@@ -1,9 +1,10 @@
 # 97 — B1–B3 Closure Review (documentation pass)
 
 Records the focused documentation pass that closes the three blocking-in-text
-conditions from `98_live-gate-review.md`. Docs-only. No source code, no installs,
-`.claude/` untouched, core architecture unchanged except as needed to close
-B1–B3.
+conditions from `98_live-gate-review.md`. This pass itself changed documentation
+only: no PoC source code, no installs, `.claude/` untouched, core architecture
+unchanged except as needed to close B1–B3. Under the corrected TRL 1-3 plan,
+B1-B3 still require later proof-of-concept test evidence.
 
 ## Closure status
 

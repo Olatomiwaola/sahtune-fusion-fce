@@ -50,9 +50,9 @@ Consolidated open inputs, maturity items, and decisions needed. Sources: `00`
 2. Approve the project-taxonomy → handling-level mapping approach (OPEN-02).
 3. Confirm the target edge hardware class/SKU for later benchmarking (OPEN-03).
 4. Prioritize/schedule H1–H14 across TRL bands (esp. H6 crypto/key management).
-5. Approve moving from TRL 1-3 (design) to TRL 4-5 (implementation/test) — this is
-   the point at which code generation would first be requested; it is out of scope
-   until explicitly approved.
+5. Approve the TRL 1-3 local PoC boundary and implementation language/tooling
+   before M2 Sprint 2 begins; production/operational implementation remains out
+   of scope until later approval.
 6. Approve any external evaluation activity (e.g., NVIDIA rig) — paper-only until then.
 7. Confirm no external-facing use of any artifact until the red-team claim audit is
    re-run on the final text.

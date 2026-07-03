@@ -57,7 +57,12 @@ is deterministic, rule-governed, and auditable.
 
 ## Scope
 
-Design artifacts only. No implementation code. No external installs.
+Architecture artifacts and TRL 1-3 planning. After requirements are baselined,
+the project expects minimal local proof-of-concept code for schema validation,
+policy evaluation, audit/provenance output, and synthetic/mock-data test
+evidence. Production, operational, deployed, classified-processing, and
+externally installed implementation work remains out of scope unless separately
+approved.
 
 ## Facts / Assumptions / Judgment / Uncertainty
 

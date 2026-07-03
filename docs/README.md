@@ -1,6 +1,9 @@
 # Sahtune Fusion Compliance Engine (FCE) — Architecture Package (Phase B/C)
 
-**Status:** Design artifacts only. No implementation code. No external tools installed.
+**Status:** Architecture and TRL 1-3 build plan. TRL 1-3 now permits a minimal
+local executable PoC after requirements are locked; production/operational code,
+external installs, real data, and measured-performance claims remain out of
+scope unless explicitly approved.
 **Prepared by:** Acting as `fce-lead-systems-architect`, applying the 13 FCE skills as the operating structure, gated by `red-team-reviewer` and `security-assurance-engineer`.
 **Date:** 2026-07-02.
 

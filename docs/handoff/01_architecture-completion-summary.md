@@ -1,7 +1,8 @@
 # 01 — Architecture Completion Summary
 
-Docs-only summary of what is designed. No performance, certification, ATO,
-endorsement, or classified-processing claims. All figures are TARGET.
+Architecture and TRL 1-3 build summary. No performance, certification, ATO,
+endorsement, classified-processing, or operational-deployment claims. All figures
+are TARGET.
 
 ## System architecture v0 summary
 - **Concept (`01`):** deterministic, default-deny, fail-closed compliance layer
@@ -47,14 +48,16 @@ requirement traces, verification methods, risks, and an exit gate. Sequenced by
 review gates GATE-A…GATE-F, with a dependency map and TRL mapping.
 
 ## TRL 1-3 build plan summary (`15`)
-Detailed plan for M1–M7 at TRL 1-3 only: 14 sprints (S1 = design/spec artifact,
-S2 = analysis/review/evidence artifact), a TRL 1-3 Master Schedule, a Mermaid
-M1–M7 flowchart, an intentionally-deferred list, and the decision gates required
-before TRL 4-5. **No code is produced at TRL 1-3.**
+Detailed plan for M1–M7 at TRL 1-3 only: 14 sprints. M1 locks requirements;
+M2-M7 combine design/spec work with minimal local PoC code, synthetic fixtures,
+tests, and evidence where the block calls for it. Production/operational code
+and measured-performance claims remain out of scope.
 
 ## What is not done yet
 - M1 Sprint 2 coverage audit is not complete; GATE-A is not yet declared.
-- No implementation, no sensor adapters, no data generation (specs only).
+- No production/operational implementation, no real sensor adapters, no real
+  data, and no external installs. Minimal local PoC code and synthetic fixtures
+  are planned after M1/GATE-A.
 - B1–B3 not yet demonstrated by test (H9).
 - High-priority conditions H1–H14 open (crypto root-of-trust/key management,
   audit ordering + anchoring, cross-object bundle version at fusion, trusted time,

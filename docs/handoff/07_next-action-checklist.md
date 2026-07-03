@@ -32,11 +32,15 @@ Immediate steps to move from Claude Code into the Claude Desktop sprint loop.
 ## E. Return to Claude Code
 - [ ] Apply the `REPO-UPDATE` items to the target repo files.
 - [ ] Read each changed file back from disk to verify clean content.
+- [ ] For M2-M7 Sprint 2 PoC work, run the local tests or scripts in Claude Code
+      and capture actual output as evidence when available.
 - [ ] Commit with a message naming the block and sprint (e.g.,
       "M1 S2: finalize RTM coverage report").
 - [ ] Push to `origin` and update `docs/handoff/04_traceability-map.md` evidence cells.
 
 ## Guardrails (unchanged)
-Docs-only until TRL 4-5 is approved; no source code; no installs; no
-certification/ATO/endorsement/classified-processing/measured-performance claims;
-project taxonomy only; synthetic data labelled SYNTHETIC.
+PoC code is allowed in TRL 1-3 after M1/GATE-A when the sprint calls for it.
+Production/operational code, real/live/classified/controlled data, real GoC
+markings, external installs, NVIDIA components, certification/ATO/endorsement/
+classified-processing claims, and measured-performance claims remain prohibited.
+Project taxonomy only; synthetic data labelled `SYNTHETIC`.

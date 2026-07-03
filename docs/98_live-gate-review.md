@@ -8,12 +8,13 @@ changed by the agents; no installs; `.claude/` untouched.
 ## Consolidated verdict
 
 **APPROVE-WITH-CONDITIONS** (both agents concur).
-Scope is design-only at TRL 1-3. No executable gate-bypass or permit-by-default
-was demonstrated, so a block verdict is not warranted at design stage. However,
-the red-team pass found latent specification-level bypass/escalation routes, so
+Scope at the time of this review was architecture documentation only. Under the
+corrected TRL 1-3 plan, B1-B3 still require later proof-of-concept test evidence:
+no executable gate-bypass or permit-by-default path had been demonstrated here.
+The red-team pass found latent specification-level bypass/escalation routes, so
 the "no path skips the seven gates" assertion in `04`/`05`/`99` **must not be
-treated as final** until conditions B1–B3 below are closed in the design text.
-The threat-level item THR-KRN-001 (unauthorized merge) remains
+treated as final** until conditions B1–B3 are closed in text and then verified
+by PoC tests. The threat-level item THR-KRN-001 (unauthorized merge) remains
 blocking-until-verified by test.
 
 ## Blocking-in-text (close before the no-bypass claim stands, before any external-facing use, before TRL 4-5 entry)

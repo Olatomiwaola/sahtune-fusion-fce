@@ -14,8 +14,9 @@ repo traceability.
 1. **Claude Code remains the source of truth.** If Desktop and repo disagree, the
    repo wins until a change is written back through Claude Code.
 2. **One mission block per chat.** Do not mix M-blocks in a single Desktop chat.
-3. **One sprint per output.** Sprint 1 = design/spec artifact; Sprint 2 =
-   analysis/review/evidence artifact. Keep them separate.
+3. **One sprint per output.** Sprint 1 generally locks design/spec; Sprint 2
+   generally produces review evidence or minimal PoC evidence. Keep them
+   separate.
 4. **Cite everything.** Every Desktop output must reference repo file paths
    (e.g., `docs/07_policy-decision-model.md`) and requirement IDs (e.g.,
    `FCE-REQ-POL-012`). No claim without a trace.
@@ -33,11 +34,14 @@ Every Desktop output keeps the labels used across the repo: FACT (cited),
 ASSUMPTION, ENGINEERING JUDGMENT, UNCERTAINTY, TARGET, MEASURED, VENDOR CLAIM
 (unverified). Keep the Facts / Assumptions / Judgment / Uncertainty split.
 
-## Hard prohibitions (same as repo governance)
-No source code (unless later explicitly approved), no external installs, no
+## Hard prohibitions and PoC boundary (same as repo governance)
+Minimal local PoC code is allowed after M1/GATE-A when the sprint calls for it.
+Claude Desktop may draft code/change proposals, but Claude Code writes files and
+runs tests. Prohibited: production or operational code claims, external installs,
 certification / accreditation / ATO / endorsement / classified-processing claims,
-no verified/measured performance claims (all TARGET), no real GoC markings
-(project taxonomy only), no unlabelled synthetic data, no AI-as-sole-authority.
+verified/measured performance claims (all TARGET), real GoC markings (project
+taxonomy only), unlabelled synthetic data, real/live/classified/controlled data,
+and AI-as-sole-authority.
 
 ## Round-trip in one line
 Desktop drafts and reviews a single sprint → tags `REPO-UPDATE` items → Claude

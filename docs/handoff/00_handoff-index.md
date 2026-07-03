@@ -1,13 +1,16 @@
 # 00 — Claude Desktop Handoff Index
 
-Fusion Compliance Engine (FCE), a capability inside Sahtune Fusion. Docs-only
-handoff. No implementation code, no installs, `.claude/` untouched.
+Fusion Compliance Engine (FCE), a capability inside Sahtune Fusion. Handoff for
+architecture review and TRL 1-3 PoC execution planning. No production/
+operational code claims, no installs, `.claude/` untouched.
 
 ## Project status
-Design stage, TRL 1-3. The system architecture package (`docs/00`–`13`), the
-B1–B3 closure (`97`), the live gate review (`98`), the M1–M9 execution
-architecture (`14`), and the TRL 1-3 build plan (`15`) are complete as v0/draft
-design artifacts. No build/implementation has started.
+TRL 1-3 stage. The system architecture package (`docs/00`–`13`), the B1–B3
+closure (`97`), the live gate review (`98`), the M1–M9 execution architecture
+(`14`), and the corrected TRL 1-3 build plan (`15`) are complete as v0/draft
+planning artifacts. Minimal local PoC implementation is expected after M1/GATE-A
+for the blocks that call for it; production/operational implementation has not
+started.
 
 ## What has been completed
 - 14 FCE agents and 13 FCE skills installed under `.claude/` (inventory in `00`).
@@ -26,15 +29,9 @@ design artifacts. No build/implementation has started.
   the latest handoff commit before relying on GitHub as the shared source of
   truth (see `07_next-action-checklist.md`).
 
-## Latest known commits (most recent first)
-```
-c93244e Add TRL 1-3 build plan
-781ca5b Add M1-M9 execution architecture
-442a8e7 Close B1-B3 architecture review findings in docs
-514c9e7 Add FCE architecture package
-25407aa Add FCE Claude agent and skill library
-```
-The handoff package is the next commit after the list above.
+## Commit reference
+Use `git log --oneline -5` in Claude Code for the current commit list. Do not
+reconstruct repo state from Desktop memory.
 
 ## Where the source-of-truth docs live
 - Governance/library: `.claude/agents/` (14 agents), `.claude/skills/` (13 skills).
