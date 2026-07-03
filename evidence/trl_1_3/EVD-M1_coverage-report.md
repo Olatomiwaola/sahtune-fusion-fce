@@ -116,3 +116,17 @@ Coverage itself is clean (ESS 6/6, DES 4/4, DES-01/03 confirmed, KRN-011 → CAP
 - **ASSUMPTION:** the supplied copies of `02`, `03`, `05`, `08` faithfully reflect repo state at or after commit 4637107 (this chat cannot read the repo); Sprint 1's live-source verification of 2026-07-03 stands and is not re-performed here.
 - **ENGINEERING JUDGMENT:** N-01–N-03 dispositions; the split-vs-reword remedy for FLAG-02; the DO-NOT-RECOMMEND framing with an identified path to RECOMMEND.
 - **UNCERTAINTY:** which side of the 17-vs-21 discrepancy is stale; possible later solicitation amendments (leadership decision #1); OPEN-02/OPEN-03 may later refine POL-011 and EDG-* rows without affecting this audit's coverage result.
+
+
+---
+
+## Addendum — 2026-07-03 (post-correction)
+
+RU-02, RU-03, RU-04, and the N-03 legend convention were committed (RTM v0.2).
+FCE-REQ-EDG-011 minted at HEAD to host the resource-exhaustion fail-closed
+invariant; RTM row count is now 22 (FACT, verified by grep at commit time).
+Off-legend methods resolved by reassignment (ASSUMPTION recorded: legend
+amendment was declined in favour of the lighter reassignment; reversible by
+decision record). The Section 6 GATE-A position accordingly converts from
+DO-NOT-RECOMMEND to RECOMMEND as the audit basis. Declaration remains with
+Kanatir leadership, including decision-register item #1 (amendment check).

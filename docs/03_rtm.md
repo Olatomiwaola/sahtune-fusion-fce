@@ -1,4 +1,4 @@
-# 03 — Requirements Traceability Matrix (RTM) v0.1 (M1 Sprint 1 draft)
+# 03 — Requirements Traceability Matrix (RTM) v0.2 (M1 Sprint 2 corrections RU-02..RU-04 per EVD-M1)
 
 Owner: `requirements-traceability-engineer`. Skill: `fce-requirements-traceability`.
 
@@ -61,6 +61,10 @@ test, red-team test, benchmark, bench test, field test, flight test,
 accreditation-support review.
 
 Status values: `draft` for M1 Sprint 1. "shall" = binding; "should" = desired.
+Convention (N-03, EVD-M1): fail-closed and safeguard clauses attached to
+Desired-outcome capabilities are conditional-binding — binding whenever the
+capability is present (applies to FCE-REQ-POL-020, FCE-REQ-OPS-002,
+FCE-REQ-EDG-011).
 Acceptance criteria are drafted for traceability and will be audited in M1
 Sprint 2.
 
@@ -115,7 +119,7 @@ Sprint 2.
 
 | Req ID | Requirement (full text) | Source | Capability | Design element | Verification | Acceptance criteria | Test/Evidence | Status |
 |---|---|---|---|---|---|---|---|---|
-| FCE-REQ-EDG-001 | The FCE should meet an internal end-to-end latency TARGET across multiple modalities and handling levels under a defined synthetic workload on named hardware. All figures are internal targets to be verified. | FCE-DES-01 | CAP-09 | ARCH-12, all gates | benchmark | Benchmark plan defines synthetic workload, named hardware, per-gate timing, and end-to-end latency target; no measured-performance claim is made until execution with provenance. | TST-PRF-001 / EVD-BENCH-001 | draft |
+| FCE-REQ-EDG-001 | The FCE should meet an internal end-to-end latency TARGET across multiple modalities and handling levels under a defined synthetic workload on named hardware. All figures are internal targets to be verified. | FCE-DES-01 | CAP-09 | ARCH-12, all gates | benchmark, analysis | Benchmark plan defines synthetic workload, named hardware, per-gate timing, and end-to-end latency target; no measured-performance claim is made until execution with provenance. | TST-PRF-001 / EVD-BENCH-001 | draft |
 
 ### FCE-DES-02 — Adaptable policy framework without restart (desired)
 
@@ -127,13 +131,14 @@ Sprint 2.
 
 | Req ID | Requirement (full text) | Source | Capability | Design element | Verification | Acceptance criteria | Test/Evidence | Status |
 |---|---|---|---|---|---|---|---|---|
-| FCE-REQ-EDG-010 | The FCE should operate within defined SWaP and compute limits on a named edge-class device and shall fail closed under resource exhaustion across all six degraded-mode constraint classes. | FCE-DES-03 | CAP-09 | ARCH-12 | benchmark, edge/degraded test | On named edge-class hardware, each degraded-mode constraint class has a defined fail-closed response; until measured, all SWaP and compute figures remain TARGET. | TST-EDG-010 | draft |
+| FCE-REQ-EDG-010 | The FCE should operate within defined SWaP and compute limits on a named edge-class device. All figures are internal targets to be verified. | FCE-DES-03 | CAP-09 | ARCH-12 | benchmark, analysis | Benchmark plan defines SWaP and compute limits (TARGET) for a named edge-class device; no measured-performance claim is made until execution with provenance. | TST-EDG-010 | draft |
+| FCE-REQ-EDG-011 | The FCE shall fail closed under resource exhaustion across all six degraded-mode constraint classes (conditional-binding under FCE-DES-03 per legend convention N-03). | FCE-DES-03 | CAP-09 | ARCH-12 | bench test, red-team test | Each of the six degraded-mode constraint classes has a defined fail-closed response; resource exhaustion never produces permit-by-default or ungoverned release; at TRL 1-3 demonstrated via simulated resource limits on the laptop PoC. | TST-EDG-011 | draft |
 
 ### FCE-DES-04 — Explainability and controlled override (desired)
 
 | Req ID | Requirement (full text) | Source | Capability | Design element | Verification | Acceptance criteria | Test/Evidence | Status |
 |---|---|---|---|---|---|---|---|---|
-| FCE-REQ-OPS-001 | The FCE should present a human-readable explanation for each decision, including the rules applied, the attributes consumed, and the reason code. | FCE-DES-04 | CAP-10 | ARCH-13 | explainability test | Each decision explanation lists rule ID(s), attributes consumed, decision, disposition, and reason code in human-readable form. | TST-EXP-001 | draft |
+| FCE-REQ-OPS-001 | The FCE should present a human-readable explanation for each decision, including the rules applied, the attributes consumed, and the reason code. | FCE-DES-04 | CAP-10 | ARCH-13 | inspection, integration test | Each decision explanation lists rule ID(s), attributes consumed, decision, disposition, and reason code in human-readable form. | TST-EXP-001 | draft |
 | FCE-REQ-OPS-002 | Operator override shall require authenticated authority, a reason code, a time limit, and an audit signature placeholder; override lacking any precondition shall be rejected fail-closed. | FCE-DES-04 | CAP-10 | ARCH-13, ARCH-10 | red-team test, integration test | Override is accepted only when all preconditions are present and cannot relax the no-unauthorized-merge invariant or a cross-domain block (B2); missing preconditions fail closed. | TST-RED-002 | draft |
 
 ### Cross-cutting security
@@ -151,6 +156,9 @@ M1 Sprint 1 acceptance criteria. Capability-level note: FCE-REQ-KRN-011 was
 added 2026-07-03 after an accountability review found the no-unauthorized-merge
 invariant (CAP-06) had no dedicated requirement row and downstream artifacts
 (`12`, M5, GDR-011) were tracing it by proxy through FCE-REQ-KRN-010.
+FCE-REQ-EDG-011 was added 2026-07-03 by the M1 Sprint 2 audit (EVD-M1, RU-03)
+to host the resource-exhaustion fail-closed invariant previously mixed into
+FCE-REQ-EDG-010; RTM row count is now 22.
 
 ## M1 Sprint 1 handoff status
 
