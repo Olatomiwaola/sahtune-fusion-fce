@@ -85,7 +85,11 @@ the source of truth if this PDF ever differs from the repo docs.
 
 ### Current M1 requirement status
 The verbatim DND IDEaS outcome text is now in the repository in `02` and `03`,
-verified against the Canada.ca challenge page on 2026-07-03. M1 Sprint 1 drafted
+verified against the live Canada.ca challenge page on 2026-07-03 (architecture
+accountability review): all 6 Essential and 4 Desired outcome texts match the
+live page word-for-word; page metadata shows the challenge issued/modified
+2026-06-04. Red-team finding RT-M1S1-01 (single-source text provenance) is
+closed by this verification. M1 Sprint 1 drafted
 RTM acceptance criteria using existing FCE-REQ IDs only. M1 Sprint 2 must still
 perform the coverage audit before GATE-A is declared.
 

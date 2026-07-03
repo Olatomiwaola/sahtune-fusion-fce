@@ -164,7 +164,7 @@ held-out laptop validation gate.
    forced-merge red-team notes.
 8. Definition of done: no merge without covering permit; override cannot relax
    the invariant; derived objects carry high-water-mark labels and parent links.
-9. Requirement IDs touched: FCE-REQ-KRN-010, FCE-REQ-POL-012,
+9. Requirement IDs touched: FCE-REQ-KRN-011, FCE-REQ-KRN-010, FCE-REQ-POL-012,
    FCE-REQ-OPS-002.
 10. Dependencies: M3, M4.
 11. Risks: THR-KRN-001 remains blocking-until-verified until stronger tests in
@@ -195,7 +195,7 @@ held-out laptop validation gate.
    `SYNTHETIC-DERIVED`, or `SYNTHETIC`; every gate and policy action is
    exercised; project taxonomy only; held-out fixtures are sealed before M7.
 9. Requirement IDs touched: FCE-REQ-ING-010, FCE-REQ-POL-011/012,
-   FCE-REQ-KRN-010.
+   FCE-REQ-KRN-010/011.
 10. Dependencies: M2, M3.
 11. Risks: unrepresentative scenarios (THR-SIM-001) give false confidence.
 12. Exit gate: GATE-C.

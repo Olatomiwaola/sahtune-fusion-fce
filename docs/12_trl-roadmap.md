@@ -47,7 +47,7 @@ artifacts are labelled "support" only. All performance figures are TARGET.
   named hardware only when a benchmark rig is approved.
 - Exit criteria:
   1. Determinism demonstrated (FCE-REQ-POL-001) by property-based tests.
-  2. No-unauthorized-merge invariant demonstrated (FCE-REQ-KRN-010).
+  2. No-unauthorized-merge invariant demonstrated (FCE-REQ-KRN-011).
   3. Audit replay reproduces dispositions (FCE-REQ-AUD-003).
   4. Fail-closed verified for all six degraded-mode classes.
   5. Internal latency TARGET measured on a named rig (MEASURED, provenance).

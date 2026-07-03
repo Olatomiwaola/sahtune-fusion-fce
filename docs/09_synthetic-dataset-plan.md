@@ -29,7 +29,7 @@ Skill: `fce-synthetic-sensor-data`.
 - Expected audit: fusion_decision, transformation, quarantine records.
 - Success: all conflicts dispositioned per `07`; Failure cases: missing metadata
   object rejected at G2. Red-team: tampered classification label.
-- Trace: FCE-REQ-KRN-010, FCE-REQ-POL-012.
+- Trace: FCE-REQ-KRN-011, FCE-REQ-KRN-010, FCE-REQ-POL-012.
 
 ### Scenario 2 — Maritime Domain Awareness — ALL DATA SYNTHETIC
 - Modalities: radar-like, AIS-like, EO/IR, anomaly events.

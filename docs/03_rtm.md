@@ -73,6 +73,7 @@ Sprint 2.
 | FCE-REQ-KRN-001 | The FCE shall render a recorded policy decision for every object before that object is released to downstream analytics. | FCE-ESS-01 | CAP-02 | ARCH-03, ARCH-04, G4 | integration test, property-based test | Every object has a policy decision before downstream release; any object without a recorded decision is blocked from release and produces an audit event. | TST-INT-001 / EVD-001 | draft |
 | FCE-REQ-POL-001 | The FCE shall render policy decisions deterministically, such that identical inputs under identical policy-bundle version yield identical decisions. | FCE-ESS-01 | CAP-02 | ARCH-03 | property-based test | Repeated evaluation of identical object, PIP attributes, and policy bundle version produces the same decision, reason code, and enforcement action. | TST-PRP-001 | draft |
 | FCE-REQ-KRN-002 | AI components shall be advisory only; no enforcement decision shall depend solely on AI output, and every decision shall cite at least one deterministic rule ID. | FCE-ESS-01 | CAP-07 | ARCH-08 | inspection, red-team test | Each enforcement decision cites deterministic rule ID(s); disabling advisory AI cannot convert a deny/block/quarantine into a permit. | TST-RED-001 | draft |
+| FCE-REQ-KRN-011 | The FCE shall not merge, fuse, or correlate objects whose combined classification, domain, and release-caveat tuple lacks an explicit covering permit in the active policy bundle; a blocked merge attempt shall segregate the input objects and emit an audit event. | FCE-ESS-01, FCE-ESS-02 | CAP-06 | ARCH-08, G5 | property-based test, red-team test | No fused object exists whose parent label tuple lacked a covering permit; every attempted unauthorized merge results in a segregate disposition with RC-003 and an audit event; operator override cannot relax the block (B2); derived objects from permitted merges carry high-water-mark labels and full parent linkage. | TST-PRP-051 / TST-RED-051 | draft |
 
 ### FCE-ESS-02 — Enforcement across modalities, domain, and handling level
 
@@ -146,7 +147,10 @@ Sprint 2.
 Essential: 6/6 (ESS-01...06 all have >= 1 shall). Desired: 4/4 (DES-01...04;
 DES-01 and DES-03 confirmed present). Gaps: none at outcome level. Every row has
 an ID, a capability trace, a design-element trace, verification method(s), and
-M1 Sprint 1 acceptance criteria.
+M1 Sprint 1 acceptance criteria. Capability-level note: FCE-REQ-KRN-011 was
+added 2026-07-03 after an accountability review found the no-unauthorized-merge
+invariant (CAP-06) had no dedicated requirement row and downstream artifacts
+(`12`, M5, GDR-011) were tracing it by proxy through FCE-REQ-KRN-010.
 
 ## M1 Sprint 1 handoff status
 

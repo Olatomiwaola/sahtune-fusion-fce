@@ -135,7 +135,7 @@ flowchart TD
   no-unauthorized-merge PoC evidence.
 - Acceptance criteria: no merge without covering permit; override cannot relax the
   invariant; derived objects carry high-water-mark labels and parent linkage.
-- Requirement IDs touched: FCE-REQ-KRN-010, FCE-REQ-POL-012, FCE-REQ-OPS-002.
+- Requirement IDs touched: FCE-REQ-KRN-011, FCE-REQ-KRN-010, FCE-REQ-POL-012, FCE-REQ-OPS-002.
 - Verification method: property-based test, red-team test.
 - Risks: THR-KRN-001 blocking-until-verified until H9 tests pass.
 - Exit gate: contributes to GATE-D.
@@ -156,7 +156,7 @@ flowchart TD
 - Acceptance criteria: every gate and every policy action exercised; all objects
   labelled `PUBLIC-OPEN-SOURCE`, `SYNTHETIC-DERIVED`, or `SYNTHETIC`; "-like"
   discipline; project taxonomy only; held-out fixture seal ready for M7.
-- Requirement IDs touched: FCE-REQ-ING-010, FCE-REQ-POL-011/012, FCE-REQ-KRN-010.
+- Requirement IDs touched: FCE-REQ-ING-010, FCE-REQ-POL-011/012, FCE-REQ-KRN-010/011.
 - Verification method: simulation, inspection.
 - Risks: unrepresentative scenarios (THR-SIM-001) give false confidence.
 - Exit gate: GATE-C.

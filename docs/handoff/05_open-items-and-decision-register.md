@@ -6,7 +6,7 @@ Consolidated open inputs, maturity items, and decisions needed. Sources: `00`
 ## Open inputs
 | ID | Item | Impact | Needed for |
 |---|---|---|---|
-| OPEN-01 | Verbatim DND IDEaS solicitation text supplied and verified on 2026-07-03; anchors registered in `docs/02` and `docs/03` | M1 Sprint 1 unblocked; GATE-A still requires Sprint 2 coverage audit | M1 Sprint 2 / GATE-A |
+| OPEN-01 | Verbatim DND IDEaS solicitation text supplied and verified against the live Canada.ca page on 2026-07-03 (word-for-word match, all 10 outcomes; RT-M1S1-01 closed); anchors registered in `docs/02` and `docs/03` | M1 Sprint 1 unblocked; GATE-A still requires Sprint 2 coverage audit | M1 Sprint 2 / GATE-A |
 | OPEN-02 | Project-taxonomy → named-handling-level mapping (e.g., Protected B target) | Policy labels use project taxonomy only | M2 / M3 |
 | OPEN-03 | Edge hardware SKU unconfirmed (Jetson-class assumed) | Benchmarks stay TARGET | TRL 4-5 / M8 |
 | OPEN-04 | Laptop PoC data-source approval: choose at least two public source families from `docs/16_laptop-poc-validation-architecture.md` | Required for source manifest, trim report, calibration/held-out fixture seal, and pre-lab validation evidence | M6 / M7 |
@@ -39,7 +39,7 @@ Consolidated open inputs, maturity items, and decisions needed. Sources: `00`
 ## L1–L5 (documentation-level; track)
 | ID | Item |
 |---|---|
-| L1 | Gate or remove `data_origin: LIVE` at this TRL; banner keys off `data_origin` |
+| L1 | RESOLVED 2026-07-03 by schema v0.2.0 (`06`) and FCE-DR-SCH-002: LIVE removed at TRL 1-3, rejected fail-closed at G1; banner keys off `data_origin` in {SYNTHETIC, SYNTHETIC-DERIVED} |
 | L2 | Align G1 "object signature (if present)" text with the schema |
 | L3 | State audit replay is read-only; mission-replay re-traverses G1–G7 |
 | L4 | Keep "Protected B" as reference-only external target; re-check vs solicitation |

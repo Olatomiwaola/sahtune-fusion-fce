@@ -46,6 +46,7 @@ Governed by `.claude/agents/_SHARED_CONSTRAINTS.md` and `fce-documentation-style
 | OPEN-01 | DND IDEaS solicitation verbatim outcome text supplied and verified on 2026-07-03 | M1 Sprint 1 unblocked; GATE-A still requires Sprint 2 coverage audit and review | requirements-traceability-engineer |
 | OPEN-02 | Classification taxonomy is a project-taxonomy placeholder, never real Government of Canada markings | Policy labels (`07`) use the project taxonomy only | policy-engineer |
 | OPEN-03 | Target edge hardware model is unconfirmed (Jetson-class assumed) | Benchmark plans (`13`) remain TARGET-only | edge-performance-engineer |
+| OPEN-04 | Laptop PoC data-source approval: choose at least two public source families from `docs/16_laptop-poc-validation-architecture.md` (leadership decision #6) | Required for source manifest, trim report, calibration/held-out fixture seal, and pre-lab validation evidence | test-evaluation-engineer / data-model-engineer |
 
 ## Shared identifier vocabulary (the spine used across all files)
 - Outcomes: `FCE-ESS-01` through `FCE-ESS-06`, and `FCE-DES-01` through `FCE-DES-04`. Outcome text is verified verbatim Canada.ca challenge text in `02` and `03`.
