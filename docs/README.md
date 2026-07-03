@@ -57,6 +57,13 @@ Claude Code + GitHub as the source of truth. Files: `00_handoff-index.md`,
 `05_open-items-and-decision-register.md`, `06_desktop-session-rules.md`,
 `07_next-action-checklist.md`.
 
+### Architecture PDF export (`docs/exports/`)
+`FCE_Architecture_Connection_Map.pdf` is a visual orientation document that
+connects the full architecture package: system elements, seven gates,
+metadata/policy/audit, security review state, M1-M9 execution architecture,
+TRL 1-3 sprint plan, and Claude Desktop handoff loop. The Markdown files remain
+the source of truth if this PDF ever differs from the repo docs.
+
 > Layout note: the user requested one file per architecture block, so this package is flat and block-numbered. The canonical `fce-evidence-pack` folder taxonomy (`evidence/trl_*`, `docs/01_requirements/`, `docs/05_data_model/`, `docs/11_risk_register/`, `docs/12_decision_records/`) remains the future home for these artifacts; cross-references note the mapping.
 
 ---
