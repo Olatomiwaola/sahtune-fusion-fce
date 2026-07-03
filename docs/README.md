@@ -42,7 +42,20 @@ Every claim in every file carries a trace ID or one of these labels (per `fce-do
 | 11 | `11_failure-modes-and-mitigations.md` | test-evaluation, security-assurance |
 | 12 | `12_trl-roadmap.md` | trl-evidence-engineer |
 | 13 | `13_nvidia-vision-acceleration-evaluation.md` | fce-vision-acceleration-evaluation |
+| 14 | `14_execution-architecture-m1-m9.md` | fce-lead-systems-architect |
+| 15 | `15_trl1-3-build-plan.md` | fce-lead-systems-architect, trl-evidence-engineer |
+| 97 | `97_b1-b3-closure-review.md` | red-team-reviewer, security-assurance-engineer |
+| 98 | `98_live-gate-review.md` | red-team-reviewer, security-assurance-engineer |
 | — | `99_gate-review.md` | red-team-reviewer, security-assurance-engineer |
+
+### Claude Desktop handoff (`docs/handoff/`)
+Prepared to continue the project sprint-by-sprint in Claude Desktop while keeping
+Claude Code + GitHub as the source of truth. Files: `00_handoff-index.md`,
+`01_architecture-completion-summary.md`,
+`02_claude-desktop-operating-instructions.md`,
+`03_sprint-by-sprint-desktop-prompts.md`, `04_traceability-map.md`,
+`05_open-items-and-decision-register.md`, `06_desktop-session-rules.md`,
+`07_next-action-checklist.md`.
 
 > Layout note: the user requested one file per architecture block, so this package is flat and block-numbered. The canonical `fce-evidence-pack` folder taxonomy (`evidence/trl_*`, `docs/01_requirements/`, `docs/05_data_model/`, `docs/11_risk_register/`, `docs/12_decision_records/`) remains the future home for these artifacts; cross-references note the mapping.
 
