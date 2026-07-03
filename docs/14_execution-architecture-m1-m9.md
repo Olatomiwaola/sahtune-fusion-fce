@@ -49,8 +49,9 @@ flowchart TD
 
 ### M1 — Requirements and Solicitation Ground Truth
 - Objective: lock the outcome registry and RTM against the verbatim solicitation.
-- Why it exists: the RTM anchors everything; paraphrased anchors (OPEN-01) must
-  become quoted solicitation text before downstream design is trusted.
+- Why it exists: the RTM anchors everything; M1 Sprint 1 replaced the original
+  paraphrased anchors with verified verbatim Canada.ca outcome text. M1 Sprint 2
+  must still audit coverage before GATE-A is declared.
 - Inputs: `02`, `03`, `00` (OPEN-01/02), DND solicitation text (pending).
 - Sprint 1: obtain and quote verbatim solicitation; replace anchors in `02`/`03`.
 - Sprint 2: finalize RTM rows, acceptance criteria, and coverage audit (6/6, 4/4).

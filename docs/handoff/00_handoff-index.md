@@ -12,8 +12,8 @@ design artifacts. No build/implementation has started.
 ## What has been completed
 - 14 FCE agents and 13 FCE skills installed under `.claude/` (inventory in `00`).
 - 13-block architecture package (`docs/00`–`13`) with verification report (`README`).
-- RTM covering 6/6 Essential and 4/4 Desired outcomes (`03`) — outcome wording is
-  paraphrased anchors pending verbatim solicitation (OPEN-01).
+- RTM covering 6/6 Essential and 4/4 Desired outcomes (`03`) — outcome wording
+  now uses verified verbatim Canada.ca challenge text from M1 Sprint 1.
 - Live red-team + security-assurance gate review (`98`); design-time self-review (`99`).
 - B1–B3 blocking-in-text conditions closed in text (`97`).
 - M1–M9 execution architecture (`14`) and TRL 1-3 build plan with 14 sprints (`15`).

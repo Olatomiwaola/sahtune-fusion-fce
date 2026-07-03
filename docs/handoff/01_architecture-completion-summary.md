@@ -7,9 +7,11 @@ endorsement, or classified-processing claims. All figures are TARGET.
 - **Concept (`01`):** deterministic, default-deny, fail-closed compliance layer
   between sensor ingestion and downstream analytics; AI advisory only.
 - **Capabilities (`02`):** CAP-01…CAP-12 mapped to all 6 Essential and 4 Desired
-  outcomes (paraphrased anchors, OPEN-01).
-- **RTM (`03`):** ~24 requirements across all outcomes; every row has ID,
-  verification method, and design trace. DES-01 and DES-03 confirmed present.
+  outcomes using verified verbatim Canada.ca challenge text from M1 Sprint 1.
+- **RTM (`03`):** 20 requirements across all outcomes including cross-cutting
+  security; every row has ID,
+  verification method, design trace, and M1 Sprint 1 acceptance criteria.
+  DES-01 and DES-03 confirmed present.
 - **Architecture + trust boundaries (`04`):** 14 elements (ARCH-01…14), zero-trust
   boundaries, Mermaid boundary diagram.
 - **Seven-gate data flow (`05`):** G1…G7 in order, no-bypass rule, per-gate
@@ -51,8 +53,7 @@ M1–M7 flowchart, an intentionally-deferred list, and the decision gates requir
 before TRL 4-5. **No code is produced at TRL 1-3.**
 
 ## What is not done yet
-- Verbatim solicitation text not integrated (OPEN-01); RTM outcome cells are
-  paraphrased anchors.
+- M1 Sprint 2 coverage audit is not complete; GATE-A is not yet declared.
 - No implementation, no sensor adapters, no data generation (specs only).
 - B1–B3 not yet demonstrated by test (H9).
 - High-priority conditions H1–H14 open (crypto root-of-trust/key management,

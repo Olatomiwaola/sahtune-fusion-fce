@@ -43,12 +43,12 @@ Governed by `.claude/agents/_SHARED_CONSTRAINTS.md` and `fce-documentation-style
 ## Open inputs and blockers
 | ID | Item | Impact | Owner |
 |---|---|---|---|
-| OPEN-01 | DND IDEaS solicitation verbatim text is absent from the repository | RTM (`03`) outcome cells and the compliance matrix cannot be finalized; the architecture is unaffected | requirements-traceability-engineer |
+| OPEN-01 | DND IDEaS solicitation verbatim outcome text supplied and verified on 2026-07-03 | M1 Sprint 1 unblocked; GATE-A still requires Sprint 2 coverage audit and review | requirements-traceability-engineer |
 | OPEN-02 | Classification taxonomy is a project-taxonomy placeholder, never real Government of Canada markings | Policy labels (`07`) use the project taxonomy only | policy-engineer |
 | OPEN-03 | Target edge hardware model is unconfirmed (Jetson-class assumed) | Benchmark plans (`13`) remain TARGET-only | edge-performance-engineer |
 
 ## Shared identifier vocabulary (the spine used across all files)
-- Outcomes: `FCE-ESS-01` through `FCE-ESS-06`, and `FCE-DES-01` through `FCE-DES-04`. Outcome text is a REQUIRED-INPUT placeholder until the solicitation is supplied.
+- Outcomes: `FCE-ESS-01` through `FCE-ESS-06`, and `FCE-DES-01` through `FCE-DES-04`. Outcome text is verified verbatim Canada.ca challenge text in `02` and `03`.
 - Capabilities: `CAP-01` through `CAP-12` (defined in `02`).
 - Architecture elements: `ARCH-01` through `ARCH-14` (defined in `04`).
 - Gates: `G1` through `G7` (defined in `05`).

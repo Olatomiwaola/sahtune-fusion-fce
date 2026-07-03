@@ -72,9 +72,11 @@ unauthenticated-source-rejection audit gap; release-destination authentication g
 No certification / accreditation / ATO; no government endorsement; no operational
 deployment; no classified-processing authority; no verified performance stated as
 fact (all TARGET); no vendor claim stated as fact (all VENDOR CLAIM, unverified);
-no fabricated solicitation text (paraphrased anchors flagged, OPEN-01); no
-unlabelled synthetic data; no AI-as-sole-authority path (every decision cites a
-deterministic rule ID; deterministic-without-AI fallback present).
+no fabricated solicitation text (at review time, paraphrased anchors were
+flagged under OPEN-01; as of M1 Sprint 1 they have been replaced by verified
+verbatim Canada.ca outcome text in `02` and `03`); no unlabelled synthetic data;
+no AI-as-sole-authority path (every decision cites a deterministic rule ID;
+deterministic-without-AI fallback present).
 
 ## Handoffs
 

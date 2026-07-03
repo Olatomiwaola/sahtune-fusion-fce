@@ -74,17 +74,20 @@ the source of truth if this PDF ever differs from the repo docs.
 |---|---|---|
 | 1 | All 14 FCE agents visible | **PASS** — 14 agent files under `.claude/agents/` (excluding `_SHARED_CONSTRAINTS.md`, a shared reference file). Listed in `00_project-context.md`. |
 | 2 | All 13 FCE skills visible | **PASS** — 13 skill directories under `.claude/skills/`. Listed in `00_project-context.md`. |
-| 3 | FCE-DES-01 … FCE-DES-04 in the RTM | **PASS BY CONSTRUCTION, WITH CAVEAT** — no RTM existed on disk before this package (no `docs/` tree present). The RTM in `03_rtm.md` is newly created and explicitly includes all 10 outcomes: FCE-ESS-01…06 and FCE-DES-01…04 (DES-01 and DES-03 called out per skill requirement). **Caveat:** outcome wording uses the user-supplied **paraphrased anchors** (recorded in `02`), which are explicitly **not** verbatim DND text and have **not** been fabricated. Replace with the quoted solicitation source to finalize. |
+| 3 | FCE-DES-01 … FCE-DES-04 in the RTM | **PASS** — the RTM in `03_rtm.md` explicitly includes all 10 outcomes: FCE-ESS-01…06 and FCE-DES-01…04 (DES-01 and DES-03 called out per skill requirement). As of M1 Sprint 1, outcome wording uses verified verbatim Canada.ca challenge text. GATE-A still requires the Sprint 2 coverage audit. |
 | 4 | NVIDIA vision acceleration remains optional evaluation only | **PASS** — treated strictly as an optional evaluation/benchmark track, never a core dependency and never in the compliance-decision path. See `13_nvidia-vision-acceleration-evaluation.md` and the trust-boundary in `04`. |
 
-### Top open input (blocking for RTM finalization only)
-**The verbatim DND IDEaS solicitation text is not in the repository.** Design currently uses the user-supplied paraphrased anchors (see `02`). Per `fce-requirements-traceability`, final RTM outcome cells must quote the solicitation, not a paraphrase. Paste the solicitation (ideally into `docs/00_project_context/solicitation/`) to finalize the RTM outcome cells and compliance matrix without changing the architecture.
+### Current M1 requirement status
+The verbatim DND IDEaS outcome text is now in the repository in `02` and `03`,
+verified against the Canada.ca challenge page on 2026-07-03. M1 Sprint 1 drafted
+RTM acceptance criteria using existing FCE-REQ IDs only. M1 Sprint 2 must still
+perform the coverage audit before GATE-A is declared.
 
 ---
 
 ## Epistemic summary for the whole package
-- **Facts:** the agent/skill inventory, the skill-mandated schema shapes (15 metadata fields, 18 audit fields, 9 audit event classes, 11 policy actions, 8 threat areas, 7 gates), and the governance constraints are drawn directly from the installed library files.
-- **Assumptions:** the thematic content of each DND outcome, until the solicitation text is supplied; the target hardware class (Jetson-class edge) pending confirmation.
+- **Facts:** the agent/skill inventory, the skill-mandated schema shapes (15 metadata fields, 18 audit fields, 9 audit event classes, 11 policy actions, 8 threat areas, 7 gates), verified verbatim DND outcome text, and the governance constraints are drawn directly from the installed library files and cited source text.
+- **Assumptions:** the target hardware class (Jetson-class edge) pending confirmation.
 - **Engineering judgment:** the specific decomposition into 12 capabilities, 14 architecture elements, and the ordering of the 7 gates.
 - **Uncertainty:** exact outcome wording; final classification taxonomy; hardware SKUs for benchmarking.
 - **No** certification, ATO, endorsement, classified-processing, or performance claims appear anywhere in this package.

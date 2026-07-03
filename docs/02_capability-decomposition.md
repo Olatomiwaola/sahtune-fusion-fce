@@ -2,40 +2,54 @@
 
 Owner: `requirements-traceability-engineer` with `fce-lead-systems-architect`.
 
-## Note on outcome text [OPEN-01]
+## Note on outcome text [OPEN-01 resolved for Sprint 1]
 
-The anchors below are paraphrased working anchors supplied for design use. They
-are NOT the verbatim DND IDEaS wording and must be replaced with the quoted
-solicitation text before this mapping is final. No verbatim text is fabricated.
+The anchors below are verbatim DND IDEaS outcome text from the Canada.ca
+challenge page, verified on 2026-07-03. Solicitation identifier
+W7714-248676/014 is treated as verified by Kanatir. The Canada.ca page remains
+the cited outcome source for this registry.
 
-## Outcome registry (paraphrased anchors — authoritative until wording supplied)
+Source: Canada.ca, "Reliable AI sensor fusion for real world missions",
+Defence IDEaS Competitive Projects,
+https://www.canada.ca/en/department-national-defence/programs/defence-ideas/element/competitive-projects/challenges/reliable-ai-sensor-fusion-for-real-world-missions.html.
+
+## Outcome registry (verbatim anchors)
 
 ### Essential outcomes
-- FCE-ESS-01: Modular AI-enabled component that automatically enforces
-  classification rules and policy constraints during multi-sensor fusion.
-- FCE-ESS-02: Machine-readable policy enforcement across at least two sensor
-  modalities, at least one network security domain, and at least Protected B
-  classification handling.
-- FCE-ESS-03: Programmatic compliance checks and enforcement during ingestion
-  and fusion without human approval for predefined policy conditions.
-- FCE-ESS-04: Provenance records for all ingested and produced data, including
-  source sensor ID, classification markings, timestamps, and domain of origin.
-- FCE-ESS-05: Audit logs documenting policy rules applied, enforcement actions
-  taken, and resulting compliance dispositions.
-- FCE-ESS-06: Exportable audit records supporting lineage traceability from
-  ingestion to fusion output for compliance review, forensic analysis, or
-  accreditation support.
+- FCE-ESS-01: Develop a modular AI-enabled component that automatically
+  enforces classification rules and policy constraints during multi-sensor (at
+  least two) data fusion operations.
+- FCE-ESS-02: Apply enforcement controls based on machine-readable policy
+  definitions across multiple sensor modalities (at least two), security
+  domains (at least Network security), and classification levels (at least
+  Protected B level).
+- FCE-ESS-03: Execute compliance checks and enforcement actions
+  programmatically during data ingestion and fusion processing, without
+  requiring human approval for predefined policy conditions.
+- FCE-ESS-04: Generate and retain provenance records for all data ingested into
+  and produced by the fusion pipeline including source sensor identification,
+  classification markings, timestamps, and domain of origin.
+- FCE-ESS-05: Produce audit logs documenting policy rules applied during fusion
+  processing, enforcement actions taken (e.g., permit, restrict, downgrade,
+  segregate) and resulting compliance dispositions.
+- FCE-ESS-06: Produce audit records that support traceability of data lineage
+  from original ingestion through fusion output and are exportable for
+  compliance review, forensic analysis, or accreditation activities.
 
 ### Desired outcomes
 - FCE-DES-01: Real-time compliance enforcement across multiple sensor
-  modalities and classification levels at tactical latency.
-- FCE-DES-02: Adaptable policy framework where classification guides, release
-  authorities, coalition caveats, and operational rules can be updated without
-  system restart.
-- FCE-DES-03: SWaP and compute limits accounted for in tactical edge
-  deployment.
-- FCE-DES-04: Explainable compliance decisions and controlled operator override
-  with accountability safeguards.
+  modalities (at least two) and classification levels, with performance
+  suitable for tactical decision-making.
+- FCE-DES-02: Adaptable policy framework that allows compliance rules (e.g.
+  classification guides, release authorities, coalition-specific caveats) to be
+  updated or reconfigured without system restart, supporting rapid transition
+  between operational contexts.
+- FCE-DES-03: Incorporate Size/Weight/Power (SWaP) and compute limits into
+  fusion pipelines for edge deployment and capable of maintaining compliance
+  enforcement.
+- FCE-DES-04: Explainability and operator trust mechanisms, including
+  human-readable compliance decisions and controlled override capabilities with
+  appropriate accountability safeguards.
 
 FCE-DES-01 and FCE-DES-03 are explicitly present (their omission is a known
 failure mode per `fce-requirements-traceability`).
@@ -89,12 +103,14 @@ capability.
 ## Coverage summary
 
 Essential: 6/6 mapped. Desired: 4/4 mapped (DES-01 and DES-03 confirmed).
-Gaps: none at the outcome level. Open: verbatim outcome text (OPEN-01);
-project-taxonomy-to-handling-level mapping (OPEN-02).
+Gaps: none at the outcome level. OPEN-01 text is supplied and verified for
+Sprint 1. Open: project-taxonomy-to-handling-level mapping (OPEN-02).
 
 ## Facts / Assumptions / Judgment / Uncertainty
 
-- Facts: outcome anchors as supplied by the user; capability list.
-- Assumptions: anchors approximate the final wording closely enough for design.
+- Facts: outcome anchors are verified verbatim Canada.ca challenge text;
+  capability list.
+- Assumptions: solicitation numbering W7714-248676/014 remains the controlling
+  procurement reference alongside the Canada.ca outcome text.
 - Judgment: the 12-capability decomposition and the mapping rationale.
-- Uncertainty: whether final verbatim wording shifts any mapping row.
+- Uncertainty: whether later solicitation amendments shift any mapping row.

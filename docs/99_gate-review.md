@@ -43,7 +43,7 @@ and red-team tests at TRL 4-5 (lens 6).
 | Real GoC markings used | none; project taxonomy only |
 | Synthetic data unlabelled | none; SYNTHETIC labelling specified |
 | AI as sole decision authority | none; AI advisory-only enforced |
-| Solicitation text fabricated | none; paraphrased anchors flagged (OPEN-01) |
+| Solicitation text fabricated | none; original paraphrased anchors were flagged (OPEN-01); M1 Sprint 1 replaced them with verified verbatim Canada.ca outcome text in `02` and `03` |
 
 ## Blocking-until-verified items
 

@@ -15,12 +15,12 @@ Immediate steps to move from Claude Code into the Claude Desktop sprint loop.
 - [ ] Load the session rules (`docs/handoff/06_desktop-session-rules.md`) at the
       start of each Desktop chat.
 
-## C. Start the sprint loop
-- [ ] Begin with **M1 Sprint 1** using the prompt in
+## C. Continue the sprint loop
+- [ ] Continue with **M1 Sprint 2** using the M1 Sprint 2 prompt in
       `docs/handoff/03_sprint-by-sprint-desktop-prompts.md`.
 - [ ] Keep one mission block per chat and one sprint per output.
-- [ ] If M1 needs the verbatim solicitation text (OPEN-01), obtain it before
-      finalizing the RTM (GATE-A).
+- [ ] Use the verified verbatim outcome text now registered in `docs/02` and
+      `docs/03`; Sprint 2 must audit coverage before declaring GATE-A.
 
 ## D. After each Desktop sprint
 - [ ] Produce a **repo update note**: a list of `REPO-UPDATE: <file> — <change>`

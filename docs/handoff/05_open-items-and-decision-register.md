@@ -6,7 +6,7 @@ Consolidated open inputs, maturity items, and decisions needed. Sources: `00`
 ## Open inputs
 | ID | Item | Impact | Needed for |
 |---|---|---|---|
-| OPEN-01 | Verbatim DND IDEaS solicitation text absent | RTM outcome cells are paraphrased anchors | GATE-A / M1 |
+| OPEN-01 | Verbatim DND IDEaS solicitation text supplied and verified on 2026-07-03; anchors registered in `docs/02` and `docs/03` | M1 Sprint 1 unblocked; GATE-A still requires Sprint 2 coverage audit | M1 Sprint 2 / GATE-A |
 | OPEN-02 | Project-taxonomy → named-handling-level mapping (e.g., Protected B target) | Policy labels use project taxonomy only | M2 / M3 |
 | OPEN-03 | Edge hardware SKU unconfirmed (Jetson-class assumed) | Benchmarks stay TARGET | TRL 4-5 / M8 |
 
@@ -45,7 +45,8 @@ Consolidated open inputs, maturity items, and decisions needed. Sources: `00`
 | L5 | Capture freshness/clock evaluation reference in the audit record |
 
 ## Decisions needed from Kanatir leadership
-1. Provide the verbatim solicitation text (unblocks OPEN-01 / GATE-A).
+1. Confirm whether later solicitation amendments exist before GATE-A is declared
+   (OPEN-01 is resolved for M1 Sprint 1 using verified Canada.ca outcome text).
 2. Approve the project-taxonomy → handling-level mapping approach (OPEN-02).
 3. Confirm the target edge hardware class/SKU for later benchmarking (OPEN-03).
 4. Prioritize/schedule H1–H14 across TRL bands (esp. H6 crypto/key management).
