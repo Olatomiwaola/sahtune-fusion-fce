@@ -1,9 +1,11 @@
 # Sahtune Fusion Compliance Engine (FCE) — Architecture Package (Phase B/C)
 
 **Status:** Architecture and TRL 1-3 build plan. TRL 1-3 now permits a minimal
-local executable PoC after requirements are locked; production/operational code,
-external installs, real data, and measured-performance claims remain out of
-scope unless explicitly approved.
+local executable PoC after requirements are locked; approved public
+open-source-derived fixtures are allowed for the laptop proof, while
+production/operational code, external installs, live operational data, private
+or controlled data, and measured-performance claims remain out of scope unless
+explicitly approved.
 **Prepared by:** Acting as `fce-lead-systems-architect`, applying the 13 FCE skills as the operating structure, gated by `red-team-reviewer` and `security-assurance-engineer`.
 **Date:** 2026-07-02.
 
@@ -47,6 +49,7 @@ Every claim in every file carries a trace ID or one of these labels (per `fce-do
 | 13 | `13_nvidia-vision-acceleration-evaluation.md` | fce-vision-acceleration-evaluation |
 | 14 | `14_execution-architecture-m1-m9.md` | fce-lead-systems-architect |
 | 15 | `15_trl1-3-build-plan.md` | fce-lead-systems-architect, trl-evidence-engineer |
+| 16 | `16_laptop-poc-validation-architecture.md` | test-evaluation, data-model, policy, audit, sensor-fusion |
 | 97 | `97_b1-b3-closure-review.md` | red-team-reviewer, security-assurance-engineer |
 | 98 | `98_live-gate-review.md` | red-team-reviewer, security-assurance-engineer |
 | — | `99_gate-review.md` | red-team-reviewer, security-assurance-engineer |

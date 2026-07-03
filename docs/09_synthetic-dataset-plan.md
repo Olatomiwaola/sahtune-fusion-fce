@@ -5,13 +5,16 @@ Skill: `fce-synthetic-sensor-data`.
 
 ## Ground rules
 
-- DND will not provide data; synthetic-first is a program requirement.
-- Every object carries `data_origin: SYNTHETIC` and every rendered artifact
-  carries a visible SYNTHETIC banner. Non-negotiable.
+- DND will not provide data; controlled synthetic scenarios remain required for
+  red-team conflict cases.
+- Public open-source-derived laptop fixtures are governed separately by
+  `16_laptop-poc-validation-architecture.md`.
+- Every synthetic object in this file carries `data_origin: SYNTHETIC` and every
+  rendered synthetic artifact carries a visible SYNTHETIC banner. Non-negotiable.
 - "-like" discipline: radar-like, AIS-like, SIGINT-like, acoustic-like — never
   claimed as emulation of any real system.
 - Classification and domain values use the project taxonomy only.
-- Specification only; no dataset is generated until approved.
+- Specification only; no synthetic dataset is generated until approved.
 
 ## Baseline scenarios
 
@@ -63,7 +66,9 @@ exercise every gate and every policy action at least once.
 
 ## Facts / Assumptions / Judgment / Uncertainty
 
-- Facts: synthetic-first requirement; SYNTHETIC labelling rule; "-like" rule.
-- Assumptions: four scenarios cover the mission space pending OPEN-01.
+- Facts: DND will not provide data; SYNTHETIC labelling rule; "-like" rule;
+  public-source-derived laptop fixtures are governed by `16`.
+- Assumptions: four synthetic scenarios cover the red-team conflict space pending
+  laptop source selection under OPEN-04.
 - Judgment: the specific conflict cases per scenario.
 - Uncertainty: whether additional coalition scenarios are needed.

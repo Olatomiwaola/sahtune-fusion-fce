@@ -11,12 +11,16 @@ behavior, and tests. Desktop may draft code/change proposals, but repo files are
 written and executed only in Claude Code.
 
 Shared guardrails (apply to every prompt below): no production or operational
-code; no real/live/classified/controlled data; no real GoC markings; synthetic
-data labelled `SYNTHETIC`; no external installs unless explicitly approved; all
-performance goals TARGET; no certification/ATO/endorsement/classified-processing
-or measured-performance claims; keep Facts/Assumptions/Judgment/Uncertainty
-labels; cite repo file paths and requirement IDs; tag every needed repo change
-as `REPO-UPDATE: <file> — <change>`.
+code; no real/live/classified/controlled data; no real GoC markings; public
+source data and synthetic data must be labelled `PUBLIC-OPEN-SOURCE`,
+`SYNTHETIC-DERIVED`, or `SYNTHETIC`; no external installs unless explicitly
+approved; all performance goals TARGET; no certification/ATO/endorsement/
+classified-processing or measured-performance claims; keep Facts/Assumptions/
+Judgment/Uncertainty labels; cite repo file paths and requirement IDs; tag every
+needed repo change as `REPO-UPDATE: <file> — <change>`.
+`docs/16_laptop-poc-validation-architecture.md` controls the proof method:
+pre-code decisions, sealed evidence, guard tests, source trimming, and separate
+held-out validation.
 
 ---
 
@@ -66,8 +70,9 @@ Expected output: REPO-UPDATE notes for local PoC schema validator, synthetic val
 object fixture, missing-field fixture, malformed fixture, source-supplied
 policy_binding_state fixture, and test commands/results expected.
 Requirement IDs: FCE-REQ-MET-010, FCE-REQ-PRV-001/002.
-Guardrails: PoC code only; no external installs; no real data; no production
-schema claims. Gate: GATE-B (partial). Tag repo changes REPO-UPDATE.
+Guardrails: PoC code only; no external installs; no live operational, private,
+controlled, or classified data; no production schema claims. Gate: GATE-B
+(partial). Tag repo changes REPO-UPDATE.
 ```
 
 ## M3 Sprint 1 — Policy engine & kernel design
@@ -153,26 +158,32 @@ demonstrate at least one blocked merge. Gate: GATE-D (partial). Tag REPO-UPDATE.
 ```
 Objective: Finalize the four synthetic scenario specifications and embedded
 conflicts.
-Source docs: docs/09_synthetic-dataset-plan.md, docs/06_metadata-schema.md,
-docs/07_policy-decision-model.md.
-Expected output: scenario specs (Joint ISR, Maritime, Tactical Edge, UAV) with
-expected dispositions and fixture-file plan.
+Source docs: docs/09_synthetic-dataset-plan.md, docs/16_laptop-poc-validation-architecture.md,
+docs/06_metadata-schema.md, docs/07_policy-decision-model.md.
+Expected output: scenario specs (Joint ISR, Maritime, Tactical Edge, UAV),
+approved open-source source choices, trim protocol, calibration/held-out split
+plan, expected dispositions, and fixture-file plan.
 Requirement IDs: FCE-REQ-ING-010, FCE-REQ-POL-011/012, FCE-REQ-KRN-010.
-Guardrails: every object labelled SYNTHETIC; "-like" discipline; project
-taxonomy only. Tag repo changes REPO-UPDATE.
+Guardrails: every object labelled PUBLIC-OPEN-SOURCE, SYNTHETIC-DERIVED, or
+SYNTHETIC; "-like" discipline; project taxonomy only. Tag repo changes
+REPO-UPDATE.
 ```
 
-## M6 Sprint 2 — Synthetic mission data fixtures
+## M6 Sprint 2 — Open-source-derived and synthetic mission fixtures
 ```
-Objective: Draft synthetic fixtures and expected-audit tables for Claude Code to
-apply.
-Source docs: docs/09_synthetic-dataset-plan.md, docs/08_audit-record-schema.md.
-Expected output: REPO-UPDATE notes for synthetic fixture files covering at least
-two modalities, red-team variants, expected dispositions, expected audit records,
-and coverage matrix.
+Objective: Draft source manifest, trim report, calibration fixtures, held-out
+fixtures, synthetic red-team fixtures, and expected-audit tables for Claude Code
+to apply.
+Source docs: docs/16_laptop-poc-validation-architecture.md,
+docs/09_synthetic-dataset-plan.md, docs/08_audit-record-schema.md.
+Expected output: REPO-UPDATE notes for public data source manifest, trim report,
+fixture files covering at least two approved source families, calibration/held-out
+split, red-team variants, expected dispositions, expected audit records, fixture
+seal, and coverage matrix.
 Requirement IDs: FCE-REQ-ING-010, FCE-REQ-POL-012, FCE-REQ-KRN-010.
-Guardrails: no real GoC markings; no real/live data; SYNTHETIC labelling
-verified. Gate: GATE-C. Tag REPO-UPDATE.
+Guardrails: no real GoC markings; no real/live operational data; no policy tuning
+after held-out exposure; labels verified as PUBLIC-OPEN-SOURCE,
+SYNTHETIC-DERIVED, or SYNTHETIC. Gate: GATE-C. Tag REPO-UPDATE.
 ```
 
 ## M7 Sprint 1 — V&V and red-team planning
@@ -189,14 +200,19 @@ REPO-UPDATE.
 
 ## M7 Sprint 2 — V&V and red-team PoC evidence
 ```
-Objective: Draft/run-plan the minimal local PoC test harness covering B1/B2/B3,
-no-bypass, no-merge, default-deny, audit emission, and provenance parent linkage.
-Source docs: docs/98_live-gate-review.md, docs/10_security-threat-model.md,
+Objective: Draft/run-plan the local PoC validation harness in two layers: code
+correctness tests and held-out laptop concept validation. Cover B1/B2/B3,
+no-bypass, no-merge, default-deny, audit emission, provenance parent linkage,
+and every guard in docs/16.
+Source docs: docs/16_laptop-poc-validation-architecture.md,
+docs/98_live-gate-review.md, docs/10_security-threat-model.md,
 docs/11_failure-modes-and-mitigations.md.
-Expected output: REPO-UPDATE notes for runnable test harness, expected test
-output, coverage report, and evidence IDs. If Claude Code has run the tests,
-summarize actual results; otherwise mark results as planned.
+Expected output: REPO-UPDATE notes for runnable test harness, guard rejection
+tests, code-correctness report, held-out validation report, source/trim evidence,
+coverage report, and evidence IDs. If Claude Code has run the tests, summarize
+actual results; otherwise mark results as planned.
 Requirement IDs: all FCE-REQ-*; H9.
-Guardrails: no expected result depends solely on AI output; synthetic-first.
-Gate: GATE-D (partial). Tag REPO-UPDATE.
+Guardrails: no expected result depends solely on AI output; public-source and
+synthetic fixtures only; report negative held-out results verbatim. Gate: GATE-D
+(partial). Tag REPO-UPDATE.
 ```

@@ -10,24 +10,30 @@ artifacts are labelled "support" only. All performance figures are TARGET.
   seven-gate flow, and a minimal executable proof-of-concept (PoC) that shows
   the core software functions are feasible.
 - Activities: this architecture package; policy rule examples; threat model;
-  synthetic scenario specs; PoC implementation of schema validation,
-  deterministic policy evaluation, seven-gate orchestration, provenance records,
-  audit-log emission, and no-unauthorized-merge behavior using synthetic/mock
-  inputs only.
+  synthetic scenario specs (`09`); laptop validation architecture (`16`); PoC
+  implementation of schema validation, deterministic policy evaluation,
+  seven-gate orchestration, provenance records, audit-log emission, and
+  no-unauthorized-merge behavior using approved public open-source-derived
+  fixtures plus synthetic red-team variants.
 - Exit criteria:
   1. Architecture, schemas (`06`, `08`), and policy model (`07`) documented.
   2. RTM (`03`) covers 6/6 Essential and 4/4 Desired outcomes.
   3. Threat model (`10`) covers all 8 areas with fail-closed per mode.
   4. Seven-gate flow (`05`) shows no bypass path.
-  5. Synthetic scenario specs (`09`) exercise every gate and action.
-  6. Minimal PoC code ingests at least two synthetic sensor modalities, binds
-     project-taxonomy metadata, applies deterministic policy decisions, emits
-     provenance and audit records, and demonstrates at least one blocked
-     no-unauthorized-merge case.
+  5. Synthetic scenario specs (`09`) and laptop validation architecture (`16`)
+     exercise every gate/action and define the proof discipline.
+  6. Minimal PoC code ingests at least two approved public open-source-derived
+     source families plus synthetic red-team variants, binds project-taxonomy
+     metadata, applies deterministic policy decisions, emits provenance and audit
+     records, and demonstrates at least one blocked no-unauthorized-merge case.
   7. PoC tests show default-deny behavior for missing metadata, ambiguous policy,
-     and unauthorised merge attempts.
+     unauthorised merge attempts, and every invalid-proof guard in `16`.
+  8. Held-out laptop validation is reported separately from code-correctness
+     tests, with negative results recorded verbatim.
 - Evidence types: design docs, RTM, decision records, threat register, PoC source
-  code, synthetic fixtures, test results, sample audit/provenance outputs.
+  code, source manifest, trim report, public-source-derived fixtures, synthetic
+  red-team fixtures, guard reports, held-out validation report, test results,
+  sample audit/provenance outputs.
 - Status: architecture and RTM foundation are in progress; executable PoC work is
   expected during TRL 1-3 after the relevant baselines are locked.
 
@@ -64,7 +70,8 @@ artifacts are labelled "support" only. All performance figures are TARGET.
 ## Notes
 
 - TRL 1-3 permits executable PoC code. It does not permit production claims,
-  operational deployment, real/classified data handling, formal accreditation,
+  operational deployment, live operational/private/controlled/classified data
+  handling, formal accreditation,
   production cryptography, or measured-performance claims without provenance.
 - Bands 4-9 activities are listed for planning and later approval; TRL 4-5 is
   where the PoC is integrated, hardened, and validated in lab/simulated

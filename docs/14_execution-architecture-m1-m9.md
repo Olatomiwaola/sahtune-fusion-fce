@@ -3,8 +3,11 @@
 Owner: `fce-lead-systems-architect`. Execution planning artifact.
 Source of truth: `docs/00`–`13`, `97`, `98`. This file plans *how* the FCE is
 built and evidenced. TRL 1-3 includes design plus a minimal executable PoC;
-production, operational, classified-processing, deployment, external installs,
-and measured-performance claims remain out of scope (see `12` TRL bands).
+`16` defines the proof discipline for that PoC: source reconstruction, pre-code
+decisions, sealed evidence, guard tests, open-source data trimming, code
+correctness, and separate held-out laptop validation. Production, operational,
+classified-processing, deployment, external installs, and measured-performance
+claims remain out of scope (see `12` TRL bands).
 
 All performance goals are TARGET (internal, to be verified on named hardware).
 No certification, accreditation, ATO, endorsement, classified-processing, or
@@ -29,7 +32,7 @@ flowchart TD
   GA --> M2[M2 Data & Metadata Foundation]
   M2 --> M3[M3 Policy Engine & Compliance Kernel]
   M2 --> M4[M4 Provenance & Audit Chain]
-  M2 --> M6[M6 Synthetic Mission Data & Simulation]
+  M2 --> M6[M6 Open-Source-Derived & Synthetic Mission Data]
   M3 --> GB{GATE-B\nschema/policy/audit coherent}
   M4 --> GB
   GB --> M5[M5 Fusion Interface & No-Merge Guard]
@@ -137,19 +140,22 @@ flowchart TD
 - Risks: THR-KRN-001 blocking-until-verified until H9 tests pass.
 - Exit gate: contributes to GATE-D.
 
-### M6 — Synthetic Mission Data and Simulation
-- Objective: finalize and materialize the synthetic scenarios and expected
-  dispositions used by the PoC.
-- Why it exists: DND provides no data; synthetic-first exercises every gate and action.
+### M6 — Open-Source-Derived and Synthetic Mission Data
+- Objective: finalize and materialize approved open-source-derived fixtures,
+  synthetic red-team variants, and expected dispositions used by the PoC.
+- Why it exists: DND provides no data; the laptop proof needs public source
+  provenance plus controlled synthetic conflicts to exercise every gate/action.
 - Inputs: `09`, M2 schema, M3 policy actions.
 - Sprint 1: scenario specs (Joint ISR, Maritime, Tactical Edge, UAV) with embedded conflicts.
-- Sprint 2: create local synthetic fixture files for at least two modalities and
-  red-team variants (tampered, malformed, stale, PIP spoofing, pre-marking,
-  unauthorized merge attempt).
-- Outputs: scenario library, synthetic fixture set, expected-decision tables,
-  red-team data specs.
+- Sprint 2: create local open-source-derived fixture files for at least two
+  approved source families, split into calibration and held-out sets, plus
+  synthetic red-team variants (tampered, malformed, stale, PIP spoofing,
+  pre-marking, unauthorized merge attempt).
+- Outputs: scenario library, source manifest, trim report, calibration fixture
+  set, held-out fixture set, expected-decision tables, red-team data specs.
 - Acceptance criteria: every gate and every policy action exercised; all objects
-  labelled SYNTHETIC; "-like" discipline; project taxonomy only.
+  labelled `PUBLIC-OPEN-SOURCE`, `SYNTHETIC-DERIVED`, or `SYNTHETIC`; "-like"
+  discipline; project taxonomy only; held-out fixture seal ready for M7.
 - Requirement IDs touched: FCE-REQ-ING-010, FCE-REQ-POL-011/012, FCE-REQ-KRN-010.
 - Verification method: simulation, inspection.
 - Risks: unrepresentative scenarios (THR-SIM-001) give false confidence.
@@ -173,7 +179,7 @@ flowchart TD
 - Requirement IDs touched: all FCE-REQ-* (verification coverage).
 - Verification method: unit / integration / property-style / red-team /
   regression / explainability.
-- Risks: untestable requirements return to M1; live/real data disallowed (synthetic-first).
+- Risks: untestable requirements return to M1; live operational, private, controlled, or classified data disallowed; public open-source-derived fixtures and synthetic variants only.
 - Exit gate: contributes to GATE-D.
 
 ### M8 — Edge/SWaP-C and NVIDIA Evaluation
@@ -218,7 +224,7 @@ flowchart TD
 | M3 | Policy model + evaluator PoC | Expand PDP + property/red-team tests | Hot-reload demo without restart |
 | M4 | Audit/lineage design + JSONL audit PoC | Harden chain + replay tests | Full export + lineage demo |
 | M5 | Fusion-guard design + no-merge PoC | No-merge invariant demonstrated at lab scale | Cross-domain demo under load |
-| M6 | Scenario specs + synthetic fixtures | Scenarios drive lab tests | Representative-environment scenarios |
+| M6 | Scenario specs + open-source-derived/synthetic fixtures | Scenarios drive lab tests | Representative-environment scenarios |
 | M7 | V&V design + minimal test harness run | Execute expanded unit/integration/property/red-team | Regression + field/integration tests |
 | M8 | Benchmark plan (TARGET) | Measured on named rig (provenance) | Sustained edge demo; NVIDIA eval outcome |
 | M9 | Evidence structure | Test-log evidence assembled | Accreditation-support package (labelled) |
@@ -248,7 +254,7 @@ flowchart LR
 |---|---|---|---|
 | GATE-A | Requirements locked | Verbatim solicitation quoted; RTM 6/6 + 4/4; DES-01/DES-03 present | after M1 |
 | GATE-B | Schema/policy/audit architecture coherent | M2 schema frozen + validation PoC; M3 default-deny + B1/B2 policy PoC; M4 audit/provenance PoC consistent | after M2, M3, M4 |
-| GATE-C | Synthetic scenarios ready | Four scenarios exercise every gate/action; SYNTHETIC labelled; red-team variants specified | after M6 |
+| GATE-C | Laptop fixtures ready | Public-source manifest, trim report, calibration/held-out split, fixture seal, and synthetic red-team variants exercise every gate/action | after M6 |
 | GATE-D | No-bypass and no-unauthorized-merge PoC evidence ready | M5 guard PoC + M7 red-team harness evidence for B1–B3, no-bypass, no-merge (H9) | after M5, M7 |
 | GATE-E | Edge benchmark plan ready | M8 metrics labelled TARGET; degraded-mode 6 classes; baseline symmetric; NVIDIA outside compliance path | after M8 |
 | GATE-F | Proposal/evidence package ready | M9 evidence traces exist; claim screen clean; ESS 6/6 DES 4/4; no prohibited vocabulary | after M9 |

@@ -43,4 +43,4 @@ PoC code is allowed in TRL 1-3 after M1/GATE-A when the sprint calls for it.
 Production/operational code, real/live/classified/controlled data, real GoC
 markings, external installs, NVIDIA components, certification/ATO/endorsement/
 classified-processing claims, and measured-performance claims remain prohibited.
-Project taxonomy only; synthetic data labelled `SYNTHETIC`.
+Project taxonomy only; public-source and synthetic fixtures labelled `PUBLIC-OPEN-SOURCE`, `SYNTHETIC-DERIVED`, or `SYNTHETIC`.

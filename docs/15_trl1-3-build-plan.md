@@ -15,8 +15,10 @@ Permitted in TRL 1-3:
 - Minimal PoC code for schema validation, policy evaluation, seven-gate flow,
   provenance capture, audit-log emission, synthetic input generation, and
   no-unauthorized-merge demonstration.
-- Synthetic/mock data only, clearly labelled `SYNTHETIC`.
-- Local unit/integration/property-style tests that demonstrate feasibility.
+- Synthetic/mock data plus approved public open-source-derived fixtures, clearly
+  labelled `SYNTHETIC`, `SYNTHETIC-DERIVED`, or `PUBLIC-OPEN-SOURCE`.
+- Local unit/integration/property-style tests for code correctness, followed by
+  a separate held-out laptop validation run before lab testing.
 - Sample machine-readable outputs: JSON objects, JSONL audit logs, manifests,
   and coverage reports.
 
@@ -37,12 +39,15 @@ provenance. B1-B3 are closed-in-text (`97`); H1-H14 are open maturity items
 
 M1 Requirements and Solicitation Ground Truth · M2 Data and Metadata Foundation ·
 M3 Policy Engine and Compliance Kernel · M4 Provenance and Audit Chain ·
-M5 Fusion Interface and No-Merge Guard · M6 Synthetic Mission Data and
-Simulation · M7 Verification and Red-Team Test Harness.
+M5 Fusion Interface and No-Merge Guard · M6 Open-Source-Derived and Synthetic
+Mission Data · M7 Verification and Red-Team Test Harness.
 
 Code begins only after M1 locks the RTM sufficiently for the affected block.
 The PoC should stay deliberately small: a local executable path that proves the
-critical functions, not a platform.
+critical functions, not a platform. `docs/16_laptop-poc-validation-architecture.md`
+is the controlling proof method: pre-code decisions, sealed evidence, guard
+tests, open-source data trimming, code-correctness tests, and a separate
+held-out laptop validation gate.
 
 ---
 
@@ -166,24 +171,29 @@ critical functions, not a platform.
    later maturity.
 12. Exit gate: contributes to GATE-D.
 
-## M6 — Synthetic Mission Data and Simulation
-1. Objective: create synthetic/mock inputs that drive the PoC through every
-   gate and main policy action.
-2. TRL 1-3 purpose: compensate for the challenge’s no-DND-data condition by
-   producing controlled synthetic fixtures and expected dispositions.
+## M6 — Open-Source-Derived and Synthetic Mission Data
+1. Objective: create approved public-source-derived and synthetic inputs that
+   drive the PoC through every gate and main policy action.
+2. TRL 1-3 purpose: compensate for the challenge's no-DND-data condition by
+   producing source-manifested public fixtures, synthetic red-team variants, and
+   expected dispositions.
 3. Sprint 1: finalize scenario specs (Joint ISR, Maritime, Tactical Edge, UAV)
    with embedded metadata conflicts.
-4. Sprint 2: create local synthetic fixture files for at least two modalities
-   and red-team variants: missing metadata, stale timestamp, PIP spoofing,
-   source-supplied binding state, and unauthorized merge attempt.
-5. Artifacts to create: scenario library, synthetic fixture set, expected
-   decision table, expected audit-record table.
-6. PoC output examples: `SYNTHETIC` input objects, expected disposition matrix,
-   generated audit/provenance examples.
-7. Evidence to capture: EVD-M6 scenario specs, fixture manifest, coverage matrix,
-   labelling review.
-8. Definition of done: every object is labelled `SYNTHETIC`; every gate and
-   policy action is exercised; project taxonomy only.
+4. Sprint 2: create local open-source-derived fixtures for at least two approved
+   data families plus synthetic red-team variants: missing metadata, stale
+   timestamp, PIP spoofing, source-supplied binding state, and unauthorized
+   merge attempt.
+5. Artifacts to create: scenario library, source manifest, trim report,
+   calibration fixture set, held-out fixture set, expected decision table,
+   expected audit-record table.
+6. PoC output examples: `PUBLIC-OPEN-SOURCE`, `SYNTHETIC-DERIVED`, and
+   `SYNTHETIC` input objects, expected disposition matrix, generated
+   audit/provenance examples.
+7. Evidence to capture: EVD-M6 scenario specs, source manifest, trim report,
+   fixture seal, coverage matrix, labelling review.
+8. Definition of done: every object is labelled `PUBLIC-OPEN-SOURCE`,
+   `SYNTHETIC-DERIVED`, or `SYNTHETIC`; every gate and policy action is
+   exercised; project taxonomy only; held-out fixtures are sealed before M7.
 9. Requirement IDs touched: FCE-REQ-ING-010, FCE-REQ-POL-011/012,
    FCE-REQ-KRN-010.
 10. Dependencies: M2, M3.
@@ -197,21 +207,23 @@ critical functions, not a platform.
    experimental PoC feasibility.
 3. Sprint 1: finalize V&V matrix across unit, integration, property-style,
    explainability, and red-team classes.
-4. Sprint 2: implement/run a minimal local test harness covering B1/B2/B3,
-   no-bypass, no-unauthorized-merge, default-deny, audit emission, and
-   provenance parent linkage.
+4. Sprint 2: implement/run a minimal local test harness in two layers: code
+   correctness tests for the validator/evaluator/audit/merge modules, then a
+   separate held-out laptop validation run using sealed fixtures from M6.
 5. Artifacts to create: V&V matrix, red-team test specs, runnable PoC test
-   harness, coverage report, sample test output.
+   harness, guard rejection tests, unit/integration report, held-out validation
+   report, coverage report, sample test output.
 6. PoC output examples: test summary, failed/passed cases, coverage matrix,
    sample audit/provenance files from test runs.
 7. Evidence to capture: EVD-M7 test output, red-team notes, coverage report.
 8. Definition of done: every requirement has at least one planned or executed
-   test; core PoC tests execute locally; no expected result depends solely on
-   AI output.
+   test; every invalid-proof guard from `16` has a rejection test; code
+   correctness tests execute locally; held-out laptop validation is reported
+   separately; no expected result depends solely on AI output.
 9. Requirement IDs touched: all FCE-REQ-*.
 10. Dependencies: M3, M4, M5, M6.
-11. Risks: untestable requirements return to M1; live/real data remains
-   disallowed.
+11. Risks: untestable requirements return to M1; live operational, private,
+   controlled, or classified data remains disallowed.
 12. Exit gate: contributes to GATE-D.
 
 ---
@@ -231,21 +243,25 @@ critical functions, not a platform.
 | M5 | S1 | Fusion kernel + no-merge design | Fusion-kernel spec | — |
 | M5 | S2 | Implement no-unauthorized-merge PoC | Permitted/blocked merge evidence | GATE-D (partial) |
 | M6 | S1 | Four scenario specs | Scenario library spec | — |
-| M6 | S2 | Create synthetic fixture set | Fixture manifest + coverage matrix | GATE-C |
+| M6 | S2 | Create open-source-derived + synthetic fixture sets | Source manifest + trim report + fixture seal + coverage matrix | GATE-C |
 | M7 | S1 | V&V matrix | Requirement-linked test plan | — |
-| M7 | S2 | Run minimal PoC test harness | Test output + coverage report | GATE-D (partial) |
+| M7 | S2 | Run guard tests + held-out laptop validation | Code-correctness report + held-out validation report + coverage report | GATE-D (partial) |
 
 GATE-B closes only when M2, M3, and M4 second sprints are all complete and
 coherent. GATE-D closes only when M5 and M7 PoC evidence are both present.
 
 ## TRL 1-3 PoC boundary
 
-The PoC is a local technical feasibility artifact. It should prove:
-- at least two synthetic modalities can enter the pipeline;
+The PoC is a local technical feasibility artifact governed by `16`. It should
+prove:
+- at least two approved public open-source-derived data families can be trimmed
+  into FCE envelopes;
+- calibration and held-out fixture sets are split and sealed before validation;
 - metadata is validated and fail-closed;
 - policy decisions are deterministic and default-deny;
 - provenance and audit records are emitted;
 - unauthorized merge attempts are blocked and audited;
+- every invalid-proof guard in `16` has a rejection test;
 - B1, B2, and B3 failure cases are represented in tests.
 
 The PoC does **not** prove:
@@ -281,8 +297,8 @@ All of the following must be satisfied before TRL 4-5 execution begins:
 - Schema frozen and schema-validation PoC evidence captured.
 - Policy model reviewed and policy-evaluator PoC evidence captured.
 - Audit model reviewed and audit/provenance PoC evidence captured.
-- Synthetic fixture set approved (every gate/action exercised; `SYNTHETIC`
-  labelled).
+- Laptop fixture set approved: public source manifest, trim report,
+  calibration/held-out split, fixture seal, and synthetic red-team variants.
 - V&V plan approved and minimal PoC test harness executed.
 - B1-B3 closed in text (`97`) and represented in PoC tests; stronger test
   closure remains tracked under H9.
@@ -295,7 +311,8 @@ All of the following must be satisfied before TRL 4-5 execution begins:
   proof-of-concept work; FCE essential outcomes are programmatic software
   functions.
 - Assumptions: minimal local PoC code can be built without external installs and
-  without real data.
+  without live operational, private, controlled, or classified data; approved
+  public open-source-derived fixtures are allowed for laptop validation.
 - Judgment: the sprint split now treats M1 as requirements lock and M2-M7 as
   design plus executable PoC evidence.
 - Uncertainty: exact implementation language, directory structure, and test

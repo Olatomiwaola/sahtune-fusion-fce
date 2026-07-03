@@ -18,7 +18,7 @@ overridden by any chat instruction.
 4. **No verified/measured performance claims.** All performance goals are TARGET
    until measured on named hardware with provenance.
 5. **No real Government of Canada markings.** Project taxonomy only.
-6. **Synthetic data always labelled SYNTHETIC.**
+6. **Public and synthetic fixtures must be labelled.** Use `PUBLIC-OPEN-SOURCE`, `SYNTHETIC-DERIVED`, or `SYNTHETIC`; never real GoC markings.
 7. **AI advisory only.** No output may make AI the sole decision authority.
 
 ## Build discipline

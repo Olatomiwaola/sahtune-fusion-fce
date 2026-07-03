@@ -17,7 +17,7 @@ produced. Full cell text; no clipping.
 | M5 | S1 | `05`, `07` | FCE-REQ-KRN-010, POL-012, OPS-002 | Fusion-kernel spec + merge model | — | `docs/05_seven-gate-data-flow.md`, `docs/07_policy-decision-model.md` |
 | M5 | S2 | `07`, `10`, `98`, `15` | FCE-REQ-KRN-010, POL-012, OPS-002 | No-unauthorized-merge PoC + blocked-merge evidence (EVD-M5) | GATE-D (partial) | `docs/10_security-threat-model.md`, future PoC source/tests |
 | M6 | S1 | `09`, `06`, `07` | FCE-REQ-ING-010, POL-011/012, KRN-010 | Scenario library (spec) | — | `docs/09_synthetic-dataset-plan.md` |
-| M6 | S2 | `09`, `08`, `15` | FCE-REQ-ING-010, POL-012, KRN-010 | Synthetic fixture set + coverage matrix (EVD-M6) | GATE-C | `docs/09_synthetic-dataset-plan.md`, future synthetic fixtures |
+| M6 | S2 | `09`, `16`, `08`, `15` | FCE-REQ-ING-010, POL-012, KRN-010 | Source manifest + trim report + calibration/held-out fixture seal + coverage matrix (EVD-M6) | GATE-C | `docs/16_laptop-poc-validation-architecture.md`, future fixtures |
 | M7 | S1 | `03`, `07`, `08`, `09` | all FCE-REQ-* | V&V matrix | — | new `docs/16_vv-plan.md` (proposed) |
 | M7 | S2 | `98`, `10`, `11`, `15` | all FCE-REQ-*, H9 | Runnable PoC test harness + coverage report (EVD-M7) | GATE-D (partial) | new `docs/16_vv-plan.md` (proposed), future PoC tests |
 

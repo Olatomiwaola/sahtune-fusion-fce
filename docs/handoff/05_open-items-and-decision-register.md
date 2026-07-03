@@ -9,6 +9,7 @@ Consolidated open inputs, maturity items, and decisions needed. Sources: `00`
 | OPEN-01 | Verbatim DND IDEaS solicitation text supplied and verified on 2026-07-03; anchors registered in `docs/02` and `docs/03` | M1 Sprint 1 unblocked; GATE-A still requires Sprint 2 coverage audit | M1 Sprint 2 / GATE-A |
 | OPEN-02 | Project-taxonomy → named-handling-level mapping (e.g., Protected B target) | Policy labels use project taxonomy only | M2 / M3 |
 | OPEN-03 | Edge hardware SKU unconfirmed (Jetson-class assumed) | Benchmarks stay TARGET | TRL 4-5 / M8 |
+| OPEN-04 | Laptop PoC data-source approval: choose at least two public source families from `docs/16_laptop-poc-validation-architecture.md` | Required for source manifest, trim report, calibration/held-out fixture seal, and pre-lab validation evidence | M6 / M7 |
 
 ## B1–B3 (closed in text; test closure deferred)
 | ID | Condition | Status |
@@ -53,6 +54,8 @@ Consolidated open inputs, maturity items, and decisions needed. Sources: `00`
 5. Approve the TRL 1-3 local PoC boundary and implementation language/tooling
    before M2 Sprint 2 begins; production/operational implementation remains out
    of scope until later approval.
-6. Approve any external evaluation activity (e.g., NVIDIA rig) — paper-only until then.
-7. Confirm no external-facing use of any artifact until the red-team claim audit is
+6. Approve the laptop PoC public data sources, trim limits, calibration/held-out
+   split, and guard list in `docs/16` before M6 Sprint 2.
+7. Approve any external evaluation activity (e.g., NVIDIA rig) — paper-only until then.
+8. Confirm no external-facing use of any artifact until the red-team claim audit is
    re-run on the final text.
