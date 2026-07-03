@@ -56,8 +56,9 @@ after Sprint 4, the first code sprint, which calibrates the PoC velocity.
 
 ## Standing rules per sprint chat
 
-One block per chat; one sprint per output; never start the next global sprint
-number in the same chat. Every sprint chat opens by reading this tracker plus
+One chat per mission block: both sprints of that block run sequentially in the
+same chat, design sprint committed via Claude Code before the build sprint
+begins; a new block always starts a new chat. Every sprint chat opens by reading this tracker plus
 the block entry in `15`, runs its role blocks per the one-chat rule, ends with
 the role handoff plus a one-line tracker status update to commit via Claude
 Code. Chat drafts REPO-UPDATE notes; Claude Code writes and runs. A sprint is
