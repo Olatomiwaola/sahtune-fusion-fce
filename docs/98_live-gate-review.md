@@ -24,6 +24,12 @@ blocking-until-verified by test.
 | B2 | State explicitly that operator override (RC-007) cannot relax the no-unauthorized-merge invariant or a cross-domain/domain-mismatch block; override acts only within an already-permitted envelope. | RT-02 | ARCH-13, ARCH-08, FCE-REQ-OPS-002, FCE-REQ-KRN-010 |
 | B3 | Make `policy_binding_state` FCE-authority-set only: force to `unvalidated` at G1 regardless of the ingested value; never trust it from the source (consider removing it from the source-supplied schema). | RT-03 | ARCH-01, `06` field 15, FCE-REQ-MET-010 |
 
+**Status update:** B1, B2, and B3 are now **CLOSED IN TEXT** by the documentation
+pass recorded in `97_b1-b3-closure-review.md` (edits to `04`, `05`, `06`, `07`,
+`10`, `11`). They remain to be **demonstrated by test** at TRL 4-5 (tracked under
+H9). The "no path skips the seven gates" assertion may now reference these
+text closures, but is still not final until H9 verification.
+
 ## High-priority (close before TRL 4-5 exit)
 
 | ID | Condition | Source |

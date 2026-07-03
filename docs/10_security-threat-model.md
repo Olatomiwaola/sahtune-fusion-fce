@@ -31,6 +31,9 @@ update workflows.
 | THR-AUD-002 | audit chain | Log overflow / audit starvation | load | flood events | audit loss | FCE-REQ-AUD-001 | backpressure, rotation, fail-closed halt | queue-depth alarm | tracked | med | med | high | design |
 | THR-UPD-001 | update workflows | Dependency / supply-chain compromise | external | tainted update | integrity loss | FCE-REQ-SEC-001 | signed updates, SBOM (reference alignment), rollback | signature/SBOM check | tracked | high | low | med | design |
 | THR-SEN-001 | sensor | Source spoofing | external | impersonate sensor | poisoned inputs | FCE-REQ-ING-010, FCE-REQ-SEC-001 | mutual authN at G1, fail-closed | authN failure log | tracked | high | med | med | design |
+| THR-PIP-001 | policy engine | PIP attribute spoofing (attributes drive authZ) | insider/external | forge network_state / mission / user context supplied to PDP | correctly-signed-but-wrong permit; default-deny flipped to permit | FCE-REQ-SEC-001, FCE-REQ-POL-011 | authenticate and integrity-bind all PIP attributes; unverifiable attribute fails closed at G4 (RC-008) [B1] | PIP attribute source authN check; mismatch alarm | tracked | high | med | med | design |
+| THR-OPS-002 | operator | Override used to relax no-unauthorized-merge or cross-domain block | insider | authenticated override applied over a G5 block | authenticated cross-domain leak | FCE-REQ-OPS-002, FCE-REQ-KRN-010 | override confined to already-permitted envelope; cannot create a permit or relax the invariant (B2) | override audit reconciled against merge invariant | tracked | high | low | high | design |
+| THR-MET-003 | metadata | Source-supplied policy_binding_state pre-marking | external/insider | ingest object pre-marked validated | validation/handling skipped | FCE-REQ-MET-010 | policy_binding_state is FCE-authority-set only; forced unvalidated at G1; ingested value ignored (B3) | ingest reset check; state-transition audit | tracked | high | low | high | design |
 
 ## Reference alignment (not a compliance claim)
 
@@ -44,7 +47,10 @@ least-privilege). Citations are to primary sources; no certification is claimed.
 One item (THR-KRN-001, unauthorized merge on a trust boundary) is marked
 blocking-until-verified: it stays blocking until the no-unauthorized-merge
 invariant is demonstrated by property-based and red-team tests. All others are
-tracked or accepted at v0 pending V&V.
+tracked or accepted at v0 pending V&V. THR-PIP-001, THR-OPS-002, and THR-MET-003
+were added to close blocking-in-text conditions B1, B2, and B3 (see
+`97_b1-b3-closure-review.md`); their mitigations are specified in text and remain
+tracked until demonstrated by red-team test.
 
 ## Facts / Assumptions / Judgment / Uncertainty
 

@@ -28,6 +28,9 @@ closed. No failure mode degrades to permit-by-default.
 | FM-14 | Invalid downgrade proof | bad transformation | improper downgrade | G6 proof check | reject downgrade, RC-006 required | FCE-REQ-POL-012 |
 | FM-15 | Source authentication failure | spoof/misconfig | poisoned inputs | G1 authN | reject/quarantine source | FCE-REQ-SEC-001 |
 | FM-16 | Accelerator path anomaly | ARCH-14 fault | corrupted preprocess | integrity check at G1 | discard, re-ingest via CPU path | FCE-REQ-ING-010 |
+| FM-17 | Unverifiable/unauthenticated PIP attribute | spoofed or unauthenticated context source | wrong permit at G4 | G4 attribute authN/integrity check | fail closed, deny, RC-008 (B1) | FCE-REQ-SEC-001, FCE-REQ-POL-011 |
+| FM-18 | Source-supplied policy_binding_state pre-marking | ingested `validated` flag | validation/handling skipped | G1 authority reset | force `unvalidated` at G1; ignore ingested value (B3) | FCE-REQ-MET-010 |
+| FM-19 | Override attempts to relax merge / cross-domain block | operator override abuse | authenticated cross-domain leak | G6 envelope check vs merge invariant | reject; override confined to already-permitted envelope (B2) | FCE-REQ-KRN-010, FCE-REQ-OPS-002 |
 
 ## Degraded-mode constraint classes (all 6)
 

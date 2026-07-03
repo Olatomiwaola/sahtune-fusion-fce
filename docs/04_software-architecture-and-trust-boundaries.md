@@ -29,6 +29,12 @@ Every pair below is mutually untrusted until authenticated and authorized:
 - Service to service (ARCH-01…ARCH-13): mutual authN/authZ on every call.
 - Operator to ARCH-13 (authenticated identity; authority for override).
 - Policy bundle to ARCH-03/ARCH-05 (signature verification before load).
+- PIP attributes to PDP (ARCH-06 to ARCH-03): every attribute authenticated and
+  integrity-bound to a trusted source; unverifiable attributes fail closed at G4
+  (RC-008). Attribute provenance is a first-class trust boundary. [B1]
+- Object binding state to the FCE (ARCH-01): `policy_binding_state` is set only
+  by the FCE and forced to `unvalidated` at G1; it is never trusted from source
+  input. [B3]
 - Audit store to all writers (append-only; no delete/update path).
 - ARCH-14 accelerator to core: data-only handoff; never a decision authority.
 - Update mechanism to any element (signed, verified, rollback-capable).

@@ -13,13 +13,26 @@ and accelerated (GPU) paths. Every gate fails closed and emits an audit event.
 
 | Gate | Name | Pass condition | Fail-closed behaviour | Audit event class |
 |---|---|---|---|---|
-| G1 | Ingestion authentication and source verification | Source authenticated; object signature (if present) verified | Reject/quarantine unverifiable source | ingestion |
+| G1 | Ingestion authentication and source verification | Source authenticated; object signature (if present) verified; `policy_binding_state` forced to `unvalidated` regardless of ingested value (B3) | Reject/quarantine unverifiable source | ingestion |
 | G2 | Metadata completeness and schema validation | All 15 mandatory metadata fields present and well-formed | Reject object missing or malformed metadata | ingestion |
 | G3 | Classification, domain, and caveat resolution and integrity | Labels valid in project taxonomy; integrity hash matches; timestamp fresh | Quarantine on invalid/expired/ambiguous label | transformation |
-| G4 | Policy decision (PDP) | PDP returns an explicit permit or restriction under default-deny | Deny/quarantine; enqueue human review on ambiguity | policy decision |
+| G4 | Policy decision (PDP) | PDP returns an explicit permit or restriction under default-deny, using only authenticated, integrity-verified PIP attributes (B1) | Deny/quarantine; enqueue human review on ambiguity; fail closed on any unverifiable PIP attribute, RC-008 (B1) | policy decision |
 | G5 | Cross-domain merge / no-unauthorized-merge | Fusion association has an explicit permit; high-water-mark labelling applied | Block merge; segregate inputs | fusion decision |
-| G6 | Enforcement and transformation action | Disposition applied (transform, route, downgrade-with-proof, quarantine) | Fail closed if action or authority invalid | routing / quarantine / downgrade |
+| G6 | Enforcement and transformation action | Disposition applied (transform, route, downgrade-with-proof, quarantine); operator override acts only within an already-permitted envelope and cannot relax a G5 no-unauthorized-merge or cross-domain block (B2) | Fail closed if action or authority invalid | routing / quarantine / downgrade |
 | G7 | Audit commit and release/export control | Audit record appended to chain; export manifest generated if releasing | Halt release if audit write fails (audit loss = fail-closed) | export / override |
+
+## B1–B3 gate clarifications
+
+- B1 (G4): the PDP consumes PIP attributes (mission, user, sensor,
+  classification, domain, caveat, timestamp, network state, operational context)
+  only when each is authenticated and integrity-bound to a trusted source; any
+  unverifiable attribute fails closed at G4 with reason code RC-008.
+- B2 (G6): operator override never creates a permit and never relaxes the
+  no-unauthorized-merge invariant or a cross-domain / domain-mismatch block; it
+  acts strictly inside an already-permitted envelope.
+- B3 (G1): `policy_binding_state` is set only by the FCE; G1 forces it to
+  `unvalidated` regardless of the ingested value, so a source cannot pre-mark an
+  object as validated.
 
 ## Ordered flow (described text / Mermaid)
 

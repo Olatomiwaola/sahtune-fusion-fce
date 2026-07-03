@@ -9,6 +9,9 @@ Owner: `data-model-engineer`. Canonical future home: `docs/05_data_model/`.
 - Classification and domain values use the project taxonomy (`07`), never real
   Government of Canada markings.
 - Schema is versioned; `schema_version` travels with every object.
+- `policy_binding_state` (field 15) is FCE-authority-set only: forced to
+  `unvalidated` at G1 regardless of any ingested value, and never trusted from
+  source input. [B3]
 
 ## Schema (15 fields)
 
@@ -28,7 +31,7 @@ Owner: `data-model-engineer`. Canonical future home: `docs/05_data_model/`.
 | 12 | provenance_ref | uri/graph-node-id | required | prov://node/1234-SYN |
 | 13 | parent_object_ids | list of uuid | required for derived/merged; else empty | [] |
 | 14 | integrity_hash | sha-256 (design) | required | sha256:...(design) |
-| 15 | policy_binding_state | enum | required; unvalidated / validated / quarantined | unvalidated |
+| 15 | policy_binding_state | enum | FCE-authority-set only; forced to unvalidated at G1; ingested value ignored (never trusted from source) | unvalidated |
 
 Advisory (non-authoritative) attribute: `ai_confidence` (float [0,1]) may
 accompany an object but is never a mandatory gate input and never the sole basis

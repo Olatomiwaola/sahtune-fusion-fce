@@ -17,7 +17,11 @@ marking procedures.
 - PDP (ARCH-03): decision. PEP (ARCH-04): enforcement at each gate.
 - PAP (ARCH-05): signed, versioned bundle administration and hot-reload.
 - PIP (ARCH-06): attributes — mission, user, sensor, classification, domain,
-  caveat, timestamp, network state, operational context.
+  caveat, timestamp, network state, operational context. Every PIP-sourced
+  attribute must be authenticated and integrity-bound to a trusted source before
+  the PDP consumes it; any unverifiable or unauthenticated attribute fails closed
+  at G4 with reason code RC-008. Attributes are never accepted on trust from an
+  unauthenticated caller. [B1]
 - Base disposition is deny. Every rule adds a narrow, attributable permit or a
   stronger restriction.
 
@@ -27,6 +31,12 @@ permit, restrict, block, segregate, quarantine, reject, transform,
 route-to-higher-domain, require-human-review, downgrade (only with valid
 authority and transformation proof), override (only with authenticated
 authority, reason code, time limit, and audit signature placeholder).
+
+Override is envelope-bounded: it acts only within an already-permitted envelope.
+Override can never create a permit, relax the no-unauthorized-merge invariant, or
+override a cross-domain / domain-mismatch block. A merge or cross-domain release
+that lacks an explicit permit stays blocked regardless of operator authority or
+reason code. [B2]
 
 ## Reason-code registry (excerpt)
 
@@ -38,7 +48,8 @@ authority, reason code, time limit, and audit signature placeholder).
 | RC-004 | Stale or unverifiable timestamp |
 | RC-005 | Ambiguous condition; enqueue human review |
 | RC-006 | Authorized downgrade with valid transformation proof |
-| RC-007 | Authenticated override within time limit |
+| RC-007 | Authenticated override within time limit (envelope-bounded; see B2) |
+| RC-008 | Unverifiable or unauthenticated PIP attribute; fail closed at G4 |
 
 ## Label propagation and high-water mark
 
@@ -52,8 +63,10 @@ For any fusion output O derived from inputs I1..In:
 O is permitted only if there exists an explicit permit P in the active bundle
 such that P covers the combined (classification, domain, caveat) tuple of
 I1..In. Absent P, the merge is blocked and inputs are segregated. Violation is
-either structurally unrepresentable or fails closed. Verified by property-based
-test (TST-PRP-040) and red-team test.
+either structurally unrepresentable or fails closed. No operator override,
+authority, reason code, or PIP attribute can create P or bypass this check; an
+override may act only inside an already-permitted envelope (B2). Verified by
+property-based test (TST-PRP-040) and red-team test.
 
 ## Conflict resolution
 
