@@ -1,8 +1,14 @@
-# 07 — Policy Decision Model v0 (draft)
+# 07 — Policy Decision Model v1
 
 Owner: `policy-engineer`. Skill: `fce-policy-as-code`.
 XACML PDP/PEP/PAP/PIP and OPA/Rego are reference patterns only (cite OASIS
 XACML; openpolicyagent.org). No compliance claims.
+
+v1 (M3 Sprint 5): reason-code registry closed with G1 codes and
+override_immutable flags; disposition severity lattice added (FCE-DR-POL-001,
+RATIFIED 2026-07-04); decision-record output contract added; RULE-POL-004..006 added;
+taxonomy registry authoring in progress (leadership decision #2 approved
+2026-07-04, OPEN-02 resolved; FU-M2S4-1).
 
 ## Project taxonomy disclaimer [OPEN-02]
 
@@ -11,6 +17,14 @@ exercising the pipeline. They are not real Government of Canada markings or
 procedures. A documented mapping links the project taxonomy to named handling
 targets (e.g., the Protected B target in FCE-ESS-02) without reproducing real
 marking procedures.
+
+### Enumerated taxonomy registry [D6 — decision #2 approved 2026-07-04; authoring in progress]
+
+Decision #2 approved 2026-07-04; enumerated families to be authored from the
+EVD-M2 hash-pinned fixture (FU-M2S4-1, in progress, held in chat pending fixture
+content + SHA-256 verification); interim authoritative source remains the pinned
+fixture. Tracked as FU-M2S4-1
+(`docs/handoff/05_open-items-and-decision-register.md`).
 
 ## Model
 
@@ -38,18 +52,33 @@ override a cross-domain / domain-mismatch block. A merge or cross-domain release
 that lacks an explicit permit stays blocked regardless of operator authority or
 reason code. [B2]
 
-## Reason-code registry (excerpt)
+## Reason-code registry (CLOSED — v1) [D2]
 
-| Code | Meaning |
-|---|---|
-| RC-001 | Missing or malformed mandatory metadata |
-| RC-002 | Classification/domain/caveat mismatch with channel |
-| RC-003 | No explicit permit for cross-domain merge |
-| RC-004 | Stale or unverifiable timestamp |
-| RC-005 | Ambiguous condition; enqueue human review |
-| RC-006 | Authorized downgrade with valid transformation proof |
-| RC-007 | Authenticated override within time limit (envelope-bounded; see B2) |
-| RC-008 | Unverifiable or unauthenticated PIP attribute; fail closed at G4 |
+Column `override_immutable` (RT-M3S5-01): true = no operator override may act
+against a decision carrying this code.
+
+| Code | Meaning | override_immutable |
+|---|---|---|
+| RC-001 | Missing or malformed mandatory metadata | false |
+| RC-002 | Classification/domain/caveat mismatch with channel (B2) | true |
+| RC-003 | No explicit permit for cross-domain merge (B2) | true |
+| RC-004 | Stale or unverifiable timestamp | false |
+| RC-005 | Ambiguous condition; enqueue human review | false |
+| RC-006 | Authorized downgrade with valid transformation proof | false |
+| RC-007 | Authenticated override within time limit (envelope-bounded; see B2) | false |
+| RC-008 | Unverifiable or unauthenticated PIP attribute; fail closed at G4 | false |
+| RC-009 | G1 reject: unsupported schema_version (envelope-version gate, GDR-006); fail closed before policy evaluation | false |
+| RC-010 | G1 reject: unsupported data_origin (LIVE at TRL 1-3 per FCE-DR-SCH-002); fail closed before policy evaluation | false |
+| RC-011 | G1 reject: source authentication failure — source_sensor_id cannot be authenticated (H14 audit hook) | false |
+| RC-012 | G1 detection (non-reject): source-supplied policy_binding_state detected and forced to `unvalidated` (B3, THR-MET-003); recorded in disposition output | false |
+
+Registry is CLOSED: any code used in any fixture, test, or gate spec must exist
+here (guard test `test_registry_guard.py`). ENGINEERING JUDGMENT: RC-009/RC-010
+split the freeze record's single G1 trigger class for replay/forensic clarity;
+the G1 disposition (REJECT fail-closed, never reaches G2) is unchanged.
+Consistency check (resolves RT-M2S4-03): RC-001, RC-003, RC-005, RC-008 as used
+in the freeze record, RTM acceptance criteria, and `docs/97` are all present —
+CONSISTENT; no orphaned codes.
 
 ## Label propagation and high-water mark
 
@@ -73,6 +102,32 @@ property-based test (TST-PRP-040) and red-team test.
 Deterministic priority: deny-overrides by default. Unresolved ties fail closed
 and enqueue human review (RC-005). No nondeterministic outcome is permitted; any
 such case escalates to the architect and holds at fail-closed in the interim.
+
+## Disposition severity lattice [D3, FCE-DR-POL-001 — RATIFIED 2026-07-04]
+
+Total order over dispositions, most → least restrictive:
+
+reject > quarantine > block > segregate > require-human-review > restrict >
+transform > route-to-higher-domain > permit.
+
+Combination: when multiple rules fire, the final disposition = the most
+restrictive among fired outcomes. `downgrade` and `override` are
+authority-gated actions — never products of lattice combination (only explicit
+authorized paths, RC-006 / RC-007). The order is total, so disposition-level
+ties are structurally impossible; residual ambiguity (an unresolvable
+condition/attribute) is not a tie — it quarantines with RC-005
+(FCE-REQ-POL-012). Middle-entry ordering is ENGINEERING JUDGMENT per
+FCE-DR-POL-001 (status: RATIFIED 2026-07-04).
+
+Trace: FCE-REQ-POL-001, FCE-REQ-POL-012.
+
+## Decision-record output contract [D4] (M4 audit-coordination hook; spec only)
+
+Every PDP evaluation emits atomically: input object ID(s); PIP attribute set
+consumed (IDs + auth status); policy-bundle version pinned at G4 entry; rule
+ID(s) fired; final disposition (D3 lattice); reason code(s) from the closed
+registry; enforcement action; evaluation timestamp; deterministic-evaluation
+flag. This is the field set the 18-field audit schema (M4, `docs/08`) consumes.
 
 ## Example rules (Rego-style, reference pattern only — no implementation)
 
@@ -119,6 +174,53 @@ quarantine if { not resolvable(input.object.classification) }
 # + require-human-review; audit transformation with RULE-POL-003, RC-005.
 ```
 
+### RULE-POL-004 — PIP attribute authentication (B1)
+```
+# Rule: RULE-POL-004 — PIP attribute authentication (B1)
+# Trace: FCE-REQ-SEC-002  Bundle: proj-baseline@0.1.0  Default: deny
+package fce.policy.pip
+default attributes_valid := false
+attributes_valid if {
+    every attr in input.pip_attributes { attr.authenticated; attr.integrity_bound }
+}
+# TST-POL-004: one spoofed/unauthenticated PIP attribute among otherwise valid
+# inputs → fail-closed at G4 with RC-008; audit records the failing attribute
+# ID; no decision consumes the attribute.
+```
+
+### RULE-POL-005 — envelope-bounded override (B2; RT-M3S5-01 fix applied)
+```
+# Rule: RULE-POL-005 — envelope-bounded override (B2)
+# Trace: FCE-REQ-OPS-002, FCE-REQ-KRN-011  Bundle: proj-baseline@0.1.0  Default: deny
+package fce.policy.override
+default override_valid := false
+override_valid if {
+    input.override.authority_authenticated
+    input.override.reason_code
+    input.override.time_limit_valid
+    input.override.audit_signature_placeholder
+    input.underlying_decision.disposition in data.permitted_envelope
+    not data.reason_codes[input.underlying_decision.reason_code].override_immutable
+}
+# TST-POL-005a: all preconditions + in-envelope decision → accepted, RC-007,
+# audited. TST-POL-005b: override vs RC-003 cross-domain block → rejected,
+# block stands. TST-POL-005c: any missing precondition → rejected fail-closed.
+# TST-POL-005d: override vs RC-002 domain-mismatch block → rejected
+# (override_immutable). TST-POL-005e: override expired per injected clock →
+# rejected (H4 dependency stated in EVD-M3).
+```
+
+### RULE-POL-006 — deny-overrides conflict combination
+```
+# Rule: RULE-POL-006 — deny-overrides conflict combination (D3 lattice)
+# Trace: FCE-REQ-POL-001, FCE-REQ-POL-012  Bundle: proj-baseline@0.1.0  Default: deny
+package fce.policy.combine
+final_disposition := most_restrictive([d | d := fired_rules[_].disposition])
+# TST-POL-006a: {permit, restrict} → restrict. TST-POL-006b: {permit, block} →
+# block. TST-POL-006c: unresolvable condition → quarantine, RC-005, review
+# queue; never permit-by-default.
+```
+
 ## Hot-reload (FCE-DES-02)
 
 PAP loads signed bundles with version pinning; in-flight objects complete under
@@ -128,7 +230,8 @@ fail-closed with rollback to the last good version.
 ## Requirement trace
 
 FCE-REQ-POL-001, FCE-REQ-POL-011, FCE-REQ-POL-012, FCE-REQ-POL-020,
-FCE-REQ-KRN-010, FCE-REQ-OPS-002.
+FCE-REQ-KRN-010, FCE-REQ-KRN-011, FCE-REQ-OPS-002, FCE-REQ-SEC-001,
+FCE-REQ-SEC-002.
 
 ## Facts / Assumptions / Judgment / Uncertainty
 

@@ -1,4 +1,4 @@
-# 03 — Requirements Traceability Matrix (RTM) v0.2 (M1 Sprint 2 corrections RU-02..RU-04 per EVD-M1)
+# 03 — Requirements Traceability Matrix (RTM) v0.3 (M3 Sprint 5: FCE-REQ-SEC-002 added; v0.2 = M1 Sprint 2 corrections RU-02..RU-04 per EVD-M1)
 
 Owner: `requirements-traceability-engineer`. Skill: `fce-requirements-traceability`.
 
@@ -146,6 +146,7 @@ Sprint 2.
 | Req ID | Requirement (full text) | Source | Capability | Design element | Verification | Acceptance criteria | Test/Evidence | Status |
 |---|---|---|---|---|---|---|---|---|
 | FCE-REQ-SEC-001 | The FCE shall enforce zero-trust authentication and authorization on every service-to-service and operator interface; unauthenticated or unauthorized requests shall be denied fail-closed. | FCE-ESS-01, FCE-ESS-02 | CAP-02 | all ARCH | red-team test, inspection | Every service-to-service and operator interface has an authN/authZ story; unauthenticated or unauthorized requests are denied fail-closed and do not advance through gates. | TST-RED-SEC-001 | draft |
+| FCE-REQ-SEC-002 | The FCE shall authenticate and integrity-bind every PIP-sourced attribute before the PDP consumes it; any unverifiable or unauthenticated attribute shall fail closed at G4 with reason code RC-008 and shall produce an audit event. | FCE-ESS-01, FCE-ESS-03 | CAP-02 | ARCH-06, ARCH-03, G4 | property-based test, red-team test | No PDP decision consumes an unauthenticated or non-integrity-bound attribute; a spoofed or unauthenticated attribute yields a fail-closed disposition with RC-008 and an audit event; disabling attribute authentication cannot yield a permit. | TST-PRP-013 / TST-RED-003 | draft |
 
 ## Coverage
 
@@ -158,7 +159,10 @@ invariant (CAP-06) had no dedicated requirement row and downstream artifacts
 (`12`, M5, GDR-011) were tracing it by proxy through FCE-REQ-KRN-010.
 FCE-REQ-EDG-011 was added 2026-07-03 by the M1 Sprint 2 audit (EVD-M1, RU-03)
 to host the resource-exhaustion fail-closed invariant previously mixed into
-FCE-REQ-EDG-010; RTM row count is now 22.
+FCE-REQ-EDG-010. FCE-REQ-SEC-002 was added 2026-07-04 (M3 Sprint 5, RTM v0.3)
+closing the `docs/97` B1 RTM follow-up — PIP attribute authentication /
+integrity-binding as a dedicated row (was traced by proxy through
+FCE-REQ-SEC-001). RTM row count is now 23.
 
 ## M1 Sprint 1 handoff status
 
