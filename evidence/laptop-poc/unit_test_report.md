@@ -17,13 +17,30 @@ integrity-hash verification (deferred, see below), no review-queue mechanics.
 
 ## Toolchain (leadership decision #5)
 
-Python 3.12, standard library plus pinned pytest only — no other dependency.
+Python 3.12, standard library plus pinned pytest only — no other dependency. The venv
+was created fresh and its two versions verified before this evidence run; the run
+executes from `.venv/bin/pytest` only.
 
-- Interpreter: CPython **3.12.13** (Homebrew `python@3.12`).
-- Test runner: **pytest==9.1.0** (pinned, `requirements.txt`), installed in a local
-  `.venv`; no other runtime or dev dependency.
-- Command: `.venv/bin/python -m pytest -v` from repo root (`pytest.ini`,
-  `pythonpath = src`).
+Verified provenance (exactly two versions):
+
+```text
+$ which python3.12
+/opt/homebrew/bin/python3.12
+$ python3.12 --version
+Python 3.12.13
+$ python3.12 -m venv .venv
+$ .venv/bin/python -m pip install -r requirements.txt   # pytest==9.1.0 (pinned)
+$ .venv/bin/python --version
+Python 3.12.13
+$ .venv/bin/pytest --version
+pytest 9.1.0
+```
+
+- Interpreter: CPython **3.12.13** (Homebrew `python@3.12`, `/opt/homebrew/bin/python3.12`).
+- Test runner: **pytest 9.1.0** (pinned in `requirements.txt`), installed into the
+  project `.venv`; no other runtime or dev dependency.
+- Run command (evidence + all test runs): `.venv/bin/pytest -v` from repo root
+  (`pytest.ini`, `pythonpath = src`). No system/global interpreter or pytest is used.
 
 ## Result summary
 
