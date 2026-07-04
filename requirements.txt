@@ -1,0 +1,8 @@
+# FCE laptop-PoC dependencies (leadership decision #5).
+# Python 3.12; standard library plus pinned pytest ONLY. No other runtime or dev
+# dependency without a new decision (aligned with FCE-DR-POC-007 intent).
+#
+# The pin below is the pytest version used to generate EVD-M2
+# (evidence/laptop-poc/unit_test_report.md); update the pin and re-run to refresh
+# the evidence.
+pytest==9.1.0

@@ -1,0 +1,7 @@
+{
+  "_note": "SYNTHETIC project-taxonomy calibration fixture. No real Government of Canada markings. Values to be reconciled against docs/07 at commit time (RT-M2S3-04).",
+  "modality": ["EO", "IR", "RADAR", "ACOUSTIC", "SIGINT", "AIS"],
+  "classification_label": ["PROJ-LEVEL-1", "PROJ-LEVEL-2", "PROJ-LEVEL-3"],
+  "domain_label": ["DOMAIN-MARITIME", "DOMAIN-AIR", "DOMAIN-LAND"],
+  "release_caveat": ["PROJ-CAVEAT-ALPHA", "PROJ-CAVEAT-BRAVO"]
+}

@@ -1,0 +1,18 @@
+{
+  "object_id": "c3d4e5f6-a7b8-4c9d-8e0f-2a3b4c5d6e7f",
+  "schema_version": "0.2.0",
+  "data_origin": "LIVE",
+  "source_sensor_id": "SENSOR-EO-001",
+  "modality": "EO",
+  "acquisition_timestamp": "2026-07-03T12:00:00Z",
+  "clock_source": "gps",
+  "ingest_timestamp": "2026-07-03T12:00:01Z",
+  "classification_label": "PROJ-LEVEL-2",
+  "domain_label": "DOMAIN-MARITIME",
+  "release_caveat": ["PROJ-CAVEAT-ALPHA"],
+  "handling_instructions": "Handle per project synthetic-data policy.",
+  "provenance_ref": "graph://node/obs-0005",
+  "parent_object_ids": [],
+  "integrity_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "lifecycle_type": "normalized_observation"
+}

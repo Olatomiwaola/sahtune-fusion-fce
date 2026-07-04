@@ -1,0 +1,19 @@
+{
+  "object_id": "not-a-uuid",
+  "schema_version": "0.2.0",
+  "data_origin": "SYNTHETIC",
+  "source_sensor_id": "",
+  "modality": "TELEPATHY",
+  "acquisition_timestamp": "03/07/2026 12:00",
+  "clock_source": "",
+  "ingest_timestamp": "not-a-timestamp",
+  "classification_label": "SECRET-REAL-MARKING",
+  "domain_label": "DOMAIN-UNKNOWN",
+  "release_caveat": "PROJ-CAVEAT-ALPHA",
+  "handling_instructions": "",
+  "provenance_ref": "has spaces in it",
+  "parent_object_ids": ["not-a-uuid"],
+  "integrity_hash": "XYZ-not-a-hash",
+  "lifecycle_type": "normalized_observation",
+  "ai_confidence": 0.5
+}
