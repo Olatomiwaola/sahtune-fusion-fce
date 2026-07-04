@@ -7,7 +7,7 @@ Consolidated open inputs, maturity items, and decisions needed. Sources: `00`
 | ID | Item | Impact | Needed for |
 |---|---|---|---|
 | OPEN-01 | Verbatim DND IDEaS solicitation text supplied and verified against the live Canada.ca page on 2026-07-03 (word-for-word match, all 10 outcomes; RT-M1S1-01 closed); anchors registered in `docs/02` and `docs/03` | M1 Sprint 1 unblocked; GATE-A still requires Sprint 2 coverage audit | M1 Sprint 2 / GATE-A |
-| OPEN-02 | Project-taxonomy → named-handling-level mapping (e.g., Protected B target) | Policy labels use project taxonomy only | M2 / M3 |
+| OPEN-02 | Project-taxonomy → named-handling-level mapping (e.g., Protected B target) | Policy labels use project taxonomy only; approach CONFIRMED in M2 Sprint 3 (freeze record, documentation-level reference-only mapping, no real GoC markings) — leadership approval (decision #2) still pending | M2 / M3 |
 | OPEN-03 | Edge hardware SKU unconfirmed (Jetson-class assumed) | Benchmarks stay TARGET | TRL 4-5 / M8 |
 | OPEN-04 | Laptop PoC data-source approval: choose at least two public source families from `docs/16_laptop-poc-validation-architecture.md` | Required for source manifest, trim report, calibration/held-out fixture seal, and pre-lab validation evidence | M6 / M7 |
 
@@ -45,12 +45,26 @@ Consolidated open inputs, maturity items, and decisions needed. Sources: `00`
 | L4 | Keep "Protected B" as reference-only external target; re-check vs solicitation |
 | L5 | Capture freshness/clock evaluation reference in the audit record |
 
+## M2 Sprint 3 follow-ups (schema freeze v0.2.0)
+
+Raised by the Sprint 3 schema freeze and red-team review (RT-M2S3, non-blocking for the
+v0.2.0 freeze). Sources: `docs/05_data_model/m2-schema-freeze-record.md`,
+`docs/06_security/red_team_findings/RT-M2S3.md`.
+
+| ID | Item | Owner | Due |
+|---|---|---|---|
+| FU-M2S3-1 | Define `integrity_hash` input domain and canonicalization (which bytes/fields are hashed); G2 integrity-check clause is untestable until then (RT-M2S3-02, freeze record field 14) | data-model-engineer | M4 |
+| FU-M2S3-2 | Decide unknown/extra envelope-field disposition (accept-and-ignore vs reject; interim default fail-closed) — must be an explicit, tested choice before Sprint 4 tests are written (RT-M2S3-03) | architect | before Sprint 4 tests |
+| FU-M2S3-3 | Define `object_id` uniqueness scope (global vs per-run/per-mission) and duplicate-ID disposition before Sprint 4 test assertions are final (RT-M2S3-01, freeze record field 1) | data-model-engineer | before Sprint 4 assertions |
+
 ## Decisions needed from Kanatir leadership
 
 Governance note 2026-07-03: gate ceremony collapsed per docs/handoff/09_governance-note-gates.md. Items #1 and #5 closed therein; GATE-A satisfied. Remaining items decided per-block as they become blocking.
 1. Confirm whether later solicitation amendments exist before GATE-A is declared
    (OPEN-01 is resolved for M1 Sprint 1 using verified Canada.ca outcome text).
 2. Approve the project-taxonomy → handling-level mapping approach (OPEN-02).
+   Approach CONFIRMED in M2 Sprint 3 (freeze record, OPEN-02 section); leadership
+   approval still pending.
 3. Confirm the target edge hardware class/SKU for later benchmarking (OPEN-03).
 4. Prioritize/schedule H1–H14 across TRL bands (esp. H6 crypto/key management).
 5. Approve the TRL 1-3 local PoC boundary and implementation language/tooling

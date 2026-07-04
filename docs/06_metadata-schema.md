@@ -83,7 +83,9 @@ FCE-REQ-MET-010, FCE-REQ-PRV-001, FCE-REQ-PRV-002, FCE-REQ-POL-011.
 - Assumptions: field set covers all four baseline scenarios (`09`).
 - Judgment: field choices and the advisory-confidence separation.
 - Uncertainty: whether coalition routing needs extra caveat sub-fields.
-- Judgment (recorded decision FCE-DR-SCH-001, `evidence/laptop-poc/decision_register.md`):
+- Status: Frozen at v0.2.0 (M2 Sprint 3, commit 5dd2a10 basis) — see
+  `docs/05_data_model/m2-schema-freeze-record.md`.
+- Judgment (recorded decision FCE-DR-SCH-001, `docs/12_decision_records/fce-dr-sch-001.md`):
   policy-bundle version evaluated, enforcement disposition, transformation
   history, source adapter ID, and mission ID are carried on audit records
   (`08`) and the provenance graph, not on the object envelope; the envelope
