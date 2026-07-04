@@ -186,6 +186,7 @@ evidence/laptop-poc/export_manifest.json
 | LAP-UNIT-007 | Code correctness | Malformed values — bad uuid/RFC3339/hash format, unknown taxonomy value, wrong types (minted in Sprint 3) | Fail closed at G2; quarantined; RC-001 |
 | LAP-UNIT-008 | Code correctness | `PUBLIC-OPEN-SOURCE` without a source-manifest reference (minted in Sprint 3) | Fail closed at G2; RC-001 |
 | LAP-UNIT-009 | Code correctness | Null-vs-empty for `release_caveat` and `parent_object_ids` (minted in Sprint 3) | Null fails closed RC-001; empty list accepted where lifecycle permits |
+| LAP-UNIT-010 | Code correctness | Unknown/extra envelope field present (minted in Sprint 4) | Reject fail-closed at G2 with RC-001 (FCE-DR-SCH-003) |
 | LAP-RED-001 | Guard | Held-out object appears in calibration | Evaluation aborts |
 | LAP-RED-002 | Guard | Missing source hash/licence/query params | Fixture build aborts or marks source unapproved |
 | LAP-RED-003 | Guard | Unauthenticated PIP attribute | Fail closed with RC-008 |

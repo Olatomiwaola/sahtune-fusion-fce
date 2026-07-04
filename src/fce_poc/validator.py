@@ -44,10 +44,10 @@ DERIVED_MERGED_TYPES = frozenset(
     {"tracklet", "fused_track", "transformed_object", "downgraded_object"}
 )
 
-# Interim disposition marker for unknown/extra envelope fields. The accept-and-ignore
-# vs reject decision is not defined in docs/06 and is deferred to the architect
-# (RT-M2S3-03 / FU-M2S3-2). Interim Sprint 4 behaviour is an explicit, tested choice:
-# default fail-closed.
+# Disposition marker for unknown/extra envelope fields. Ratified by FCE-DR-SCH-003
+# (M2 Sprint 4): unknown fields REJECT fail-closed at G2 with RC-001 — realized here as
+# the G2 fail-closed disposition. Resolves RT-M2S3-03 / closes FU-M2S3-2. Revisit at the
+# first external ingest adapter or TRL 4-5 (see the decision record).
 UNKNOWN_FIELD_RULE = "UNKNOWN-FIELD"
 
 _SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
@@ -200,7 +200,7 @@ def validate_g2(env: Envelope, taxonomy: Taxonomy) -> tuple[tuple[str, ...], boo
     if not _is_sha256_format(env.integrity_hash):
         failed.append("RULE-VAL-016")
 
-    # Interim: unknown/extra envelope fields fail closed (RT-M2S3-03 / FU-M2S3-2).
+    # Unknown/extra envelope fields fail closed (FCE-DR-SCH-003; LAP-UNIT-010).
     if env.unknown_fields:
         failed.append(UNKNOWN_FIELD_RULE)
 

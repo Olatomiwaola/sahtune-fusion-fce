@@ -54,8 +54,12 @@ v0.2.0 freeze). Sources: `docs/05_data_model/m2-schema-freeze-record.md`,
 | ID | Item | Owner | Due |
 |---|---|---|---|
 | FU-M2S3-1 | Define `integrity_hash` input domain and canonicalization (which bytes/fields are hashed); G2 integrity-check clause is untestable until then (RT-M2S3-02, freeze record field 14) | data-model-engineer | M4 |
-| FU-M2S3-2 | Decide unknown/extra envelope-field disposition (accept-and-ignore vs reject; interim default fail-closed) — must be an explicit, tested choice before Sprint 4 tests are written (RT-M2S3-03) | architect | before Sprint 4 tests |
+| FU-M2S3-2 | ~~Decide unknown/extra envelope-field disposition~~ **CLOSED 2026-07-04** by FCE-DR-SCH-003 (reject fail-closed at G2 with RC-001; LAP-UNIT-010). Resolves RT-M2S3-03. | architect | done |
 | FU-M2S3-3 | Define `object_id` uniqueness scope (global vs per-run/per-mission) and duplicate-ID disposition before Sprint 4 test assertions are final (RT-M2S3-01, freeze record field 1) | data-model-engineer | before Sprint 4 assertions |
+| FU-M2S4-1 | Author the enumerated project-taxonomy registry in `docs/07` (classification, domain, caveat, modality value families) and add a guard that the calibration `taxonomy.json` equals the docs/07 families. Interim: fixture sourced from docs/09+docs/06, hash-pinned in EVD-M2 (RT-M2S3-04 resolved). Consumes OPEN-02 / leadership decision #2. | policy-engineer | M3 Sprint 5 |
+
+RT-M2S3-03 and RT-M2S3-04 are resolved (see `docs/06_security/red_team_findings/RT-M2S3.md`);
+FCE-DR-SCH-003 recorded in `docs/12_decision_records/`.
 
 ## Decisions needed from Kanatir leadership
 

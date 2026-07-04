@@ -9,6 +9,7 @@ Test-ID map to docs/16 Required Laptop Tests / docs/05_data_model/m2-poc-file-pl
   LAP-UNIT-007 malformed values quarantined RC-001 (all failures reported)
   LAP-UNIT-008 PUBLIC-OPEN-SOURCE without manifest ref quarantined RC-001
   LAP-UNIT-009 null-vs-empty for release_caveat and parent_object_ids
+  LAP-UNIT-010 unknown/extra envelope field rejected fail-closed (FCE-DR-SCH-003)
 RULE-VAL-018 determinism is asserted directly.
 """
 
@@ -172,13 +173,16 @@ def test_derived_lifecycle_requires_nonempty_parents(valid_raw, taxonomy):
     assert evaluate(raw, taxonomy).disposition == "accepted"
 
 
-# --- interim unknown-field handling (RT-M2S3-03) ----------------------------
+# --- LAP-UNIT-010 unknown-field rejection (FCE-DR-SCH-003) -------------------
 
-def test_unknown_field_fails_closed_interim(valid_raw, taxonomy):
+def test_lap_unit_010_unknown_field_rejected(valid_raw, taxonomy):
+    # FCE-DR-SCH-003: unknown/extra envelope fields reject fail-closed at G2 with
+    # RC-001 (realized as the G2 quarantine disposition). Resolves RT-M2S3-03.
     raw = dict(valid_raw)
     raw["smuggled"] = "payload"
     disp = evaluate(raw, taxonomy)
     assert disp.disposition == "quarantined"
+    assert disp.reason_code == REASON_CODE_FAIL_CLOSED
     assert UNKNOWN_FIELD_RULE in disp.failed_rules
 
 

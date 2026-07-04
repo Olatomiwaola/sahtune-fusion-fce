@@ -6,17 +6,18 @@ package: `docs/05_data_model/m2-schema-freeze-record.md`,
 and decision records `docs/12_decision_records/fce-dr-sch-001.md` /
 `fce-dr-sch-002.md`. Basis commit 5dd2a10.
 
-All five findings are **OPEN and NON-BLOCKING** for the v0.2.0 freeze: each is a scope
-or definition gap already acknowledged in the freeze record, not a defect in the frozen
-15-field shape. They must be dispositioned before the affected Sprint 4 test assertions
-are finalized. Tracked in `docs/handoff/05_open-items-and-decision-register.md`.
+Originally all five findings were **OPEN and NON-BLOCKING** for the v0.2.0 freeze: each a
+scope or definition gap already acknowledged in the freeze record, not a defect in the
+frozen 15-field shape. **Update (M2 Sprint 4, 2026-07-04, basis ca75497): RT-M2S3-03 and
+RT-M2S3-04 are RESOLVED** (see per-finding notes); the remaining three stay open and
+non-blocking. Tracked in `docs/handoff/05_open-items-and-decision-register.md`.
 
 | Finding | Title | Severity | Status | Disposition target |
 |---|---|---|---|---|
-| RT-M2S3-01 | object_id uniqueness scope undefined | Medium | Open | data-model-engineer, before Sprint 4 assertions |
-| RT-M2S3-02 | integrity_hash format-only deferral | Medium | Open | data-model-engineer, input domain due M4 |
-| RT-M2S3-03 | unknown/extra-field handling undefined | Medium | Open | architect, before Sprint 4 tests |
-| RT-M2S3-04 | taxonomy fixture provenance | Low | Open | data-model-engineer, Sprint 4 (`docs/07`) |
+| RT-M2S3-01 | object_id uniqueness scope undefined | Medium | Open | data-model-engineer, before Sprint 4 assertions (FU-M2S3-3) |
+| RT-M2S3-02 | integrity_hash format-only deferral | Medium | Open | data-model-engineer, input domain due M4 (FU-M2S3-1) |
+| RT-M2S3-03 | unknown/extra-field handling undefined | Medium | **RESOLVED** (FCE-DR-SCH-003; LAP-UNIT-010) | closed FU-M2S3-2 |
+| RT-M2S3-04 | taxonomy fixture provenance | Low | **RESOLVED** (hash + docs/09+docs/06 provenance; FU-M2S4-1 for docs/07 registry) | EVD-M2 |
 | RT-M2S3-05 | volatile pre-marking / source-supplied binding-state flag | Low | Open | data-model-engineer / policy-engineer |
 
 ## RT-M2S3-01 — object_id uniqueness scope undefined
@@ -70,6 +71,12 @@ vs reject is not defined … default fail-closed"); PoC file plan UNCERTAINTY
 **Recommendation.** Make the disposition an explicit, tested choice before Sprint 4
 tests are written; interim default fail-closed. Owner: architect, before Sprint 4 tests.
 
+**Resolution (M2 Sprint 4).** RESOLVED by **FCE-DR-SCH-003**: unknown/extra envelope
+fields reject fail-closed at G2 with RC-001. Verified by **LAP-UNIT-010**
+(`tests/test_validator.py::test_lap_unit_010_unknown_field_rejected`). Follow-up
+FU-M2S3-2 is closed. Revisit trigger recorded in the decision record (first external
+adapter or TRL 4-5).
+
 **Trace.** FCE-REQ-MET-010. Owner: architect.
 
 ## RT-M2S3-04 — taxonomy fixture provenance
@@ -89,6 +96,15 @@ enum").
 **Recommendation.** At Sprint 4, populate the taxonomy fixture directly from `docs/07`
 and record its provenance in EVD-M2; add a consistency check that the fixture equals the
 `docs/07` value families. Fail-closed-on-unknown is the correct interim posture.
+
+**Resolution (M2 Sprint 4).** RESOLVED by hash + provenance. `docs/07` was found to carry
+the project-taxonomy **disclaimer only** — it enumerates no values (no registry yet), so
+the fixture was populated from the **docs/09 + docs/06 enumerations** (values: PROJ-LEVEL-1..3,
+DOMAIN-A/DOMAIN-B, modalities from docs/09; release_caveat PROJ-CAVEAT-X from docs/06;
+lower_snake token form per the docs/06 example). The fixture is hash-pinned in EVD-M2
+(sha-256 `59979c4d…bec240`), and unknown values fail closed. Authoring the enumerated
+registry in `docs/07` (with a fixture-equality guard) is carried forward as **FU-M2S4-1**
+(owner policy-engineer, due M3 Sprint 5, consumes OPEN-02 / leadership decision #2).
 
 **Trace.** FCE-REQ-MET-010, FCE-REQ-POL-011. Owner: data-model-engineer (Sprint 4).
 

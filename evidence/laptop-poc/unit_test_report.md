@@ -1,10 +1,16 @@
 # EVD-M2 — Laptop-PoC Schema-Validation Unit Test Report
 
 Evidence ID: EVD-M2. Owner: `data-model-engineer`. Block: M2 Sprint 4 (global
-Sprint 4). Produced 2026-07-04 at repo HEAD e91f671 (Sprint 3 basis), implementing
-`docs/05_data_model/m2-poc-file-plan.md` against schema v0.2.0
+Sprint 4). Implements `docs/05_data_model/m2-poc-file-plan.md` against schema v0.2.0
 (`docs/05_data_model/m2-schema-freeze-record.md`) and the validation rules
 (`docs/05_data_model/m2-validation-rules.md`).
+
+Revised 2026-07-04 on basis commit ca75497 (M2 Sprint-4 punch list): taxonomy fixture
+repopulated from docs/09+docs/06 with recorded sha-256; unknown-field handling ratified
+by FCE-DR-SCH-003 and covered by LAP-UNIT-010. **Self-provenance:** this revision is
+recorded in the punch-list commit whose parent is ca75497 (the immediate child of
+ca75497 on `main`; see git log for the child hash — a commit cannot contain its own
+hash).
 
 ## Scope and layer separation
 
@@ -42,13 +48,33 @@ pytest 9.1.0
 - Run command (evidence + all test runs): `.venv/bin/pytest -v` from repo root
   (`pytest.ini`, `pythonpath = src`). No system/global interpreter or pytest is used.
 
+## Taxonomy fixture provenance (RT-M2S3-04 resolved)
+
+`data/fixtures/calibration/taxonomy.json` values come from the **docs/09 + docs/06
+enumerations (the docs/07 registry does not yet exist)**: classification labels
+`PROJ-LEVEL-1..3` and domains `DOMAIN-A, DOMAIN-B` and the modality set from
+`docs/09_synthetic-dataset-plan.md`; `release_caveat` value `PROJ-CAVEAT-X` from the
+`docs/06_metadata-schema.md` example. Token form is lower_snake per the docs/06 schema
+example convention (field 5 example `eo_ir`); docs/09's `EO/IR` is prose. `docs/07`
+carries the project-taxonomy disclaimer only and enumerates no values — authoring the
+enumerated registry there is tracked as **FU-M2S4-1** (owner policy-engineer, due M3
+Sprint 5, consumes OPEN-02 / leadership decision #2).
+
+Recorded fixture hash (resolves RT-M2S3-04 by hash + provenance):
+
+```text
+sha-256(data/fixtures/calibration/taxonomy.json) =
+  59979c4d72b79cba6dec02892cc2940d609a705a2a724b5416ec275749bec240
+```
+
 ## Result summary
 
 **44 passed, 0 failed, 0 skipped.** All Required Laptop Tests minted for M2
-(LAP-UNIT-001..004, 006..009) and the RULE-VAL-018 determinism property pass.
-LAP-UNIT-005 (identical input/policy determinism) remains an M3 policy-evaluator test;
-its validator-layer repeat-determinism assertions ride inside LAP-UNIT-001/007 per
-RULE-VAL-018.
+(LAP-UNIT-001..004, 006..010) and the RULE-VAL-018 determinism property pass.
+LAP-UNIT-010 (unknown/extra field rejected fail-closed, FCE-DR-SCH-003) is new this
+revision. LAP-UNIT-005 (identical input/policy determinism) remains an M3
+policy-evaluator test; its validator-layer repeat-determinism assertions ride inside
+LAP-UNIT-001/007 per RULE-VAL-018.
 
 ## Per-rule coverage (RULE-VAL-001..018 -> test -> result)
 
@@ -73,9 +99,10 @@ RULE-VAL-018.
 | RULE-VAL-017 | policy_binding_state forced to `unvalidated` at G1; source value detected | G1 | LAP-UNIT-003 | PASS |
 | RULE-VAL-018 | identical envelope input -> identical disposition/reason/flags | property | LAP-UNIT-001/007 | PASS |
 
-Interim (not a RULE-VAL id): unknown/extra envelope fields fail closed at G2 pending the
-architect's disposition decision (RT-M2S3-03 / FU-M2S3-2). Tested:
-`test_unknown_field_fails_closed_interim` — PASS.
+Unknown/extra envelope fields (not a RULE-VAL id): reject fail-closed at G2 with RC-001,
+**ratified by FCE-DR-SCH-003** (resolves RT-M2S3-03, closes FU-M2S3-2). Carried as the
+`UNKNOWN-FIELD` disposition marker. Tested: `test_lap_unit_010_unknown_field_rejected`
+(LAP-UNIT-010) — PASS.
 
 ## Integrity-hash deferral (explicit)
 
@@ -153,7 +180,6 @@ first-failure short-circuit.
 ```text
 ============================= test session starts ==============================
 platform darwin -- Python 3.12.13, pytest-9.1.0, pluggy-1.6.0 -- /Users/olaberry/dev/Kanatir-FCE/sahtune-fusion-fce/.venv/bin/python
-cachedir: .pytest_cache
 rootdir: /Users/olaberry/dev/Kanatir-FCE/sahtune-fusion-fce
 configfile: pytest.ini
 testpaths: tests
@@ -199,32 +225,35 @@ tests/test_validator.py::test_lap_unit_009_null_release_caveat_fails PASSED [ 84
 tests/test_validator.py::test_lap_unit_009_null_parent_object_ids_fails PASSED [ 86%]
 tests/test_validator.py::test_lap_unit_009_empty_lists_accepted PASSED   [ 88%]
 tests/test_validator.py::test_derived_lifecycle_requires_nonempty_parents PASSED [ 90%]
-tests/test_validator.py::test_unknown_field_fails_closed_interim PASSED  [ 93%]
+tests/test_validator.py::test_lap_unit_010_unknown_field_rejected PASSED [ 93%]
 tests/test_validator.py::test_integrity_hash_format_only PASSED          [ 95%]
 tests/test_validator.py::test_rule_val_018_determinism_accepted PASSED   [ 97%]
 tests/test_validator.py::test_rule_val_018_determinism_multifailure PASSED [100%]
 
-============================== 44 passed in 0.03s ==============================
+============================== 44 passed in 0.05s ==============================
 ```
 
 ## Open items carried from this run
 
 - FU-M2S3-1 — integrity_hash input-domain definition (owner data-model-engineer, due
   M4). RULE-VAL-016 stays format-only until then.
-- FU-M2S3-2 — unknown/extra-field disposition (owner architect, before Sprint 4-final
-  test set). Interim: fail closed.
+- FU-M2S3-2 — **CLOSED** by FCE-DR-SCH-003 (unknown/extra fields reject fail-closed at
+  G2; LAP-UNIT-010). RT-M2S3-03 resolved.
 - FU-M2S3-3 — object_id uniqueness scope + duplicate-ID disposition (owner
   data-model-engineer). RULE-VAL-001 enforces presence/format only.
-- Taxonomy fixture provenance (RT-M2S3-04): calibration `taxonomy.json` values are
-  synthetic placeholders pending reconciliation against `docs/07`.
+- FU-M2S4-1 — author the enumerated project-taxonomy registry in `docs/07` (owner
+  policy-engineer, due M3 Sprint 5, consumes OPEN-02 / leadership decision #2). Until
+  then the fixture is sourced from docs/09+docs/06 with the recorded hash above.
+- RT-M2S3-04 — **RESOLVED** by hash + provenance (taxonomy section above).
 
 ## Facts / Assumptions / Judgment / Uncertainty
 
 - FACT: 44/44 tests pass on CPython 3.12.13 with pinned pytest 9.1.0; outputs above are
   verbatim.
-- ASSUMPTION: taxonomy fixture stands in for `docs/07` values (not supplied to the
-  build); fail-closed-on-unknown is the interim posture.
-- ENGINEERING JUDGMENT: module decomposition, fixture design, and the interim
-  unknown-field fail-closed choice.
-- UNCERTAINTY: the three follow-ups above must be dispositioned before the Sprint
-  4-final assertions are frozen; integrity-hash verification remains deferred.
+- FACT: the taxonomy fixture values are the docs/09 + docs/06 enumerations (the docs/07
+  registry does not yet exist); token form follows the docs/06 example convention. The
+  fixture is hash-pinned (sha-256 above); unknown values fail closed.
+- ENGINEERING JUDGMENT: module decomposition, fixture design, and (now ratified by
+  FCE-DR-SCH-003) the unknown-field reject-fail-closed disposition.
+- UNCERTAINTY: FU-M2S3-1 (integrity-hash input domain) and FU-M2S3-3 (object_id
+  uniqueness scope) remain open; integrity-hash verification stays deferred to M4.

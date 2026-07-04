@@ -1,7 +1,7 @@
 {
-  "_note": "SYNTHETIC project-taxonomy calibration fixture. No real Government of Canada markings. Values to be reconciled against docs/07 at commit time (RT-M2S3-04).",
-  "modality": ["EO", "IR", "RADAR", "ACOUSTIC", "SIGINT", "AIS"],
+  "_provenance": "Project-taxonomy VALUES from docs/09_synthetic-dataset-plan.md (classification labels PROJ-LEVEL-1..3; domains DOMAIN-A, DOMAIN-B; modalities) and docs/06_metadata-schema.md (release_caveat example PROJ-CAVEAT-X). TOKEN FORM (lower_snake) follows docs/06's schema example convention (field 5 example: eo_ir); docs/09's 'EO/IR' etc. is prose. docs/07_policy-decision-model.md carries the project-taxonomy DISCLAIMER only and enumerates no values (the docs/07 registry does not yet exist; see FU-M2S4-1). No real Government of Canada markings.",
+  "modality": ["eo_ir", "radar_like", "sigint_like", "acoustic_like", "ais_like", "uas_telemetry"],
   "classification_label": ["PROJ-LEVEL-1", "PROJ-LEVEL-2", "PROJ-LEVEL-3"],
-  "domain_label": ["DOMAIN-MARITIME", "DOMAIN-AIR", "DOMAIN-LAND"],
-  "release_caveat": ["PROJ-CAVEAT-ALPHA", "PROJ-CAVEAT-BRAVO"]
+  "domain_label": ["DOMAIN-A", "DOMAIN-B"],
+  "release_caveat": ["PROJ-CAVEAT-X"]
 }
