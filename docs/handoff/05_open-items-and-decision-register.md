@@ -46,6 +46,8 @@ Consolidated open inputs, maturity items, and decisions needed. Sources: `00`
 | L5 | Capture freshness/clock evaluation reference in the audit record |
 
 ## Decisions needed from Kanatir leadership
+
+Governance note 2026-07-03: gate ceremony collapsed per docs/handoff/09_governance-note-gates.md. Items #1 and #5 closed therein; GATE-A satisfied. Remaining items decided per-block as they become blocking.
 1. Confirm whether later solicitation amendments exist before GATE-A is declared
    (OPEN-01 is resolved for M1 Sprint 1 using verified Canada.ca outcome text).
 2. Approve the project-taxonomy → handling-level mapping approach (OPEN-02).
