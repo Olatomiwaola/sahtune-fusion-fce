@@ -71,6 +71,40 @@ def test_t7_sentinel_legality_rejections():  # T7 traces RT-M4S7-04
         validate_record_body(new_record(**valid_body("export", policy_bundle_version="0.1.0")))
 
 
+def test_fu_m4s8_1_policy_decision_detail_required():  # FU-M4S8-1 (D4 atomic emission)
+    # All three policy-decision detail fields are now REQUIRED.
+    with pytest.raises(RecordValidationError):  # missing deterministic_evaluation
+        validate_record_body(new_record(**valid_body(
+            "policy-decision",
+            event_detail={"pip_attributes_consumed": [], "detection_flags": []})))
+    with pytest.raises(RecordValidationError):  # missing detection_flags
+        validate_record_body(new_record(**valid_body(
+            "policy-decision",
+            event_detail={"pip_attributes_consumed": [], "deterministic_evaluation": True})))
+    with pytest.raises(RecordValidationError):  # missing pip_attributes_consumed
+        validate_record_body(new_record(**valid_body(
+            "policy-decision",
+            event_detail={"detection_flags": [], "deterministic_evaluation": True})))
+
+
+def test_fu_m4s8_1_downgrade_requiredness():  # FU-M4S8-1 (docs/08 downgrade matrix row)
+    validate_record_body(new_record(**valid_body("downgrade")))  # valid downgrade accepted
+    with pytest.raises(RecordValidationError):  # output_object_id required
+        validate_record_body(new_record(**valid_body("downgrade", output_object_id=None)))
+    with pytest.raises(RecordValidationError):  # source_object_ids >= 1
+        validate_record_body(new_record(**valid_body("downgrade", source_object_ids=[])))
+    with pytest.raises(RecordValidationError):  # policy_rule_ids >= 1
+        validate_record_body(new_record(**valid_body("downgrade", policy_rule_ids=[])))
+    with pytest.raises(RecordValidationError):  # detail missing authority_ref
+        validate_record_body(new_record(**valid_body(
+            "downgrade", event_detail={"transformation_proof_ref": "proof-1"})))
+    with pytest.raises(RecordValidationError):  # bundle_version must be semver
+        validate_record_body(new_record(**valid_body("downgrade", policy_bundle_version="N/A-PRE-G4")))
+    with pytest.raises(RecordValidationError):  # detail missing transformation_proof_ref
+        validate_record_body(new_record(**valid_body(
+            "downgrade", event_detail={"authority_ref": "auth-1"})))
+
+
 def test_t14_duplicate_object_id_quarantine_path(tmp_path):  # T14 traces FCE-DR-SCH-004 D5
     body = new_record(**valid_body(
         "ingestion", disposition="quarantine", enforcement_action="quarantine",

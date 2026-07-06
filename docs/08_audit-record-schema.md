@@ -61,7 +61,8 @@ envelope). Detail sub-schemas are part of schema v1:
 - **transformation**: transformation record reference.
 - **policy-decision**: the D4 remainder exactly — `pip_attributes_consumed`
   (IDs + auth status; values never stored), `detection_flags`,
-  `deterministic_evaluation`.
+  `deterministic_evaluation` (all three REQUIRED per D4 atomic emission —
+  FU-M4S8-1).
 - **fusion-decision**: merge-permit reference (permitted) or RC-003 context
   (blocked).
 - **routing**: destination domain.
@@ -90,6 +91,7 @@ pip_attributes_consumed, detection_flags, deterministic_evaluation→event_detai
 | fusion-decision | ≥2 | required if permitted; null if blocked | required semver | ≥1 | merge ref / RC-003 |
 | routing | ≥1 | optional | required semver | ≥1 | destination domain |
 | quarantine | ≥1 | null | required semver post-G4; `N/A-PRE-G4` if G2 | ≥0 | queue ref |
+| downgrade | ≥1 | required | required semver | ≥1 | authority + transformation-proof reference |
 | export | empty | null | `N/A-EXPORT` only | empty | manifest ref + range + manifest sha-256 |
 | override | ≥1 | null | required semver | ≥1 | precondition results |
 
@@ -97,6 +99,11 @@ Sentinels are explicit values, never null-by-omission; a record violating the
 matrix (including illegal sentinel-for-class) is malformed and the writer
 refuses it fail-closed. Sentinel-legality rejection tests are an explicit
 Sprint 8 obligation (RT-M4S7-04).
+
+Amendment 2026-07-06 (FU-M4S8-1, closed): the `downgrade` row was added to the
+matrix above (previously absent — the Sprint 8 PoC supplied it by engineering
+judgment), and policy-decision `event_detail` is now REQUIRED (D4 atomic
+emission). The M4 writer/validator enforces both; regression tests added.
 
 ## Hash chain and append-only semantics
 

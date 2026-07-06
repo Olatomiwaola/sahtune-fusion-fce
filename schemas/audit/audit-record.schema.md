@@ -35,7 +35,7 @@ Plus `event_detail`: closed per-class typed object; unknown fields refused fail-
 |---|---|---|
 | ingestion | ingest_attempt_id | source_asserted_object_id, object_id_authenticated, detection_flags, validation_rule_refs |
 | transformation | transformation_ref | — |
-| policy-decision | — | pip_attributes_consumed, detection_flags, deterministic_evaluation |
+| policy-decision | pip_attributes_consumed, detection_flags, deterministic_evaluation | — |
 | fusion-decision | — | merge_permit_ref, rc003_context |
 | routing | destination_domain | — |
 | quarantine | review_queue_ref | — |
@@ -46,5 +46,5 @@ Plus `event_detail`: closed per-class typed object; unknown fields refused fail-
 ## Requiredness matrix
 
 Per `docs/08` (source_object_ids cardinality, output_object_id, bundle_version legality,
-rule_ids). `downgrade` is not in the docs/08 matrix table; the PoC supplies minimal
-requiredness by engineering judgment (recorded in EVD-M4).
+rule_ids). The `downgrade` row is now in the docs/08 matrix (FU-M4S8-1, 2026-07-06):
+≥1 source, output required, semver, ≥1 rule, authority + transformation-proof detail.

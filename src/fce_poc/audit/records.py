@@ -47,8 +47,9 @@ DETAIL_SCHEMA = {
     },
     "transformation": {"required": {"transformation_ref"}, "optional": set()},
     "policy-decision": {
-        "required": set(),
-        "optional": {"pip_attributes_consumed", "detection_flags", "deterministic_evaluation"},
+        # Required per docs/07 D4 atomic emission (FU-M4S8-1, 2026-07-06).
+        "required": {"pip_attributes_consumed", "detection_flags", "deterministic_evaluation"},
+        "optional": set(),
     },
     "fusion-decision": {"required": set(), "optional": {"merge_permit_ref", "rc003_context"}},
     "routing": {"required": {"destination_domain"}, "optional": set()},
