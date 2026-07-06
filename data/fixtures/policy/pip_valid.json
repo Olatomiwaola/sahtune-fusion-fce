@@ -1,0 +1,5 @@
+[
+  {"attr_id": "mission", "value": "MISSION-ALPHA", "authenticated": true, "integrity_bound": true},
+  {"attr_id": "sensor", "value": "SENSOR-EO-001", "authenticated": true, "integrity_bound": true},
+  {"attr_id": "operator", "value": "OP-01", "authenticated": true, "integrity_bound": true}
+]

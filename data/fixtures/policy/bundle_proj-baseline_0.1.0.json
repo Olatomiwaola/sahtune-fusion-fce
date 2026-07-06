@@ -1,0 +1,19 @@
+{
+  "_note": "SYNTHETIC policy bundle fixture. signature_placeholder is a PLACEHOLDER only (no crypto; real root-of-trust is H6). Taxonomy values are the docs/07 D6 project-taxonomy families. No real Government of Canada markings.",
+  "version": "0.1.0",
+  "signature_placeholder": "valid",
+  "permits": {
+    "MISSION-ALPHA": {
+      "classifications": ["PROJ-LEVEL-1", "PROJ-LEVEL-2"],
+      "domains": ["DOMAIN-A"],
+      "caveats": ["PROJ-CAVEAT-X"]
+    }
+  },
+  "merge_permits": [
+    {
+      "classifications": ["PROJ-LEVEL-1", "PROJ-LEVEL-2"],
+      "domains": ["DOMAIN-A"],
+      "caveats": ["PROJ-CAVEAT-X"]
+    }
+  ]
+}
