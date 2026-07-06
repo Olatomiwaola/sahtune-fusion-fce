@@ -57,7 +57,19 @@ v0.2.0 freeze). Sources: `docs/05_data_model/m2-schema-freeze-record.md`,
 | FU-M2S3-2 | ~~Decide unknown/extra envelope-field disposition~~ **CLOSED 2026-07-04** by FCE-DR-SCH-003 (reject fail-closed at G2 with RC-001; LAP-UNIT-010). Resolves RT-M2S3-03. | architect | done |
 | FU-M2S3-3 | Define `object_id` uniqueness scope (global vs per-run/per-mission) and duplicate-ID disposition before Sprint 4 test assertions are final (RT-M2S3-01, freeze record field 1) | data-model-engineer | before Sprint 4 assertions |
 | FU-M2S4-1 | Author the enumerated project-taxonomy registry in `docs/07` (classification, domain, caveat, modality value families) and add a guard that the calibration `taxonomy.json` equals the docs/07 families. **CLOSED 2026-07-05**: registry authored in `docs/07` (D6) verbatim from the verified fixture, SHA-256 `59979c4d…bec240` match; reference-only PROJ-LEVEL-2 ↔ Protected B mapping (lead concurrence 2026-07-05); taxonomy-equality guard switch specced for Sprint 6 (fixture stays hash-pinned until then). Consumed OPEN-02 / decision #2. | policy-engineer | closed 2026-07-05 |
-| FU-M3S5-1 | State the H4 trusted-time (injected-clock) dependency for override expiry, and label RC-011 cases "mechanism-simulated", in EVD-M3 — EVD-M3 must not claim trusted time or source authentication demonstrated (RT-M3S5-02, RT-M3S5-03). | test-evaluation-engineer | M3 Sprint 6 |
+| FU-M3S5-1 | State the H4 trusted-time (injected-clock) dependency for override expiry, and label RC-011 cases "mechanism-simulated", in EVD-M3 — EVD-M3 must not claim trusted time or source authentication demonstrated (RT-M3S5-02, RT-M3S5-03). **CLOSED 2026-07-06** — both obligations stated verbatim in EVD-M3 (`evidence/laptop-poc/policy_eval_report.md`). | test-evaluation-engineer | closed 2026-07-06 |
+
+M3 Sprint 6 red-team findings (`docs/06_security/red_team_findings/RT-M3S6.md`),
+open non-blocking, carried forward:
+- **RT-M3S6-02, RT-M3S6-03, RT-M3S6-05 → due M7** (owner test-evaluation-engineer):
+  determinism hash-compare breadth (permit+reject only); pairwise-only lattice test;
+  staleness / anti-replay (RC-004 unexercised; emission test at M7, substantive fix H4);
+  includes missing-requirement flag → requirements-traceability-engineer
+  (freshness/anti-replay candidate row, ties to H4).
+- **RT-M3S6-06 → due M5** (owner sensor-fusion-engineer / architect): no-unauthorized-
+  merge is label-coverage only, not parentage (H1, FCE-REQ-KRN-011; freeze-record field 13).
+RT-M3S6-01 FIXED pre-commit (EVD-M3 full-suite tail, f48229e); RT-M3S6-04 disclosed
+(placeholder bundle signature; real root-of-trust is H6, TRL 4-5).
 
 RT-M2S3-03 and RT-M2S3-04 are resolved (see `docs/06_security/red_team_findings/RT-M2S3.md`);
 FCE-DR-SCH-003 recorded in `docs/12_decision_records/`. **RT-M2S4-03 (reason-code
