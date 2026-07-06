@@ -1,4 +1,4 @@
-# 03 — Requirements Traceability Matrix (RTM) v0.3 (M3 Sprint 5: FCE-REQ-SEC-002 added; v0.2 = M1 Sprint 2 corrections RU-02..RU-04 per EVD-M1)
+# 03 — Requirements Traceability Matrix (RTM) v0.4 (M4 Sprint 7: FCE-REQ-ING-011 added per RT-M3S6-05 missing-requirement flag; v0.3 = M3 Sprint 5 FCE-REQ-SEC-002; v0.2 = M1 Sprint 2 corrections RU-02..RU-04 per EVD-M1)
 
 Owner: `requirements-traceability-engineer`. Skill: `fce-requirements-traceability`.
 
@@ -93,6 +93,7 @@ Sprint 2.
 |---|---|---|---|---|---|---|---|---|
 | FCE-REQ-KRN-010 | The FCE shall perform compliance checks at ingestion and at fusion and shall auto-disposition predefined policy conditions without human approval. | FCE-ESS-03 | CAP-02 | ARCH-04, G4, G5 | integration test | Predefined policy conditions at ingestion and fusion receive automatic permit/restrict/block/quarantine disposition without human approval, and each disposition is audited. | TST-INT-011 | draft |
 | FCE-REQ-POL-012 | The FCE shall default-deny and fail closed when a condition is not predefined or is ambiguous, enqueuing the object for human review. | FCE-ESS-03 | CAP-02 | ARCH-03 | property-based test, red-team test | Ambiguous, undefined, or conflicting policy conditions never produce permit-by-default; the object is denied/quarantined and queued for review with RC-005 or a more specific reason code. | TST-PRP-012 | draft |
+| FCE-REQ-ING-011 | The FCE shall evaluate every object's acquisition timestamp for freshness against a defined staleness policy and shall fail closed with reason code RC-004 on stale or unverifiable timestamps; timestamp trust is bounded by the available clock source, and trusted/attested time is tracked separately (H4). | FCE-ESS-03 | CAP-02 | ARCH-03, G4 | unit test, red-team test | A stale or unverifiable acquisition timestamp under the defined staleness policy yields a fail-closed disposition with RC-004 and an audit event; no stale object reaches fusion; the staleness policy and clock source are recorded in the decision record. TRL 1-3 demonstration uses the injected clock; no trusted-time claim (H4 open). | TST-UNT-030 / EVD-M7 | draft |
 
 ### FCE-ESS-04 — Provenance for all ingested and produced data
 
@@ -162,7 +163,12 @@ to host the resource-exhaustion fail-closed invariant previously mixed into
 FCE-REQ-EDG-010. FCE-REQ-SEC-002 was added 2026-07-04 (M3 Sprint 5, RTM v0.3)
 closing the `docs/97` B1 RTM follow-up — PIP attribute authentication /
 integrity-binding as a dedicated row (was traced by proxy through
-FCE-REQ-SEC-001). RTM row count is now 23.
+FCE-REQ-SEC-001). FCE-REQ-ING-011 was added 2026-07-06 (M4 Sprint 7, RTM
+v0.4) discharging the RT-M3S6-05 missing-requirement flag: timestamp
+freshness / anti-replay was previously traced by proxy through
+FCE-REQ-POL-001 and the RC-004 registry entry with no owning row. Its
+test-emission obligation remains due M7; trusted time remains H4. RTM row
+count is now 24.
 
 ## M1 Sprint 1 handoff status
 

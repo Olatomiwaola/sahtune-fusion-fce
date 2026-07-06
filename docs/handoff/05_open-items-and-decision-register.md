@@ -53,11 +53,14 @@ v0.2.0 freeze). Sources: `docs/05_data_model/m2-schema-freeze-record.md`,
 
 | ID | Item | Owner | Due |
 |---|---|---|---|
-| FU-M2S3-1 | Define `integrity_hash` input domain and canonicalization (which bytes/fields are hashed); G2 integrity-check clause is untestable until then (RT-M2S3-02, freeze record field 14) | data-model-engineer | M4 |
+| FU-M2S3-1 | ~~Define `integrity_hash` input domain and canonicalization~~ **CLOSED 2026-07-06** by FCE-DR-SCH-004 (RATIFIED): CANON-1 shared profile; envelope hash over fields 1–6, 8–13; G2 integrity clause now testable (Sprint 8 tamper-pair test). Resolves RT-M2S3-02 / freeze-record field 14. | data-model-engineer | closed 2026-07-06 |
 | FU-M2S3-2 | ~~Decide unknown/extra envelope-field disposition~~ **CLOSED 2026-07-04** by FCE-DR-SCH-003 (reject fail-closed at G2 with RC-001; LAP-UNIT-010). Resolves RT-M2S3-03. | architect | done |
-| FU-M2S3-3 | Define `object_id` uniqueness scope (global vs per-run/per-mission) and duplicate-ID disposition before Sprint 4 test assertions are final (RT-M2S3-01, freeze record field 1) | data-model-engineer | before Sprint 4 assertions |
+| FU-M2S3-3 | ~~Define `object_id` uniqueness scope and duplicate-ID disposition~~ **CLOSED 2026-07-06** by FCE-DR-SCH-004 D5: per-run scope; duplicate → quarantine via RC-001 path + `duplicate_object_id` detection flag; no new reason code (policy-engineer reassesses at M7); cross-run aggregation keys on (package_id or run_id, object_id) per FU-M4S7-3. Resolves RT-M2S3-01. | data-model-engineer | closed 2026-07-06 |
 | FU-M2S4-1 | Author the enumerated project-taxonomy registry in `docs/07` (classification, domain, caveat, modality value families) and add a guard that the calibration `taxonomy.json` equals the docs/07 families. **CLOSED 2026-07-05**: registry authored in `docs/07` (D6) verbatim from the verified fixture, SHA-256 `59979c4d…bec240` match; reference-only PROJ-LEVEL-2 ↔ Protected B mapping (lead concurrence 2026-07-05); taxonomy-equality guard switch specced for Sprint 6 (fixture stays hash-pinned until then). Consumed OPEN-02 / decision #2. | policy-engineer | closed 2026-07-05 |
 | FU-M3S5-1 | State the H4 trusted-time (injected-clock) dependency for override expiry, and label RC-011 cases "mechanism-simulated", in EVD-M3 — EVD-M3 must not claim trusted time or source authentication demonstrated (RT-M3S5-02, RT-M3S5-03). **CLOSED 2026-07-06** — both obligations stated verbatim in EVD-M3 (`evidence/laptop-poc/policy_eval_report.md`). | test-evaluation-engineer | closed 2026-07-06 |
+| FU-M4S7-1 | RT-M4S7-01 disclosure obligation: EVD-M4 must state the TRL 1-3 tamper-evidence boundary — in-file edit/delete/reorder detected; whole-file substitution from the public genesis constant NOT detectable from the file alone; external chain-head anchoring is H6. Export manifests carry chain_head_hash as partial mitigation. | audit-forensics-engineer | M4 Sprint 8 (EVD-M4) |
+| FU-M4S7-2 | RT-M4S7-02: writer tail-verification on startup (last record complete + hash-links; partial trailing line refuses fail-closed) + torn-write corruption test. | test-evaluation-engineer | M4 Sprint 8 |
+| FU-M4S7-3 | RT-M4S7-05 disclosure: replay/export docs and EVD-M4 state that cross-run aggregation must key on (package_id or run_id, object_id), never object_id alone (per-run uniqueness, FCE-DR-SCH-004 D5). | audit-forensics-engineer | M4 Sprint 8 (docs/08 done; EVD-M4 pending) |
 
 M3 Sprint 6 red-team findings (`docs/06_security/red_team_findings/RT-M3S6.md`),
 open non-blocking, carried forward:
@@ -70,6 +73,16 @@ open non-blocking, carried forward:
   merge is label-coverage only, not parentage (H1, FCE-REQ-KRN-011; freeze-record field 13).
 RT-M3S6-01 FIXED pre-commit (EVD-M3 full-suite tail, f48229e); RT-M3S6-04 disclosed
 (placeholder bundle signature; real root-of-trust is H6, TRL 4-5).
+
+M4 Sprint 7 red-team findings (`docs/06_security/red_team_findings/RT-M4S7.md`),
+none blocking, claim audit clean: RT-M4S7-01 (Med) → FU-M4S7-1 (H6 tie);
+RT-M4S7-02 (Med) → FU-M4S7-2; RT-M4S7-03 (Low, detail-ID replay poisoning)
+and RT-M4S7-04 (Low, per-class sentinel-legality rejection) carried as
+explicit Sprint 8 test hooks per lead concurrence 2026-07-06; RT-M4S7-05
+(Low) → FU-M4S7-3. RT-M3S6-05's missing-requirement flag is DISCHARGED by
+FCE-REQ-ING-011 (RTM v0.4); its test-emission obligation remains due M7.
+FCE-DR-AUD-001 and FCE-DR-SCH-004 RATIFIED 2026-07-06 (architect + red-team
++ lead concurrence recorded in each DR).
 
 RT-M2S3-03 and RT-M2S3-04 are resolved (see `docs/06_security/red_team_findings/RT-M2S3.md`);
 FCE-DR-SCH-003 recorded in `docs/12_decision_records/`. **RT-M2S4-03 (reason-code
