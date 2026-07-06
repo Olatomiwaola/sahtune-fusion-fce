@@ -257,3 +257,10 @@ tests/test_validator.py::test_rule_val_018_determinism_multifailure PASSED [100%
   FCE-DR-SCH-003) the unknown-field reject-fail-closed disposition.
 - UNCERTAINTY: FU-M2S3-1 (integrity-hash input domain) and FU-M2S3-3 (object_id
   uniqueness scope) remain open; integrity-hash verification stays deferred to M4.
+
+## Annotation 2026-07-05
+
+FU-M2S4-1 completed under decision #2 (approved 2026-07-04); the `docs/07` registry
+now exists and is authoritative; the fixture `_provenance` line stating otherwise is
+historical, retained to preserve the pinned hash. The FU-M2S4-1 scheduling note above
+is superseded by the register (`docs/handoff/05_open-items-and-decision-register.md`).

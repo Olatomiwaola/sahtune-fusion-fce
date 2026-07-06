@@ -18,13 +18,67 @@ procedures. A documented mapping links the project taxonomy to named handling
 targets (e.g., the Protected B target in FCE-ESS-02) without reproducing real
 marking procedures.
 
-### Enumerated taxonomy registry [D6 — decision #2 approved 2026-07-04; authoring in progress]
+### Enumerated taxonomy registry [D6 — authored 2026-07-05; FU-M2S4-1 closed]
 
-Decision #2 approved 2026-07-04; enumerated families to be authored from the
-EVD-M2 hash-pinned fixture (FU-M2S4-1, in progress, held in chat pending fixture
-content + SHA-256 verification); interim authoritative source remains the pinned
-fixture. Tracked as FU-M2S4-1
-(`docs/handoff/05_open-items-and-decision-register.md`).
+Leadership decision #2 approved 2026-07-04 (OPEN-02 resolved). The enumerated
+project-taxonomy value families below are authored verbatim from the verified,
+hash-pinned calibration fixture (`data/fixtures/calibration/taxonomy.json`,
+sha-256 `59979c4d72b79cba6dec02892cc2940d609a705a2a724b5416ec275749bec240`,
+recorded in EVD-M2). This registry is now the authoritative source; the fixture's
+`_provenance` note (which predates this section) is retained to preserve the
+pinned hash. No real Government of Canada markings.
+
+**Modality**
+
+| Value |
+|---|
+| eo_ir |
+| radar_like |
+| sigint_like |
+| acoustic_like |
+| ais_like |
+| uas_telemetry |
+
+**Classification label**
+
+| Value |
+|---|
+| PROJ-LEVEL-1 |
+| PROJ-LEVEL-2 |
+| PROJ-LEVEL-3 |
+
+**Domain label**
+
+| Value |
+|---|
+| DOMAIN-A |
+| DOMAIN-B |
+
+**Release caveat**
+
+| Value |
+|---|
+| PROJ-CAVEAT-X |
+
+**Reference-only mapping to named handling targets**
+
+Documentation-level, reference-only mapping (FCE-REQ-POL-011): never a real
+Government of Canada marking procedure and never an enforcement input.
+PROJ-LEVEL-2 mapping selected by engineering judgment; project lead concurrence
+2026-07-05.
+
+| Project-taxonomy value | Named external target (reference only) |
+|---|---|
+| PROJ-LEVEL-2 | Protected B (equivalent handling target, FCE-ESS-02) |
+
+PROJ-LEVEL-1 and PROJ-LEVEL-3 have no named external target at TRL 1-3.
+
+**Guard spec (Sprint 6).** A taxonomy-equality guard shall assert that the
+enumerated families above equal the calibration fixture's families
+(`data/fixtures/calibration/taxonomy.json`). Until that guard lands the fixture
+stays hash-pinned (sha-256 above); at Sprint 6 the guard switches its authority
+from the pinned fixture hash to docs/07 equality (this section). Tracked:
+FU-M2S4-1 (closed on authoring), guard implementation in Sprint 6.
 
 ## Model
 
