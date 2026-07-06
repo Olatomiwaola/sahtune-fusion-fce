@@ -141,3 +141,15 @@ Full repo suite: `68 passed` (44 M2 + 24 M3) from `.venv/bin/pytest`.
 - UNCERTAINTY (open, non-blocking): trusted/attested time (H4, RT-M3S5-02) and
   real source authentication (H3/H4, RT-M3S5-03) are out of scope at TRL 1-3;
   EVD-M3 claims neither. Tracked under FU-M3S5-1.
+
+## Annotation 2026-07-06 (M4 Sprint 8 run environment)
+
+Full-suite verbatim tail from the Sprint 8 environment (68 M1–M3 + 15 M4 audit):
+
+```text
+83 passed in 0.11s
+```
+
+This discharges the RT-M3S6-01 residual (EVD-M3 full-suite claim backed by verbatim
+output) recorded in the M4 block preconditions. Append-only; no content above this
+annotation was edited.
