@@ -108,6 +108,32 @@ quarantine `event_detail` gains an OPTIONAL `detection_flags` field (schemas/aud
 (V3/V4/V7, EVD-M5). RT-M5S9-01/-02/-03/-05 hooks DISCHARGED 2026-07-07
 (tests/fusion/test_hooks.py, 4/4 PASS, EVD-M5).
 
+## M6 open resolutions (2026-07-07, lead decisions at block open)
+
+1. **docs/09 citation resolved:** `docs/09_synthetic-dataset-plan.md` (v0 draft, four
+   baseline scenarios: Joint ISR, Maritime, Tactical Edge, UAV) EXISTS; the M2
+   freeze-record citation is live, not dangling; no stale-reference entry. Sprint 11
+   finalizes the scenario library on this baseline (no fresh authoring).
+2. **Modality ruling (lead, 2026-07-07):** no D6 registry change is authorized at M6
+   open. Sprint 11 maps docs/09 loose terms into the closed registry (eo_ir,
+   radar_like, sigint_like, acoustic_like, ais_like, uas_telemetry). "wearable
+   events" may map to `uas_telemetry` only if reframed as platform/operator/device
+   telemetry relevant to the scenario; otherwise it is replaced by a registered
+   modality preserving the scenario purpose. "anomaly events" is not a modality: it
+   is an event/label derived from registered modalities, never a source modality.
+   Any scenario that cannot be made technically meaningful under the closed registry
+   escalates to policy-engineer/architect — no silent new modality.
+   Supplementary ruling (policy-engineer block, M6 open, same date): USGS (OSD-01)
+   seismic event fixtures are assigned fixture modality `acoustic_like` — a
+   project-taxonomy fixture role, not a claim that the data is acoustic sensor
+   output; the assignment is disclosed in the source manifest and trim report; D6
+   registry and taxonomy-equality guard unchanged.
+3. **Push executed (lead decision, M6 open):** origin/main advanced
+   5dd2a10..d721d9d (25 commits, M2 Sprint 3 → M5 close governance); local main in
+   sync with remote.
+4. **Rule 9 RATIFIED 2026-07-07** — see docs/handoff/10 (evidence-append protocol;
+   binding before EVD-M6 exists).
+
 RT-M2S3-03 and RT-M2S3-04 are resolved (see `docs/06_security/red_team_findings/RT-M2S3.md`);
 FCE-DR-SCH-003 recorded in `docs/12_decision_records/`. **RT-M2S4-03 (reason-code
 registry consistency) → RESOLVED** by the closed RC-001..012 registry + consistency check

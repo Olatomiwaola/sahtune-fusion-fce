@@ -32,7 +32,7 @@ Project working conventions (learned M2–M3).
    verifies clean. A verification instrument whose readings cannot be
    trusted is itself a fail-closed trigger. (Ratified 2026-07-06, M5 open:
    architect recommendation + lead concurrence recorded in-chat.)
-9. (PROPOSED — M6-open agenda, not ratified) Evidence-append protocol:
+9. (RATIFIED 2026-07-07, M6 open) Evidence-append protocol:
    EVD-* files receive only chat-authored evidence content, quoted verbatim
    in a dedicated append instruction; the exact append body is read back
    raw to chat and confirmed BEFORE the commit; release directives, delta
