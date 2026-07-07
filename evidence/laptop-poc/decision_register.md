@@ -52,3 +52,21 @@ ratification pending for all entries marked OPEN or "ratify".
   not exist as a standalone record at HEAD 5dd2a10"; the register file did exist —
   the defensible reading is that no standalone DR *file* existed at that HEAD.
   Clarified here; the ratified DR file itself is not edited.
+
+**Sprint 11 close 2026-07-07 (append-only; lead concurrence in-chat):**
+
+- FCE-DR-POC-003: RESOLVED — calibration/held-out split: 70/30 stratified per
+  source family and modality; deterministic key = sha-256 over (stable source
+  record ID, seed); seed = 12918724377571503927, minted blind 2026-07-07 at Sprint 11 close,
+  before any data download (network unapproved until Sprint 12). Held-out set
+  seals at Sprint 12 close per FCE-DR-POC-004/-006.
+- FCE-DR-POC-006: RATIFIED — evidence write rules = working-conventions rule 9
+  (RATIFIED 2026-07-07) + docs/16 §3 prior-artifact seal; sealed-artifact
+  locations = docs/16 fixture-and-evidence layout (`data/fixtures/heldout/`,
+  `evidence/laptop-poc/`). Sprint 12 seal record names fixture hashes AND the
+  pinned policy-bundle version (FCE-DR-POC-004 pairing, lead concurrence
+  2026-07-07).
+- Transform-action fixture gap: ACCEPTED at M6 (lead concurrence 2026-07-07) —
+  representability demonstrated in docs/07; fixture-level exercise deferred to
+  Sprint 13 / M7 V&V planning.
+

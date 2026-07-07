@@ -39,6 +39,17 @@ Project working conventions (learned M2–M3).
    blocks, and process language never enter EVD-* files. (Motivated by the
    M5 incidents: EVD-M4 unauthored annotation attempt; EVD-M5
    directive-text appends at 42b70c9/3819be0, superseded by 119bac1.)
+10. **Claude Code execution discipline (RATIFIED 2026-07-07, Sprint 11
+    close).** Claude Code is the write/run environment only: no role blocks,
+    review subagents, or HANDOFF blocks — reviews and design happen in the
+    block chat. Chat drafts; Code writes verbatim from transport files at
+    exact paths; missing or garbled text is reported, never reconstructed or
+    authored. Every edited/appended region is read back raw from disk and
+    emitted BEFORE the git commands run; any deviation stops the commit.
+    Narration is not evidence — every state claim ships with raw command
+    output. Approvals are one-time, never backgrounded, batched, or
+    generalized. Full text: CLAUDE.md §"Claude Code execution discipline"
+    (precedent record: eafb980, M6).
 
 DR ratification = role-block review in chat + explicit project-lead
 concurrence, both recorded in the DR or decision record update.

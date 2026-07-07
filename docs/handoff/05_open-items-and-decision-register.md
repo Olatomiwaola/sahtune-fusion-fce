@@ -134,6 +134,26 @@ quarantine `event_detail` gains an OPTIONAL `detection_flags` field (schemas/aud
 4. **Rule 9 RATIFIED 2026-07-07** — see docs/handoff/10 (evidence-append protocol;
    binding before EVD-M6 exists).
 
+### M6 Sprint 11 close (2026-07-07)
+
+Scenario library finalized as docs/09 v1 (supersedes v0) through the full role
+chain (fusion → data-model → policy → T&E → red-team), lead concurrence
+recorded per item. Rulings: RC-002 caveat/domain mismatch → BLOCK,
+override-immune (per B2 / RULE-POL-005d; v0 "restrict" superseded); item 2.4
+added (restrict partial-permit coverage, TST-POL-007); item 2.5 added
+(route-to-higher-domain coverage, TST-POL-008, delivery-disposition-only per
+RT-M6S11-02). FCE-DR-SCH-005 (data_origin propagation) RATIFIED — binding
+before any Sprint 12 fixture build. RT-M6S11 findings 01–05 dispositioned
+(1 High, 2 Med, 2 Low; none blocking; claim audit clean) — see
+docs/06_security/red_team_findings/RT-M6S11.md. Transform-action fixture gap
+accepted at M6, deferred to Sprint 13 / M7 V&V (also recorded in
+evidence/laptop-poc/decision_register.md). FCE-DR-POC-003 RESOLVED (blind seed
+minted at close) and FCE-DR-POC-006 RATIFIED — see the laptop-poc decision
+register. LAP-RED-005/-006 minted (GDR-005/GDR-016 rejection tests).
+Process record: commit eafb980 (M6-01) executed before its read-backs were
+returned — post-hoc verified clean in-chat; codified as working-conventions
+rule 10 and the CLAUDE.md execution-discipline section (this close).
+
 RT-M2S3-03 and RT-M2S3-04 are resolved (see `docs/06_security/red_team_findings/RT-M2S3.md`);
 FCE-DR-SCH-003 recorded in `docs/12_decision_records/`. **RT-M2S4-03 (reason-code
 registry consistency) → RESOLVED** by the closed RC-001..012 registry + consistency check
