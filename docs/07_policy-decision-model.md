@@ -10,6 +10,11 @@ RATIFIED 2026-07-04); decision-record output contract added; RULE-POL-004..006 a
 taxonomy registry authoring in progress (leadership decision #2 approved
 2026-07-04, OPEN-02 resolved; FU-M2S4-1).
 
+M5 Sprint 9 amendment (2026-07-06): MERGE-PERMIT schema added
+(permitted_combinations exact-multiset semantics per RT-M5S9-01/-03
+dispositions); segregation disposition-not-transformation sentence added.
+Registry and RULE-POL-002 unchanged.
+
 ## Project taxonomy disclaimer [OPEN-02]
 
 All classification, domain, and caveat values are a PROJECT TAXONOMY for
@@ -139,6 +144,9 @@ CONSISTENT; no orphaned codes.
 Merged or derived object label = most-restrictive combination of parent labels
 across classification, domain, and caveat, unless RC-006 (authorized downgrade
 with proof) applies. Propagation is deterministic and recorded in provenance.
+Segregation is a disposition, not a transformation: no derived object exists
+and no label propagates; the segregated set is recorded in provenance and
+audit only (M5 Sprint 9 amendment 2026-07-06).
 
 ## No-unauthorized-merge invariant (formal)
 
@@ -150,6 +158,26 @@ either structurally unrepresentable or fails closed. No operator override,
 authority, reason code, or PIP attribute can create P or bypass this check; an
 override may act only inside an already-permitted envelope (B2). Verified by
 property-based test (TST-PRP-040) and red-team test.
+
+## MERGE-PERMIT schema [M5 Sprint 9 amendment 2026-07-06]
+
+Bundle section `merge_permits[]`. Explicit enumeration only — no wildcards,
+no patterns, no cardinality shortcuts at TRL 1-3.
+
+| Field | Constraint |
+|---|---|
+| permit_id | unique within the bundle |
+| permitted_combinations | list of parent-tuple multisets; each entry is an explicit multiset of (classification, domain, caveat) tuples |
+| output_authority | fixed value HWM: the output label is always computed by ARCH-07 invoked by ARCH-08 post-permit; a permit can never assign an output label |
+
+`covers(request)` is true iff the request's parent-tuple multiset EXACTLY
+matches one enumerated entry in `permitted_combinations` (RT-M5S9-01: a
+combination [T1, T2] does not cover [T1, T1] or [T2, T2]; duplicate-tuple
+merges [T, T] are legal only when explicitly enumerated). There is no
+max_parents field: each combination fixes its own cardinality (architect
+disposition + lead concurrence 2026-07-06). RULE-POL-002 text and semantics
+are unchanged; this schema defines the data it evaluates. Trace:
+FCE-REQ-KRN-011, FCE-REQ-KRN-012.
 
 ## Conflict resolution
 

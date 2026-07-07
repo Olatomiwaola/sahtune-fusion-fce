@@ -70,8 +70,11 @@ open non-blocking, carried forward:
   staleness / anti-replay (RC-004 unexercised; emission test at M7, substantive fix H4);
   includes missing-requirement flag → requirements-traceability-engineer
   (freshness/anti-replay candidate row, ties to H4).
-- **RT-M3S6-06 → due M5** (owner sensor-fusion-engineer / architect): no-unauthorized-
-  merge is label-coverage only, not parentage (H1, FCE-REQ-KRN-011; freeze-record field 13).
+- **RT-M3S6-06 → design-level closure 2026-07-06** (M5 Sprint 9):
+  FCE-REQ-KRN-012 (RTM v0.5) + fusion-kernel spec §1 (kernel-written
+  parentage, C3 bidirectional G5-entry cross-check, C2 kernel-only ARCH-09
+  linkage write authority). Test closure due Sprint 10 (EVD-M5: V3, V4, V7).
+  H1 design-level discharge recorded; H1 test closure follows EVD-M5.
 RT-M3S6-01 FIXED pre-commit (EVD-M3 full-suite tail, f48229e); RT-M3S6-04 disclosed
 (placeholder bundle signature; real root-of-trust is H6, TRL 4-5).
 
@@ -86,6 +89,15 @@ FCE-DR-AUD-001 and FCE-DR-SCH-004 RATIFIED 2026-07-06 (architect + red-team
 + lead concurrence recorded in each DR). M4 Sprint 8 (EVD-M4): the RT-M4S7-03
 (detail-ID replay poisoning) and RT-M4S7-04 (per-class sentinel legality) test
 hooks landed as T11 and T7; FU-M4S7-1/-2/-3 CLOSED.
+
+M5 Sprint 9 red-team findings
+(`docs/06_security/red_team_findings/RT-M5S9.md`), all dispositioned
+2026-07-06 (architect + lead concurrence), none blocking: RT-M5S9-01 (Med,
+permitted_combinations exact-multiset semantics, max_parents dropped);
+-02/-03/-04/-05 (Low, absorbed into fusion spec + V7 + Sprint 10 hooks);
+-06 (wording, fixed). SEC-M5S9-01 (Med) mitigated by C3. Conditions C1–C3
+accepted 2026-07-06. Sprint 10 test obligations: RT-M5S9-01/-02/-03/-05
+hooks + V1–V7 (EVD-M5).
 
 RT-M2S3-03 and RT-M2S3-04 are resolved (see `docs/06_security/red_team_findings/RT-M2S3.md`);
 FCE-DR-SCH-003 recorded in `docs/12_decision_records/`. **RT-M2S4-03 (reason-code

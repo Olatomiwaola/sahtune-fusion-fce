@@ -1,4 +1,4 @@
-# 03 — Requirements Traceability Matrix (RTM) v0.4 (M4 Sprint 7: FCE-REQ-ING-011 added per RT-M3S6-05 missing-requirement flag; v0.3 = M3 Sprint 5 FCE-REQ-SEC-002; v0.2 = M1 Sprint 2 corrections RU-02..RU-04 per EVD-M1)
+# 03 — Requirements Traceability Matrix (RTM) v0.5 (M5 Sprint 9: FCE-REQ-KRN-012 added — ARCH-08 sole fusion authority + kernel-recorded parentage, discharging H1/RT-M3S6-06; V1–V7 Test/Evidence mapping; v0.4 = M4 Sprint 7: FCE-REQ-ING-011 added per RT-M3S6-05 missing-requirement flag; v0.3 = M3 Sprint 5 FCE-REQ-SEC-002; v0.2 = M1 Sprint 2 corrections RU-02..RU-04 per EVD-M1)
 
 Owner: `requirements-traceability-engineer`. Skill: `fce-requirements-traceability`.
 
@@ -77,7 +77,8 @@ Sprint 2.
 | FCE-REQ-KRN-001 | The FCE shall render a recorded policy decision for every object before that object is released to downstream analytics. | FCE-ESS-01 | CAP-02 | ARCH-03, ARCH-04, G4 | integration test, property-based test | Every object has a policy decision before downstream release; any object without a recorded decision is blocked from release and produces an audit event. | TST-INT-001 / EVD-001 | draft |
 | FCE-REQ-POL-001 | The FCE shall render policy decisions deterministically, such that identical inputs under identical policy-bundle version yield identical decisions. | FCE-ESS-01 | CAP-02 | ARCH-03 | property-based test | Repeated evaluation of identical object, PIP attributes, and policy bundle version produces the same decision, reason code, and enforcement action. | TST-PRP-001 | draft |
 | FCE-REQ-KRN-002 | AI components shall be advisory only; no enforcement decision shall depend solely on AI output, and every decision shall cite at least one deterministic rule ID. | FCE-ESS-01 | CAP-07 | ARCH-08 | inspection, red-team test | Each enforcement decision cites deterministic rule ID(s); disabling advisory AI cannot convert a deny/block/quarantine into a permit. | TST-RED-001 | draft |
-| FCE-REQ-KRN-011 | The FCE shall not merge, fuse, or correlate objects whose combined classification, domain, and release-caveat tuple lacks an explicit covering permit in the active policy bundle; a blocked merge attempt shall segregate the input objects and emit an audit event. | FCE-ESS-01, FCE-ESS-02 | CAP-06 | ARCH-08, G5 | property-based test, red-team test | No fused object exists whose parent label tuple lacked a covering permit; every attempted unauthorized merge results in a segregate disposition with RC-003 and an audit event; operator override cannot relax the block (B2); derived objects from permitted merges carry high-water-mark labels and full parent linkage. | TST-PRP-051 / TST-RED-051 | draft |
+| FCE-REQ-KRN-011 | The FCE shall not merge, fuse, or correlate objects whose combined classification, domain, and release-caveat tuple lacks an explicit covering permit in the active policy bundle; a blocked merge attempt shall segregate the input objects and emit an audit event. | FCE-ESS-01, FCE-ESS-02 | CAP-06 | ARCH-08, G5 | property-based test, red-team test | No fused object exists whose parent label tuple lacked a covering permit; every attempted unauthorized merge results in a segregate disposition with RC-003 and an audit event; operator override cannot relax the block (B2); derived objects from permitted merges carry high-water-mark labels and full parent linkage. | TST-PRP-051 / TST-RED-051 / EVD-M5 (V1, V2; RT-M5S9-01/-02/-03 hooks) | draft |
+| FCE-REQ-KRN-012 | The FCE shall construct fused or derived objects only within the Fusion Compliance Kernel (ARCH-08), which shall record parent linkage exclusively from its actual evaluated input set; a derived-type object presented at G5 whose parentage is not kernel-recorded in the provenance graph, or an object recorded in the provenance graph as a derivation output that does not present as a derived type with matching parentage, shall be quarantined and shall emit an audit event. | FCE-ESS-01, FCE-ESS-04 | CAP-06 | ARCH-08, ARCH-09, G5 | property-based test, red-team test | No fused or derived object exists whose parent linkage was not written by ARCH-08 from its evaluated input set; a caller-supplied or self-declared parentage claim, in either cross-check direction, is quarantined at G5 entry with the unrecorded_parentage detection flag and an audit event; ARCH-07 computes output labels only as a function invoked by ARCH-08 post-permit (single label writer). | TST-PRP-052 / TST-RED-052 / EVD-M5 | draft |
 
 ### FCE-ESS-02 — Enforcement across modalities, domain, and handling level
 
@@ -92,7 +93,7 @@ Sprint 2.
 | Req ID | Requirement (full text) | Source | Capability | Design element | Verification | Acceptance criteria | Test/Evidence | Status |
 |---|---|---|---|---|---|---|---|---|
 | FCE-REQ-KRN-010 | The FCE shall perform compliance checks at ingestion and at fusion and shall auto-disposition predefined policy conditions without human approval. | FCE-ESS-03 | CAP-02 | ARCH-04, G4, G5 | integration test | Predefined policy conditions at ingestion and fusion receive automatic permit/restrict/block/quarantine disposition without human approval, and each disposition is audited. | TST-INT-011 | draft |
-| FCE-REQ-POL-012 | The FCE shall default-deny and fail closed when a condition is not predefined or is ambiguous, enqueuing the object for human review. | FCE-ESS-03 | CAP-02 | ARCH-03 | property-based test, red-team test | Ambiguous, undefined, or conflicting policy conditions never produce permit-by-default; the object is denied/quarantined and queued for review with RC-005 or a more specific reason code. | TST-PRP-012 | draft |
+| FCE-REQ-POL-012 | The FCE shall default-deny and fail closed when a condition is not predefined or is ambiguous, enqueuing the object for human review. | FCE-ESS-03 | CAP-02 | ARCH-03 | property-based test, red-team test | Ambiguous, undefined, or conflicting policy conditions never produce permit-by-default; the object is denied/quarantined and queued for review with RC-005 or a more specific reason code. | TST-PRP-012 / EVD-M5 (V5; RT-M5S9-05 hook) | draft |
 | FCE-REQ-ING-011 | The FCE shall evaluate every object's acquisition timestamp for freshness against a defined staleness policy and shall fail closed with reason code RC-004 on stale or unverifiable timestamps; timestamp trust is bounded by the available clock source, and trusted/attested time is tracked separately (H4). | FCE-ESS-03 | CAP-02 | ARCH-03, G4 | unit test, red-team test | A stale or unverifiable acquisition timestamp under the defined staleness policy yields a fail-closed disposition with RC-004 and an audit event; no stale object reaches fusion; the staleness policy and clock source are recorded in the decision record. TRL 1-3 demonstration uses the injected clock; no trusted-time claim (H4 open). | TST-UNT-030 / EVD-M7 | draft |
 
 ### FCE-ESS-04 — Provenance for all ingested and produced data
@@ -100,7 +101,7 @@ Sprint 2.
 | Req ID | Requirement (full text) | Source | Capability | Design element | Verification | Acceptance criteria | Test/Evidence | Status |
 |---|---|---|---|---|---|---|---|---|
 | FCE-REQ-PRV-001 | The FCE shall record provenance for every ingested and produced object, including source sensor ID, classification markings, timestamps, and domain of origin. | FCE-ESS-04 | CAP-04 | ARCH-09 | unit test, integration test | Every ingested and produced object has provenance fields for source sensor ID, project-taxonomy classification label, timestamp(s), and domain of origin. | TST-INT-040 | draft |
-| FCE-REQ-PRV-002 | The FCE shall preserve provenance across transformation and fusion by linking each derived object to all parent objects. | FCE-ESS-04 | CAP-04 | ARCH-09, ARCH-07 | property-based test | Every transformed or fused object records all parent object IDs; replay of lineage reaches original ingested objects without orphaned derived outputs. | TST-PRP-040 | draft |
+| FCE-REQ-PRV-002 | The FCE shall preserve provenance across transformation and fusion by linking each derived object to all parent objects. | FCE-ESS-04 | CAP-04 | ARCH-09, ARCH-07 | property-based test | Every transformed or fused object records all parent object IDs; replay of lineage reaches original ingested objects without orphaned derived outputs. | TST-PRP-040 / EVD-M5 (V1) | draft |
 
 ### FCE-ESS-05 — Audit logs of rules, actions, and dispositions
 
@@ -140,7 +141,7 @@ Sprint 2.
 | Req ID | Requirement (full text) | Source | Capability | Design element | Verification | Acceptance criteria | Test/Evidence | Status |
 |---|---|---|---|---|---|---|---|---|
 | FCE-REQ-OPS-001 | The FCE should present a human-readable explanation for each decision, including the rules applied, the attributes consumed, and the reason code. | FCE-DES-04 | CAP-10 | ARCH-13 | inspection, integration test | Each decision explanation lists rule ID(s), attributes consumed, decision, disposition, and reason code in human-readable form. | TST-EXP-001 | draft |
-| FCE-REQ-OPS-002 | Operator override shall require authenticated authority, a reason code, a time limit, and an audit signature placeholder; override lacking any precondition shall be rejected fail-closed. | FCE-DES-04 | CAP-10 | ARCH-13, ARCH-10 | red-team test, integration test | Override is accepted only when all preconditions are present and cannot relax the no-unauthorized-merge invariant or a cross-domain block (B2); missing preconditions fail closed. | TST-RED-002 | draft |
+| FCE-REQ-OPS-002 | Operator override shall require authenticated authority, a reason code, a time limit, and an audit signature placeholder; override lacking any precondition shall be rejected fail-closed. | FCE-DES-04 | CAP-10 | ARCH-13, ARCH-10 | red-team test, integration test | Override is accepted only when all preconditions are present and cannot relax the no-unauthorized-merge invariant or a cross-domain block (B2); missing preconditions fail closed. | TST-RED-002 / EVD-M5 (V6; RT-M5S9-05 hook) | draft |
 
 ### Cross-cutting security
 
@@ -169,6 +170,13 @@ freshness / anti-replay was previously traced by proxy through
 FCE-REQ-POL-001 and the RC-004 registry entry with no owning row. Its
 test-emission obligation remains due M7; trusted time remains H4. RTM row
 count is now 24.
+
+FCE-REQ-KRN-012 was added 2026-07-06 (M5 Sprint 9, RTM v0.5): H1 and
+RT-M3S6-06 (no-unauthorized-merge enforced as label-coverage only, not
+verified parentage) had no owning row and were traced by proxy through
+FCE-REQ-KRN-011 and FCE-REQ-PRV-002. Design-level discharge is the M5
+fusion-kernel spec; test closure is Sprint 10 (EVD-M5). RTM row count is
+now 25.
 
 ## M1 Sprint 1 handoff status
 

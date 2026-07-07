@@ -17,7 +17,7 @@ and accelerated (GPU) paths. Every gate fails closed and emits an audit event.
 | G2 | Metadata completeness and schema validation | All 15 mandatory metadata fields present and well-formed | Reject object missing or malformed metadata | ingestion |
 | G3 | Classification, domain, and caveat resolution and integrity | Labels valid in project taxonomy; integrity hash matches; timestamp fresh | Quarantine on invalid/expired/ambiguous label | transformation |
 | G4 | Policy decision (PDP) | PDP returns an explicit permit or restriction under default-deny, using only authenticated, integrity-verified PIP attributes (B1) | Deny/quarantine; enqueue human review on ambiguity; fail closed on any unverifiable PIP attribute, RC-008 (B1) | policy decision |
-| G5 | Cross-domain merge / no-unauthorized-merge | Fusion association has an explicit permit; high-water-mark labelling applied | Block merge; segregate inputs | fusion decision |
+| G5 | Cross-domain merge / no-unauthorized-merge | Fusion association has an explicit covering combination in the active bundle (docs/07 MERGE-PERMIT); kernel-recorded parentage cross-checked against ARCH-09 in both directions (C3); high-water-mark labelling applied by ARCH-07 invoked by ARCH-08 post-permit | Block merge; segregate inputs (RC-003). Parentage cross-check mismatch or mixed pinned bundle versions → quarantine (RC-001 path with unrecorded_parentage flag / RC-005 with review queue respectively) | fusion decision |
 | G6 | Enforcement and transformation action | Disposition applied (transform, route, downgrade-with-proof, quarantine); operator override acts only within an already-permitted envelope and cannot relax a G5 no-unauthorized-merge or cross-domain block (B2) | Fail closed if action or authority invalid | routing / quarantine / downgrade |
 | G7 | Audit commit and release/export control | Audit record appended to chain; export manifest generated if releasing | Halt release if audit write fails (audit loss = fail-closed) | export / override |
 
@@ -69,7 +69,7 @@ decision authority and cannot shortcut any gate (see `13`).
 ## Requirement trace
 
 G1 to FCE-REQ-ING-010; G2 to FCE-REQ-MET-010; G3 to FCE-REQ-POL-011; G4 to
-FCE-REQ-KRN-001, FCE-REQ-POL-012; G5 to FCE-REQ-KRN-010; G6 to FCE-REQ-OPS-002
+FCE-REQ-KRN-001, FCE-REQ-POL-012; G5 to FCE-REQ-KRN-010, FCE-REQ-KRN-011, FCE-REQ-KRN-012; G6 to FCE-REQ-OPS-002
 (override/downgrade); G7 to FCE-REQ-AUD-001, FCE-REQ-EXP-001.
 
 ## Facts / Assumptions / Judgment / Uncertainty

@@ -12,7 +12,7 @@ Owner: `fce-lead-systems-architect`. Reviewed under `fce-secure-architecture-rev
 | ARCH-04 | Policy Enforcement Points (PEP) | Apply PDP disposition at each gate |
 | ARCH-05 | Policy Administration Point (PAP) and Bundle Store | Signed, versioned policy bundles; hot-reload with rollback |
 | ARCH-06 | Policy Information Point (PIP) | Supply attributes: mission, user, sensor, classification, domain, caveat, time, network state |
-| ARCH-07 | Label Propagation Engine | High-water-mark labelling for merged and derived objects |
+| ARCH-07 | Label Propagation Engine | High-water-mark labelling for merged and derived objects. Pure function invoked only by ARCH-08 post-permit (C1, 2026-07-06): executes in ARCH-08's trust domain; deterministic; side-effect-free (no I/O, no state); invocable by no component other than ARCH-08. ARCH-08 via ARCH-07 is the single writer of output labels. |
 | ARCH-08 | Fusion Compliance Kernel | Deterministic gate around fusion; no-unauthorized-merge (G5) |
 | ARCH-09 | Provenance and Lineage Graph Store | Record and preserve provenance and parent linkage |
 | ARCH-10 | Audit Chain Writer | Append-only, hash-chained audit records (G7) |
@@ -38,6 +38,12 @@ Every pair below is mutually untrusted until authenticated and authorized:
 - Audit store to all writers (append-only; no delete/update path).
 - ARCH-14 accelerator to core: data-only handoff; never a decision authority.
 - Update mechanism to any element (signed, verified, rollback-capable).
+- ARCH-07 to ARCH-08 (C1): ARCH-07 is in-kernel — its code integrity is
+  kernel integrity; the former service-pair boundary is collapsed to a
+  caller/callee contract with the four stated properties.
+- ARCH-09 fusion parent-link records (C2): writable only by ARCH-08.
+  Kernel-only write authority for fusion linkage is an explicit trust
+  boundary; the G5-entry cross-check depends on it.
 
 ## Deployment view [ASSUMPTION — pending OPEN-03]
 
@@ -55,8 +61,8 @@ flowchart LR
   PIP[ARCH-06 PIP] --> PDP
   PAP[ARCH-05 PAP\nsigned bundles] --> PDP
   PDP --> PEP[ARCH-04 PEP]
-  PEP --> LBL[ARCH-07 Label Propagation\nhigh-water mark]
-  LBL --> KRN[ARCH-08 Fusion Compliance Kernel\nG5 no-unauthorized-merge]
+  PEP --> KRN[ARCH-08 Fusion Compliance Kernel\nG5 no-unauthorized-merge]
+  KRN -. post-permit call .-> LBL[ARCH-07 Label Propagation\nhigh-water mark]
   KRN --> EXP[ARCH-11 Export/Release\nmanifest]
   KRN --> PRV[ARCH-09 Provenance Store]
   PEP --> AUD[ARCH-10 Audit Chain\nG7 append-only]
@@ -83,5 +89,5 @@ every decision emits audit; degraded mode is fail-closed.
 
 - Facts: zero-trust invariant; gate-ordering requirement.
 - Assumptions: edge deployment target and topology (OPEN-03).
-- Judgment: the 14-element decomposition and boundary placement.
+- Judgment: the 14-element decomposition and boundary placement; ARCH-07 pure-function demotion (C1, M5 Sprint 9).
 - Uncertainty: final topology of higher-side cross-domain services.
