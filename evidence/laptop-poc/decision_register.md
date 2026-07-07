@@ -19,3 +19,36 @@ edit. FCE-DR-POC-001…007 remain open until approved before M2 Sprint 2.
 Facts: register structure and DR-POC-001…007 definitions are drawn verbatim
 from `16` §2. Judgment: FCE-DR-SCH-001/002 dispositions. Uncertainty: leadership
 ratification pending for all entries marked OPEN or "ratify".
+
+**Reconciliation 2026-07-07 (M6 open, lead concurrence in-chat; append-only — original rows above retained unmodified):**
+
+- FCE-DR-SCH-001 / -002: RATIFIED M2 Sprint 3 per the standalone records in
+  `docs/12_decision_records/`; the "ratify at M2 Sprint 1" rows above are
+  superseded by those files, which are authoritative.
+- FCE-DR-POC-001: PARTIALLY RESOLVED — source families fixed by leadership
+  decision #6 (2026-07-07): USGS (OSD-01) + Sentinel-2 STAC (OSD-04). Query
+  windows/AOI finalize in the trim manifest at Sprint 11/12, recorded before
+  download.
+- FCE-DR-POC-002: RESOLVED — envelope v0.2.0 per FCE-DR-SCH-002.
+- FCE-DR-POC-003: OPEN — split decided (70/30 stratified, keyed on stable source
+  record IDs, lead concurrence 2026-07-07); seed to be minted blind and committed
+  at Sprint 11 close, before any data download. The Sprint 11 mint deliberately
+  supersedes this row's "set at M6 Sprint 2" (= Sprint 12) target: early, not
+  conflicting.
+- FCE-DR-POC-004: OPEN — milestone corrected: the original "set at M3 Sprint 2"
+  target is stale; the pinned held-out bundle version is recorded in the Sprint 12
+  seal record alongside fixture hashes (lead concurrence 2026-07-07).
+- FCE-DR-POC-005: OPEN, unchanged — register target "ratify before M7 Sprint 2"
+  stands; pass/fail candidate is docs/16 criteria 1–10; ratify at M7 Sprint 13
+  (V&V plan).
+- FCE-DR-POC-006: RESOLUTION PROPOSED (due before Sprint 12 per its own register
+  target) — evidence write rules = working convention rule 9 (RATIFIED
+  2026-07-07) + docs/16 §3 prior-artifact seal; sealed-artifact locations =
+  docs/16 fixture-and-evidence layout (`data/fixtures/heldout/`,
+  `evidence/laptop-poc/`). Ratify at Sprint 11 close, before any fixture build.
+- FCE-DR-POC-007: RESOLVED — leadership decision #5 (2026-07-03): Python 3.12.13
+  + pinned pytest 9.1.0, stdlib-first, installs by approval only.
+- Note: `docs/12_decision_records/fce-dr-sch-001.md` states this register "does
+  not exist as a standalone record at HEAD 5dd2a10"; the register file did exist —
+  the defensible reading is that no standalone DR *file* existed at that HEAD.
+  Clarified here; the ratified DR file itself is not edited.
