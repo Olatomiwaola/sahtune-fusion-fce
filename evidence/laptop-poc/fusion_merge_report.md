@@ -143,3 +143,17 @@ HOLD 1 RELEASED: fusion/permits.py exact-multiset covers(); M3 evaluator delegat
 ## Annotation 2026-07-07 (HOLD 1 semantic-preservation line, canonical)
 
 HOLD 1 RELEASED: fusion/permits.py exact-multiset covers(); M3 evaluator delegates merge coverage to it, old-shape logic REMOVED (no fallback, no adapter); bundle fixture rewritten to permit_id / permitted_combinations / output_authority=HWM; tests/policy/test_rule_pol_002 updated, semantics unchanged.
+
+## Annotation 2026-07-07 — HOLD 1 canonical evidence line (supersedes both prior HOLD 1 entries)
+
+The line-128 entry (committed 42b70c9) and the first annotation (committed
+3819be0) both contain release-directive text from the chat instruction
+block, not evidence content. Both are retained unaltered per convention 3;
+this annotation supersedes both as the HOLD 1 record. The directive text's
+reference to "tests/policy/test_rule_pol_002" is category shorthand — the
+actual file is tests/policy/test_rules_001_003.py (mapping ratified in-chat
+2026-07-06).
+
+The 98 includes tests/policy/test_rules_001_003.py::test_tst_pol_002_cross_domain_merge_blocked,
+updated to the MERGE-PERMIT permitted_combinations shape (HOLD 1) with semantics
+unchanged (differing-domain pair, no covering combination → block, RC-003) — PASS.
