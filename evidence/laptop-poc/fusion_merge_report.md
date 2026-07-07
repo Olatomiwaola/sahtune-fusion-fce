@@ -139,3 +139,7 @@ HOLD 1 RELEASED: fusion/permits.py exact-multiset covers(); M3 evaluator delegat
 - UNCERTAINTY (open, disclosed): H4 trusted time, H6 anchoring, H7 concurrency, H8
   cross-version resolution; combination-enumeration scale at M6 (DR if it breaks);
   G5-entry cross-check cost (TARGET only, M8).
+
+## Annotation 2026-07-07 (HOLD 1 semantic-preservation line, canonical)
+
+HOLD 1 RELEASED: fusion/permits.py exact-multiset covers(); M3 evaluator delegates merge coverage to it, old-shape logic REMOVED (no fallback, no adapter); bundle fixture rewritten to permit_id / permitted_combinations / output_authority=HWM; tests/policy/test_rule_pol_002 updated, semantics unchanged.
