@@ -105,6 +105,19 @@ def test_fu_m4s8_1_downgrade_requiredness():  # FU-M4S8-1 (docs/08 downgrade mat
             "downgrade", event_detail={"authority_ref": "auth-1"})))
 
 
+def test_m5s10_quarantine_detection_flags_validate():  # M5 Sprint 10 (docs/08 amendment)
+    validate_record_body(new_record(**valid_body(
+        "quarantine", event_detail={"review_queue_ref": "q1", "detection_flags": ["mixed_bundle_versions"]})))
+    validate_record_body(new_record(**valid_body(
+        "quarantine", event_detail={"review_queue_ref": "q1", "detection_flags": ["unrecorded_parentage"]})))
+
+
+def test_m5s10_quarantine_unknown_detail_still_refused():  # M5 Sprint 10 (unknown-field refusal intact)
+    with pytest.raises(RecordValidationError):
+        validate_record_body(new_record(**valid_body(
+            "quarantine", event_detail={"review_queue_ref": "q1", "bogus_field": 1})))
+
+
 def test_t14_duplicate_object_id_quarantine_path(tmp_path):  # T14 traces FCE-DR-SCH-004 D5
     body = new_record(**valid_body(
         "ingestion", disposition="quarantine", enforcement_action="quarantine",

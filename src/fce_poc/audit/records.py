@@ -53,7 +53,7 @@ DETAIL_SCHEMA = {
     },
     "fusion-decision": {"required": set(), "optional": {"merge_permit_ref", "rc003_context"}},
     "routing": {"required": {"destination_domain"}, "optional": set()},
-    "quarantine": {"required": {"review_queue_ref"}, "optional": set()},
+    "quarantine": {"required": {"review_queue_ref"}, "optional": {"detection_flags"}},
     "downgrade": {"required": {"authority_ref", "transformation_proof_ref"}, "optional": set()},
     "export": {"required": {"manifest_ref", "record_range", "manifest_sha256"}, "optional": set()},
     "override": {

@@ -38,7 +38,7 @@ Plus `event_detail`: closed per-class typed object; unknown fields refused fail-
 | policy-decision | pip_attributes_consumed, detection_flags, deterministic_evaluation | — |
 | fusion-decision | — | merge_permit_ref, rc003_context |
 | routing | destination_domain | — |
-| quarantine | review_queue_ref | — |
+| quarantine | review_queue_ref | detection_flags (M5 Sprint 10; fusion mixed_bundle_versions / unrecorded_parentage) |
 | downgrade | authority_ref, transformation_proof_ref | — |
 | export | manifest_ref, record_range, manifest_sha256 | — |
 | override | precondition_results, envelope_check, override_immutable_check | — |

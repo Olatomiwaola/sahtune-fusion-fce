@@ -119,8 +119,12 @@ The kernel requires all parents in a MergeRequest to carry the same pinned
 bundle version. A mixed-version request is an ambiguous condition — which
 law governs is undecidable — and quarantines with RC-005 and human review
 (FCE-REQ-POL-012 path; NOT a block), with detection flag
-`mixed_bundle_versions` recorded in the policy-decision
-`event_detail.detection_flags` (a required field since M5-01, 715daee).
+`mixed_bundle_versions` recorded in the quarantine-class record's
+`event_detail.detection_flags` (optional field added by the M5 Sprint 10 docs/08
+amendment). Correction 2026-07-06 (lead concurrence, no new DR): the flag lives on
+the quarantine-class record's `detection_flags`, not on a fabricated
+policy-decision record; the same routing applies to the §1 `unrecorded_parentage`
+cross-check flag.
 
 ENGINEERING JUDGMENT: same-version-only is a deterministic TRL 1-3
 narrowing, not a resolution of H8. H8 (general cross-object bundle-version

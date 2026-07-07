@@ -99,6 +99,14 @@ permitted_combinations exact-multiset semantics, max_parents dropped);
 accepted 2026-07-06. Sprint 10 test obligations: RT-M5S9-01/-02/-03/-05
 hooks + V1–V7 (EVD-M5).
 
+M5 Sprint 10 amendments (2026-07-06, lead concurrence, no new DR, executed in the
+Sprint 10 commit): (1) docs/18 §5 corrected — the `mixed_bundle_versions` /
+`unrecorded_parentage` flags are recorded on the quarantine-class record's
+`event_detail.detection_flags`, not on a fabricated policy-decision record; (2) docs/08
+quarantine `event_detail` gains an OPTIONAL `detection_flags` field (schemas/audit mirror
++ records.py), unknown-field refusal unchanged. RT-M3S6-06 / H1 reach test closure
+(V3/V4/V7, EVD-M5).
+
 RT-M2S3-03 and RT-M2S3-04 are resolved (see `docs/06_security/red_team_findings/RT-M2S3.md`);
 FCE-DR-SCH-003 recorded in `docs/12_decision_records/`. **RT-M2S4-03 (reason-code
 registry consistency) → RESOLVED** by the closed RC-001..012 registry + consistency check

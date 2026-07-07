@@ -8,7 +8,7 @@ no network. Clock is injected (H4); PIP auth flags are mechanism-simulated (H3/H
 
 from .actions import ACTIONS, SEVERITY_ORDER, most_restrictive
 from .attributes import InjectedClock, PIPAttribute, all_attributes_valid
-from .bundle import PolicyBundle, bundle_is_valid, covers_merge, load_bundle
+from .bundle import PolicyBundle, bundle_is_valid, load_bundle
 from .evaluator import evaluate, record_canonical, record_hash
 from .override import OverrideRequest, override_valid, time_limit_valid
 from .reason_codes import REASON_CODES, ReasonCode, is_override_immutable
@@ -22,7 +22,6 @@ __all__ = [
     "all_attributes_valid",
     "PolicyBundle",
     "bundle_is_valid",
-    "covers_merge",
     "load_bundle",
     "evaluate",
     "record_canonical",

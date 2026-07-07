@@ -26,7 +26,9 @@ def test_tst_pol_002_cross_domain_merge_blocked(make_request, bundle, clock, res
         {"object_id": "in-b", "classification_label": "PROJ-LEVEL-2", "domain_label": "DOMAIN-B", "release_caveat": ["PROJ-CAVEAT-X"]},
     ]
     rec = _ev(make_request(inputs=inputs), bundle, clock, resolvable_classifications)
-    # DOMAIN-B input is covered by no merge permit -> block + RC-003 dominates the lattice.
+    # No merge_permits combination exactly matches this cross-domain tuple multiset
+    # (M5 Sprint 10: coverage delegated to fusion.permits.covers, exact-multiset) ->
+    # block + RC-003 dominates the lattice.
     assert rec["disposition"] == "block"
     assert "RC-003" in rec["reason_codes"]
     assert "RULE-POL-002" in rec["rules_fired"]

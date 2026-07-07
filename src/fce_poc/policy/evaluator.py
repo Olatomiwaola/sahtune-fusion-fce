@@ -20,7 +20,8 @@ import json
 
 from .actions import most_restrictive
 from .attributes import InjectedClock, all_attributes_valid, failing_attribute_ids
-from .bundle import PolicyBundle, bundle_is_valid, covers_merge
+from .bundle import PolicyBundle, bundle_is_valid
+from fce_poc.fusion.permits import covers as merge_covers, tuples_from_objects
 
 ALLOWED_DATA_ORIGINS = frozenset({"SYNTHETIC", "SYNTHETIC-DERIVED", "PUBLIC-OPEN-SOURCE"})
 
@@ -148,7 +149,7 @@ def evaluate(
     # RULE-POL-002 — cross-domain merge without covering permit.
     inputs = request.get("inputs")
     if inputs:
-        if not covers_merge(bundle, inputs):
+        if not merge_covers(tuples_from_objects(inputs), bundle.merge_permits):
             rules_fired.append("RULE-POL-002")
             reason_codes.append("RC-003")
             dispositions.append("block")

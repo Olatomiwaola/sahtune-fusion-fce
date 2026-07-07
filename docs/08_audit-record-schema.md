@@ -66,7 +66,9 @@ envelope). Detail sub-schemas are part of schema v1:
 - **fusion-decision**: merge-permit reference (permitted) or RC-003 context
   (blocked).
 - **routing**: destination domain.
-- **quarantine**: review-queue reference.
+- **quarantine**: review-queue reference; OPTIONAL `detection_flags` (M5 Sprint 10
+  amendment — carries `mixed_bundle_versions` / `unrecorded_parentage` for the
+  fusion quarantine outcomes, docs/18 §1/§5). Unknown detail fields still refused.
 - **downgrade**: authority reference + transformation-proof reference.
 - **export**: manifest reference, record range, and the manifest's own
   sha-256 (architect addition 2026-07-06: the chain binds manifest content,
@@ -104,6 +106,13 @@ Amendment 2026-07-06 (FU-M4S8-1, closed): the `downgrade` row was added to the
 matrix above (previously absent — the Sprint 8 PoC supplied it by engineering
 judgment), and policy-decision `event_detail` is now REQUIRED (D4 atomic
 emission). The M4 writer/validator enforces both; regression tests added.
+
+Amendment 2026-07-06 (M5 Sprint 10, lead concurrence — no new DR): quarantine
+`event_detail` gains an OPTIONAL `detection_flags` field so the fusion quarantine
+outcomes (mixed pinned bundle versions → `mixed_bundle_versions`; parentage
+cross-check mismatch → `unrecorded_parentage`, docs/18 §1/§5) record their flag on
+the quarantine-class record itself. No policy-decision record is fabricated for
+these; unknown-field refusal is unchanged.
 
 ## Hash chain and append-only semantics
 

@@ -43,21 +43,6 @@ def bundle_is_valid(bundle: PolicyBundle, pinned_version: str) -> bool:
     return bundle.signature_ok and bundle.version == pinned_version
 
 
-def covers_merge(bundle: PolicyBundle, inputs) -> bool:
-    """True iff some merge_permit covers the combined labels of all inputs.
-
-    An input is covered by a permit when its classification/domain/caveats all
-    fall within that permit's sets (docs/07 no-unauthorized-merge invariant).
-    """
-    for permit in bundle.merge_permits:
-        classes = set(permit.get("classifications", []))
-        domains = set(permit.get("domains", []))
-        caveats = set(permit.get("caveats", []))
-        if all(
-            obj.get("classification_label") in classes
-            and obj.get("domain_label") in domains
-            and set(obj.get("release_caveat", [])) <= caveats
-            for obj in inputs
-        ):
-            return True
-    return False
+# covers_merge removed (M5 Sprint 10): merge coverage is delegated to
+# fce_poc.fusion.permits.covers (exact-multiset match, docs/18 §4 / docs/07
+# MERGE-PERMIT). No old-shape (label-subset) logic, no fallback, no adapter.
