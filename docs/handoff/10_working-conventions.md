@@ -32,6 +32,13 @@ Project working conventions (learned M2–M3).
    verifies clean. A verification instrument whose readings cannot be
    trusted is itself a fail-closed trigger. (Ratified 2026-07-06, M5 open:
    architect recommendation + lead concurrence recorded in-chat.)
+9. (PROPOSED — M6-open agenda, not ratified) Evidence-append protocol:
+   EVD-* files receive only chat-authored evidence content, quoted verbatim
+   in a dedicated append instruction; the exact append body is read back
+   raw to chat and confirmed BEFORE the commit; release directives, delta
+   blocks, and process language never enter EVD-* files. (Motivated by the
+   M5 incidents: EVD-M4 unauthored annotation attempt; EVD-M5
+   directive-text appends at 42b70c9/3819be0, superseded by 119bac1.)
 
 DR ratification = role-block review in chat + explicit project-lead
 concurrence, both recorded in the DR or decision record update.

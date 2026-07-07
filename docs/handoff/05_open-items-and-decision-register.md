@@ -9,7 +9,7 @@ Consolidated open inputs, maturity items, and decisions needed. Sources: `00`
 | OPEN-01 | Verbatim DND IDEaS solicitation text supplied and verified against the live Canada.ca page on 2026-07-03 (word-for-word match, all 10 outcomes; RT-M1S1-01 closed); anchors registered in `docs/02` and `docs/03` | M1 Sprint 1 unblocked; GATE-A still requires Sprint 2 coverage audit | M1 Sprint 2 / GATE-A |
 | OPEN-02 | Project-taxonomy → named-handling-level mapping (e.g., Protected B target) | **RESOLVED 2026-07-04**: approach confirmed M2 Sprint 3 (documentation-level reference-only mapping, no real GoC markings); leadership decision #2 approved 2026-07-04. Enumerated registry authoring follows under FU-M2S4-1 | M2 / M3 |
 | OPEN-03 | Edge hardware SKU unconfirmed (Jetson-class assumed) | Benchmarks stay TARGET | TRL 4-5 / M8 |
-| OPEN-04 | Laptop PoC data-source approval: choose at least two public source families from `docs/16_laptop-poc-validation-architecture.md` | Required for source manifest, trim report, calibration/held-out fixture seal, and pre-lab validation evidence | M6 / M7 |
+| OPEN-04 | Laptop PoC data-source approval: choose at least two public source families from `docs/16_laptop-poc-validation-architecture.md` | PARTIALLY RESOLVED 2026-07-07 — leadership decision #6 (in-chat, M5 close): USGS + Sentinel-2 STAC approved as the two public source families. Trim limits, calibration/held-out split, and guard list per docs/16 remain to confirm at M6 Sprint 11 open. | M6 / M7 |
 
 ## B1–B3 (closed in text; test closure deferred)
 | ID | Condition | Status |
@@ -105,7 +105,8 @@ Sprint 10 commit): (1) docs/18 §5 corrected — the `mixed_bundle_versions` /
 `event_detail.detection_flags`, not on a fabricated policy-decision record; (2) docs/08
 quarantine `event_detail` gains an OPTIONAL `detection_flags` field (schemas/audit mirror
 + records.py), unknown-field refusal unchanged. RT-M3S6-06 / H1 reach test closure
-(V3/V4/V7, EVD-M5).
+(V3/V4/V7, EVD-M5). RT-M5S9-01/-02/-03/-05 hooks DISCHARGED 2026-07-07
+(tests/fusion/test_hooks.py, 4/4 PASS, EVD-M5).
 
 RT-M2S3-03 and RT-M2S3-04 are resolved (see `docs/06_security/red_team_findings/RT-M2S3.md`);
 FCE-DR-SCH-003 recorded in `docs/12_decision_records/`. **RT-M2S4-03 (reason-code
@@ -129,6 +130,8 @@ Governance note 2026-07-03: gate ceremony collapsed per docs/handoff/09_governan
    of scope until later approval.
 6. Approve the laptop PoC public data sources, trim limits, calibration/held-out
    split, and guard list in `docs/16` before M6 Sprint 2.
+   Source families DECIDED 2026-07-07 (USGS + Sentinel-2 STAC); remainder
+   (trim limits, split, guard list) confirms at M6 Sprint 11.
 7. Approve any external evaluation activity (e.g., NVIDIA rig) — paper-only until then.
 8. Confirm no external-facing use of any artifact until the red-team claim audit is
    re-run on the final text.
