@@ -41,3 +41,10 @@ exact-multiset covers(), kernel-written parentage, C3 bidirectional
 G5-entry cross-check, segregation and quarantine paths with correct
 detection-flag routing. No production, deployment, performance, or
 accreditation claim. Sprint 14 (M7 held-out validation) completes GATE-D.
+
+GATE-C DECLARED 2026-07-08 (lead): the sealed, guarded, licence-provenanced
+public-source + synthetic fixture package required by docs/16 exists — basis
+EVD-M6 (evidence/laptop-poc/fixture_report.md) at the Sprint 12 close
+commit; seed per FCE-DR-POC-003, bundle pin per FCE-DR-POC-004
+(proj-baseline@0.2.0), locations per FCE-DR-POC-006. TRL 1-3 scope: fixture
+existence and guard function only; enforcement demonstration is M7 (GATE-D).

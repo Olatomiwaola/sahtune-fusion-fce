@@ -1,0 +1,44 @@
+{
+  "_note": "SYNTHETIC policy bundle fixture. signature_placeholder is a PLACEHOLDER only (no crypto; real root-of-trust is H6). Taxonomy values are the docs/07 D6 project-taxonomy families. merge_permits per docs/07 MERGE-PERMIT (permit_id / permitted_combinations exact-multiset / output_authority=HWM). No real Government of Canada markings.",
+  "version": "0.2.0",
+  "signature_placeholder": "valid",
+  "permits": {
+    "MISSION-ALPHA": {
+      "classifications": ["PROJ-LEVEL-1", "PROJ-LEVEL-2"],
+      "domains": ["DOMAIN-A"],
+      "caveats": ["PROJ-CAVEAT-X"]
+    }
+  },
+  "merge_permits": [
+    {
+      "permit_id": "MP-V1-SAME-DOMAIN",
+      "permitted_combinations": [
+        [
+          ["PROJ-LEVEL-1", "DOMAIN-A", ["PROJ-CAVEAT-X"]],
+          ["PROJ-LEVEL-2", "DOMAIN-A", ["PROJ-CAVEAT-X"]]
+        ]
+      ],
+      "output_authority": "HWM"
+    },
+    {
+      "permit_id": "MP-TT-DUP",
+      "permitted_combinations": [
+        [
+          ["PROJ-LEVEL-3", "DOMAIN-A", ["PROJ-CAVEAT-X"]],
+          ["PROJ-LEVEL-3", "DOMAIN-A", ["PROJ-CAVEAT-X"]]
+        ]
+      ],
+      "output_authority": "HWM"
+    },
+    {
+      "permit_id": "MP-S1-15-PUBLIC-PAIR",
+      "permitted_combinations": [
+        [
+          ["PROJ-LEVEL-1", "DOMAIN-A", []],
+          ["PROJ-LEVEL-1", "DOMAIN-A", []]
+        ]
+      ],
+      "output_authority": "HWM"
+    }
+  ]
+}

@@ -190,6 +190,26 @@ only; enforcement demonstration claims are M7's (two-layer harness, sealed
 held-out replay, deterministic-outcome verification, train/serve identity per
 GDR-016, negative results reported verbatim).
 
+### M6 Sprint 12 close (2026-07-08)
+
+Fixture package complete and sealed: source manifest with USGS licence
+provenance chain (R1→R4) and Sentinel-2 supersession record; 208 association
+candidate pairs (widening not fired); 70/30 split under the blind seed
+(POC-003); held-out sealed (aggregate 059829241e527eb1…954ed63e) with pinned
+bundle proj-baseline@0.2.0 (POC-004 RESOLVED; POC-001 RESOLVED); seven
+synthetic variants (GDR-004 clean); 106 tests green; coverage RC 12/12,
+flags 4/4, guards 7/7, conflict items 17/20 (3.1–3.3 runtime → M7 harness).
+EVD-M6 at evidence/laptop-poc/fixture_report.md (rule 9 protocol). Pre-seal
+finding: bundle v0.1.0 lacked caveat-empty merge coverage (item 1.5 would
+have false-negatived); proj-baseline@0.2.0 adds MP-S1-15-PUBLIC-PAIR
+pre-evaluation (lead concurrence 2026-07-08); S4 coverage verifies at
+Sprint 13 with explicit pre-evaluation re-pin as fallback. Process notes:
+M6-05r licence-capture gap remediated (R1→R4, two lead-confirmed hostnames);
+R3 extractor bytes/str bug recovered locally (no extra network); STAC
+slicing artifact corrected by supersession-recorded re-query. Network closed
+final 2026-07-08; approval expired per bound 6. GATE-C DECLARED — see
+docs/handoff/09.
+
 RT-M2S3-03 and RT-M2S3-04 are resolved (see `docs/06_security/red_team_findings/RT-M2S3.md`);
 FCE-DR-SCH-003 recorded in `docs/12_decision_records/`. **RT-M2S4-03 (reason-code
 registry consistency) → RESOLVED** by the closed RC-001..012 registry + consistency check

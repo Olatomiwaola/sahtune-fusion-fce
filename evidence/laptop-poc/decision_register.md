@@ -70,3 +70,16 @@ ratification pending for all entries marked OPEN or "ratify".
   representability demonstrated in docs/07; fixture-level exercise deferred to
   Sprint 13 / M7 V&V planning.
 
+
+**Sprint 12 close 2026-07-08 (append-only; lead concurrence in-chat):**
+
+- FCE-DR-POC-004: RESOLVED — pinned bundle for held-out evaluation =
+  proj-baseline@0.2.0, recorded in the Sprint 12 seal record
+  (evidence/laptop-poc/sprint12_seal.md) alongside the held-out fixture
+  hashes and aggregate digest. Re-pin protocol: explicit, pre-evaluation,
+  recorded; no silent evaluation under a different bundle; no post-seal
+  mutation.
+- FCE-DR-POC-001: RESOLVED (from PARTIALLY RESOLVED) — query windows/AOI
+  finalized and recorded in the source manifest before download; the
+  Sentinel-2 corrective slice-alignment re-query is recorded with verbatim
+  supersession rationale (data/fixtures/source_manifest.json).
