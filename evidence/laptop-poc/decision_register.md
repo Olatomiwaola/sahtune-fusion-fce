@@ -83,3 +83,7 @@ ratification pending for all entries marked OPEN or "ratify".
   finalized and recorded in the source manifest before download; the
   Sentinel-2 corrective slice-alignment re-query is recorded with verbatim
   supersession rationale (data/fixtures/source_manifest.json).
+
+**Sprint 13 open 2026-07-08 (append-only; lead ratification in-chat):**
+
+- FCE-DR-POC-005: RATIFIED — pass/fail validation criteria = docs/16 Pass/Fail criteria 1–10, adopted verbatim. Binding readings recorded at ratification: (1) criterion 6 ("held-out validation runs without changing the policy bundle or thresholds") is satisfied only under the seal re-pin protocol — any re-pin is explicit, pre-held-out (pre-evaluation), recorded, and names a new sealed bundle reference; the sealed proj-baseline@0.2.0 is never mutated in place. (2) Failure of any of criteria 1–10 on the held-out run forces the outcome label "engineering progress; PoC validation gate not passed", never "PoC validated". Ratified at M7 Sprint 13 (V&V plan docs/17 §1); register target "ratify before M7 Sprint 2" met. Trace: docs/16 §Pass/Fail, docs/17_vv-plan.md §1.
