@@ -1,0 +1,10 @@
+{
+  "association_candidate_pairs_after": 208,
+  "association_candidate_pairs_before": 208,
+  "candidate_definition": "epicenter in item bbox AND |dt| <= 7 days",
+  "stac_records": 100,
+  "stac_trimmed_sha256": "ffa9265c1d6b203d6f4a6ffae30fa243624de412a41dc492645f0484d85ffa03",
+  "usgs_records": 200,
+  "usgs_trimmed_sha256": "567810dff5408d801acbfdd0612b216f49810a65bb65c713e61c6e4bd1d12688",
+  "widening": "not fired"
+}

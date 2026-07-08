@@ -118,6 +118,14 @@ def test_m5s10_quarantine_unknown_detail_still_refused():  # M5 Sprint 10 (unkno
             "quarantine", event_detail={"review_queue_ref": "q1", "bogus_field": 1})))
 
 
+def test_m6s12_policydecision_unknown_permitted_channels_refused():  # docs/09 v1 writer-rejection hook (RT-M6S11-01)
+    with pytest.raises(RecordValidationError):
+        validate_record_body(new_record(**valid_body(
+            "policy-decision",
+            event_detail={"pip_attributes_consumed": [], "detection_flags": [],
+                          "deterministic_evaluation": True, "permitted_channels": ["chan-a"]})))
+
+
 def test_t14_duplicate_object_id_quarantine_path(tmp_path):  # T14 traces FCE-DR-SCH-004 D5
     body = new_record(**valid_body(
         "ingestion", disposition="quarantine", enforcement_action="quarantine",

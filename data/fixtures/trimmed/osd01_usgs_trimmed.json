@@ -1,0 +1,2002 @@
+[
+  {
+    "acquisition_timestamp": "2025-06-01T06:49:28Z",
+    "depth": 2.15,
+    "latitude": 35.0908333,
+    "longitude": -119.0868333,
+    "magnitude": 1.7,
+    "record_id": "ci40982247",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-01T06:51:40Z",
+    "depth": 12.23,
+    "latitude": 35.0823333,
+    "longitude": -119.0755,
+    "magnitude": 2.24,
+    "record_id": "ci40982255",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-02T06:04:24Z",
+    "depth": 5.88,
+    "latitude": 37.4173333333333,
+    "longitude": -121.767,
+    "magnitude": 1.67,
+    "record_id": "nc75189911",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-02T12:09:17Z",
+    "depth": 9.18,
+    "latitude": 36.9031666666667,
+    "longitude": -121.507833333333,
+    "magnitude": 1.53,
+    "record_id": "nc75189991",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-02T13:31:19Z",
+    "depth": 6.43,
+    "latitude": 35.4538333333333,
+    "longitude": -120.739666666667,
+    "magnitude": 2.43,
+    "record_id": "nc75190026",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-02T18:27:20Z",
+    "depth": 0.71,
+    "latitude": 36.7095,
+    "longitude": -121.358166666667,
+    "magnitude": 2.01,
+    "record_id": "nc75190156",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-02T20:28:59Z",
+    "depth": 3.85,
+    "latitude": 36.7295,
+    "longitude": -121.374666666667,
+    "magnitude": 1.72,
+    "record_id": "nc75190191",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-02T20:49:38Z",
+    "depth": 5.67,
+    "latitude": 36.0498333333333,
+    "longitude": -120.612833333333,
+    "magnitude": 1.7,
+    "record_id": "nc75190196",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-02T22:38:23Z",
+    "depth": 5.2,
+    "latitude": 36.9713333333333,
+    "longitude": -121.633,
+    "magnitude": 1.77,
+    "record_id": "nc75190246",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-02T23:38:10Z",
+    "depth": 6.86,
+    "latitude": 35.4536666666667,
+    "longitude": -120.7375,
+    "magnitude": 2.98,
+    "record_id": "nc75190256",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-02T23:41:13Z",
+    "depth": 2.11,
+    "latitude": 36.0106666666667,
+    "longitude": -120.575,
+    "magnitude": 1.88,
+    "record_id": "nc75190261",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-03T17:16:16Z",
+    "depth": 5.71,
+    "latitude": 37.0358333333333,
+    "longitude": -121.473,
+    "magnitude": 1.54,
+    "record_id": "nc75190531",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-04T03:24:17Z",
+    "depth": 6.47,
+    "latitude": 36.5961666666667,
+    "longitude": -121.1215,
+    "magnitude": 2.02,
+    "record_id": "nc75190741",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-04T08:03:30Z",
+    "depth": 11.65,
+    "latitude": 35.0851667,
+    "longitude": -119.0845,
+    "magnitude": 2.07,
+    "record_id": "ci41171712",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-05T01:00:49Z",
+    "depth": 8.8,
+    "latitude": 36.7738333333333,
+    "longitude": -121.288333333333,
+    "magnitude": 1.61,
+    "record_id": "nc75191086",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-05T01:01:27Z",
+    "depth": 8.99,
+    "latitude": 36.7743333333333,
+    "longitude": -121.288666666667,
+    "magnitude": 2.49,
+    "record_id": "nc75191091",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-05T01:01:36Z",
+    "depth": 8.63,
+    "latitude": 36.774,
+    "longitude": -121.289,
+    "magnitude": 2.08,
+    "record_id": "nc75003673",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-05T03:00:44Z",
+    "depth": 8.93,
+    "latitude": 36.7755,
+    "longitude": -121.291,
+    "magnitude": 1.99,
+    "record_id": "nc75191136",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-05T16:01:19Z",
+    "depth": 3.41,
+    "latitude": 36.8683333333333,
+    "longitude": -121.503666666667,
+    "magnitude": 1.68,
+    "record_id": "nc75191376",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-06T04:09:40Z",
+    "depth": 11.11,
+    "latitude": 35.8545,
+    "longitude": -120.001666666667,
+    "magnitude": 2.18,
+    "record_id": "nc75191606",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-06T04:55:53Z",
+    "depth": 3.09,
+    "latitude": 36.6756666666667,
+    "longitude": -121.306666666667,
+    "magnitude": 1.51,
+    "record_id": "nc75191626",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-06T05:11:03Z",
+    "depth": 5.18,
+    "latitude": 36.6801666666667,
+    "longitude": -121.299,
+    "magnitude": 1.68,
+    "record_id": "nc75191631",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-06T06:04:54Z",
+    "depth": 5.17,
+    "latitude": 36.6793333333333,
+    "longitude": -121.299166666667,
+    "magnitude": 1.5,
+    "record_id": "nc75191651",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-06T18:07:46Z",
+    "depth": 22.5,
+    "latitude": 37.2866666666667,
+    "longitude": -119.643666666667,
+    "magnitude": 2.03,
+    "record_id": "nc75191886",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-07T06:13:14Z",
+    "depth": 2.92,
+    "latitude": 37.4601666666667,
+    "longitude": -118.818666666667,
+    "magnitude": 1.56,
+    "record_id": "nc75192136",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-07T07:51:15Z",
+    "depth": 6.61,
+    "latitude": 35.7471666666667,
+    "longitude": -121.579666666667,
+    "magnitude": 2.24,
+    "record_id": "nc75192181",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-07T10:37:28Z",
+    "depth": 12,
+    "latitude": 36.457,
+    "longitude": -120.446166666667,
+    "magnitude": 1.81,
+    "record_id": "nc75192216",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-08T00:26:46Z",
+    "depth": 9.17,
+    "latitude": 36.0603333333333,
+    "longitude": -120.202,
+    "magnitude": 1.65,
+    "record_id": "nc75192516",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-08T09:03:32Z",
+    "depth": 8.32,
+    "latitude": 36.9148333333333,
+    "longitude": -121.333666666667,
+    "magnitude": 1.58,
+    "record_id": "nc75192646",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-08T18:23:37Z",
+    "depth": 3.15,
+    "latitude": 35.8235,
+    "longitude": -119.813666666667,
+    "magnitude": 1.75,
+    "record_id": "nc75192831",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-08T19:05:15Z",
+    "depth": 6.89,
+    "latitude": 35.7245,
+    "longitude": -121.055833333333,
+    "magnitude": 1.66,
+    "record_id": "nc75192856",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-08T20:03:11Z",
+    "depth": 14.27,
+    "latitude": 36.3766666666667,
+    "longitude": -120.605666666667,
+    "magnitude": 2.02,
+    "record_id": "nc75192871",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-08T22:08:44Z",
+    "depth": 10.66,
+    "latitude": 37.491,
+    "longitude": -118.523333333333,
+    "magnitude": 1.85,
+    "record_id": "nc75192911",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-08T22:33:49Z",
+    "depth": 15.02,
+    "latitude": 36.3841666666667,
+    "longitude": -120.5925,
+    "magnitude": 1.59,
+    "record_id": "nc75192921",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-09T04:18:37Z",
+    "depth": 9.66,
+    "latitude": 36.7688333333333,
+    "longitude": -121.514166666667,
+    "magnitude": 1.84,
+    "record_id": "nc75193021",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-09T20:42:03Z",
+    "depth": 5.2,
+    "latitude": 36.68,
+    "longitude": -121.307166666667,
+    "magnitude": 1.72,
+    "record_id": "nc75193431",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-11T22:45:12Z",
+    "depth": 7.73,
+    "latitude": 36.4626666666667,
+    "longitude": -121.0415,
+    "magnitude": 2.45,
+    "record_id": "nc75194471",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-11T23:39:15Z",
+    "depth": 8.65,
+    "latitude": 37.0183333333333,
+    "longitude": -121.72,
+    "magnitude": 2.41,
+    "record_id": "nc75194496",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-12T02:28:45Z",
+    "depth": 8.28,
+    "latitude": 36.462,
+    "longitude": -121.043166666667,
+    "magnitude": 1.77,
+    "record_id": "nc75194531",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-12T22:57:53Z",
+    "depth": 4.7,
+    "latitude": 36.8483333333333,
+    "longitude": -121.586833333333,
+    "magnitude": 1.9,
+    "record_id": "nc75194901",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-13T17:47:20Z",
+    "depth": 9.2,
+    "latitude": 36.2373333333333,
+    "longitude": -120.818833333333,
+    "magnitude": 2.27,
+    "record_id": "nc75195196",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-13T19:09:56Z",
+    "depth": -0.39,
+    "latitude": 36.9976666666667,
+    "longitude": -119.808666666667,
+    "magnitude": 1.76,
+    "record_id": "nc75195231",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-14T13:11:15Z",
+    "depth": 6.82,
+    "latitude": 36.7223333333333,
+    "longitude": -121.4175,
+    "magnitude": 1.81,
+    "record_id": "nc75195626",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-14T13:41:55Z",
+    "depth": 7.07,
+    "latitude": 36.8291666666667,
+    "longitude": -121.2945,
+    "magnitude": 1.84,
+    "record_id": "nc75195631",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-15T01:16:33Z",
+    "depth": 6,
+    "latitude": 35.3206667,
+    "longitude": -118.5721667,
+    "magnitude": 1.8,
+    "record_id": "ci40994687",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-15T04:26:36Z",
+    "depth": 6.21,
+    "latitude": 36.1886667,
+    "longitude": -118.267,
+    "magnitude": 1.85,
+    "record_id": "ci40994807",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-15T05:16:08Z",
+    "depth": 11.17,
+    "latitude": 37.3878333333333,
+    "longitude": -118.555666666667,
+    "magnitude": 2.41,
+    "record_id": "nc75195921",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-15T22:18:56Z",
+    "depth": 23.16,
+    "latitude": 37.3375,
+    "longitude": -119.939166666667,
+    "magnitude": 2.14,
+    "record_id": "nc75196116",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-16T10:06:41Z",
+    "depth": 4.36,
+    "latitude": 35.337,
+    "longitude": -119.8811667,
+    "magnitude": 1.59,
+    "record_id": "ci40995655",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-17T03:38:19Z",
+    "depth": 4.67,
+    "latitude": 36.2468333,
+    "longitude": -118.3005,
+    "magnitude": 2.13,
+    "record_id": "ci40996343",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-17T08:40:26Z",
+    "depth": 11.4,
+    "latitude": 37.3771666666667,
+    "longitude": -118.7515,
+    "magnitude": 2.06,
+    "record_id": "nc75196736",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-17T09:00:32Z",
+    "depth": 4.64,
+    "latitude": 36.2486667,
+    "longitude": -118.3015,
+    "magnitude": 1.51,
+    "record_id": "ci40996543",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-17T12:31:25Z",
+    "depth": 4.66,
+    "latitude": 36.2481667,
+    "longitude": -118.3041667,
+    "magnitude": 1.54,
+    "record_id": "ci40996639",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-17T16:54:57Z",
+    "depth": 4.84,
+    "latitude": 35.3075,
+    "longitude": -118.5991667,
+    "magnitude": 1.93,
+    "record_id": "ci40996879",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-18T18:09:38Z",
+    "depth": 6.79,
+    "latitude": 36.7656666666667,
+    "longitude": -121.485833333333,
+    "magnitude": 1.73,
+    "record_id": "nc75197311",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-18T22:56:24Z",
+    "depth": 10.28,
+    "latitude": 35.9418333333333,
+    "longitude": -120.491666666667,
+    "magnitude": 3.35,
+    "record_id": "nc75197401",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-18T23:06:16Z",
+    "depth": 9.96,
+    "latitude": 35.9416666666667,
+    "longitude": -120.491833333333,
+    "magnitude": 2.38,
+    "record_id": "nc75197406",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-19T17:21:03Z",
+    "depth": 6.1,
+    "latitude": 36.8376666666667,
+    "longitude": -121.575,
+    "magnitude": 1.59,
+    "record_id": "nc75197776",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-19T18:30:58Z",
+    "depth": 8.45,
+    "latitude": 36.6948333333333,
+    "longitude": -121.204333333333,
+    "magnitude": 1.64,
+    "record_id": "nc75197806",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-19T22:31:41Z",
+    "depth": 6.75,
+    "latitude": 36.5935,
+    "longitude": -121.1135,
+    "magnitude": 1.81,
+    "record_id": "nc75197841",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-20T02:23:54Z",
+    "depth": 6.9,
+    "latitude": 35.4926666666667,
+    "longitude": -120.755,
+    "magnitude": 1.89,
+    "record_id": "nc75197886",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-20T07:23:51Z",
+    "depth": 6.87,
+    "latitude": 36.9393333333333,
+    "longitude": -121.559,
+    "magnitude": 2.6,
+    "record_id": "nc75197951",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-20T12:47:28Z",
+    "depth": 8.37,
+    "latitude": 36.4018333333333,
+    "longitude": -120.977333333333,
+    "magnitude": 1.91,
+    "record_id": "nc75198066",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-20T15:09:04Z",
+    "depth": 5.6,
+    "latitude": 36.2478333,
+    "longitude": -118.302,
+    "magnitude": 1.73,
+    "record_id": "ci40999671",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-21T04:13:06Z",
+    "depth": 3.81,
+    "latitude": 36.496,
+    "longitude": -121.072166666667,
+    "magnitude": 2.11,
+    "record_id": "nc75198406",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-21T11:59:45Z",
+    "depth": 7.81,
+    "latitude": 36.4613333333333,
+    "longitude": -121.0395,
+    "magnitude": 1.72,
+    "record_id": "nc75198486",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-21T12:22:02Z",
+    "depth": 10.22,
+    "latitude": 35.9355,
+    "longitude": -120.490666666667,
+    "magnitude": 2.28,
+    "record_id": "nc75198496",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-21T13:02:38Z",
+    "depth": 22.81,
+    "latitude": 35.3841667,
+    "longitude": -119.3225,
+    "magnitude": 2,
+    "record_id": "ci41000503",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-21T16:21:59Z",
+    "depth": 7.26,
+    "latitude": 36.042,
+    "longitude": -120.613,
+    "magnitude": 2.41,
+    "record_id": "nc75198581",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-22T04:51:38Z",
+    "depth": 2.75,
+    "latitude": 37.1816666666667,
+    "longitude": -121.577833333333,
+    "magnitude": 2.5,
+    "record_id": "nc75198786",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-22T05:43:41Z",
+    "depth": 7.58,
+    "latitude": 36.1723333,
+    "longitude": -118.1615,
+    "magnitude": 2,
+    "record_id": "ci41000831",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-23T01:09:34Z",
+    "depth": 19.85,
+    "latitude": 35.9651666666667,
+    "longitude": -119.758666666667,
+    "magnitude": 2.11,
+    "record_id": "nc75199171",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-23T03:54:39Z",
+    "depth": 1.56,
+    "latitude": 37.3961666666667,
+    "longitude": -118.145166666667,
+    "magnitude": 1.77,
+    "record_id": "nc75199216",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-23T06:35:39Z",
+    "depth": 8.85,
+    "latitude": 35.0031667,
+    "longitude": -118.6721667,
+    "magnitude": 1.79,
+    "record_id": "ci41001447",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-23T09:59:24Z",
+    "depth": 6.95,
+    "latitude": 36.1725,
+    "longitude": -118.1623333,
+    "magnitude": 1.55,
+    "record_id": "ci41001615",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-23T10:13:22Z",
+    "depth": 8.51,
+    "latitude": 36.5478333333333,
+    "longitude": -121.104666666667,
+    "magnitude": 2.13,
+    "record_id": "nc75199361",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-23T20:08:26Z",
+    "depth": -0.86,
+    "latitude": 36.9966666666667,
+    "longitude": -119.805,
+    "magnitude": 1.65,
+    "record_id": "nc75199566",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-24T06:00:27Z",
+    "depth": 4.85,
+    "latitude": 37.253,
+    "longitude": -121.633,
+    "magnitude": 2.36,
+    "record_id": "nc75199741",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-24T13:08:46Z",
+    "depth": 6.12,
+    "latitude": 36.8148333333333,
+    "longitude": -121.553833333333,
+    "magnitude": 2.04,
+    "record_id": "nc75199861",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-24T13:21:39Z",
+    "depth": 6.21,
+    "latitude": 36.8131666666667,
+    "longitude": -121.553333333333,
+    "magnitude": 1.53,
+    "record_id": "nc75199871",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-24T19:59:42Z",
+    "depth": 6.15,
+    "latitude": 36.8143333333333,
+    "longitude": -121.550666666667,
+    "magnitude": 1.89,
+    "record_id": "nc75200016",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-25T06:26:03Z",
+    "depth": 23.01,
+    "latitude": 37.169,
+    "longitude": -118.517333333333,
+    "magnitude": 1.82,
+    "record_id": "nc75200231",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-25T18:08:16Z",
+    "depth": -0.12,
+    "latitude": 36.8928333333333,
+    "longitude": -121.619833333333,
+    "magnitude": 1.88,
+    "record_id": "nc75200506",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-26T13:57:39Z",
+    "depth": 16.88,
+    "latitude": 37.391,
+    "longitude": -119.992666666667,
+    "magnitude": 2.15,
+    "record_id": "nc75200911",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-26T16:05:20Z",
+    "depth": -0.12,
+    "latitude": 36.8911666666667,
+    "longitude": -121.618333333333,
+    "magnitude": 2.29,
+    "record_id": "nc75200951",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-26T21:32:59Z",
+    "depth": 3.58,
+    "latitude": 36.0303333333333,
+    "longitude": -120.589166666667,
+    "magnitude": 1.53,
+    "record_id": "nc75201031",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-27T13:22:29Z",
+    "depth": 9.68,
+    "latitude": 36.4263333333333,
+    "longitude": -121.019333333333,
+    "magnitude": 1.58,
+    "record_id": "nc75201326",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-27T18:06:00Z",
+    "depth": 9.55,
+    "latitude": 36.2553333333333,
+    "longitude": -121.751166666667,
+    "magnitude": 2.25,
+    "record_id": "nc75201441",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-27T21:16:53Z",
+    "depth": 15.46,
+    "latitude": 36.1011666666667,
+    "longitude": -120.1955,
+    "magnitude": 1.5,
+    "record_id": "nc75201466",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-27T23:34:50Z",
+    "depth": 6.11,
+    "latitude": 36.8123333333333,
+    "longitude": -121.549666666667,
+    "magnitude": 1.98,
+    "record_id": "nc75201481",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-27T23:37:42Z",
+    "depth": 6.09,
+    "latitude": 36.8133333333333,
+    "longitude": -121.550666666667,
+    "magnitude": 2.42,
+    "record_id": "nc75201486",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-28T01:50:09Z",
+    "depth": 5.74,
+    "latitude": 35.3076667,
+    "longitude": -118.5516667,
+    "magnitude": 2.73,
+    "record_id": "ci41006999",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-28T03:26:52Z",
+    "depth": 5.15,
+    "latitude": 35.312,
+    "longitude": -118.5565,
+    "magnitude": 1.67,
+    "record_id": "ci41007071",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-28T07:19:58Z",
+    "depth": 9.17,
+    "latitude": 36.808,
+    "longitude": -121.394166666667,
+    "magnitude": 1.84,
+    "record_id": "nc75201651",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-28T10:51:15Z",
+    "depth": 5.02,
+    "latitude": 35.31,
+    "longitude": -118.5528333,
+    "magnitude": 2.26,
+    "record_id": "ci41007327",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-29T01:05:18Z",
+    "depth": 5.96,
+    "latitude": 35.1055,
+    "longitude": -118.5886667,
+    "magnitude": 1.64,
+    "record_id": "ci41008071",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-29T02:34:27Z",
+    "depth": 6.12,
+    "latitude": 36.829,
+    "longitude": -121.570833333333,
+    "magnitude": 2.92,
+    "record_id": "nc75201996",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-29T03:16:21Z",
+    "depth": 3.65,
+    "latitude": 37.4315,
+    "longitude": -118.881166666667,
+    "magnitude": 2.21,
+    "record_id": "nc75202031",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-29T03:22:01Z",
+    "depth": 8.1,
+    "latitude": 36.7443333333333,
+    "longitude": -121.460666666667,
+    "magnitude": 2.86,
+    "record_id": "nc75202036",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-29T04:32:44Z",
+    "depth": 3.88,
+    "latitude": 37.4443333333333,
+    "longitude": -118.875333333333,
+    "magnitude": 2.03,
+    "record_id": "nc75202066",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-29T05:03:49Z",
+    "depth": 6,
+    "latitude": 35.3123333,
+    "longitude": -118.5556667,
+    "magnitude": 1.75,
+    "record_id": "ci41008207",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-29T07:42:53Z",
+    "depth": 2.88,
+    "latitude": 37.4286666666667,
+    "longitude": -118.883333333333,
+    "magnitude": 1.62,
+    "record_id": "nc75202141",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-29T22:22:12Z",
+    "depth": 24.85,
+    "latitude": 36.2556666666667,
+    "longitude": -119.769833333333,
+    "magnitude": 2.01,
+    "record_id": "nc75202346",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-30T06:25:36Z",
+    "depth": 10.07,
+    "latitude": 36.0493333333333,
+    "longitude": -120.883166666667,
+    "magnitude": 2.06,
+    "record_id": "nc75202436",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-30T08:14:26Z",
+    "depth": 0.88,
+    "latitude": 37.4241666666667,
+    "longitude": -118.8825,
+    "magnitude": 1.58,
+    "record_id": "nc75202471",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-06-30T08:27:25Z",
+    "depth": 6.47,
+    "latitude": 36.8775,
+    "longitude": -121.619666666667,
+    "magnitude": 1.83,
+    "record_id": "nc75202481",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-01T01:37:55Z",
+    "depth": 4.28,
+    "latitude": 37.0421666666667,
+    "longitude": -121.132,
+    "magnitude": 3.34,
+    "record_id": "nc75202886",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-01T02:09:10Z",
+    "depth": 1.5,
+    "latitude": 37.0401666666667,
+    "longitude": -121.136,
+    "magnitude": 1.65,
+    "record_id": "nc75202891",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-01T02:55:19Z",
+    "depth": 5.49,
+    "latitude": 36.0156666666667,
+    "longitude": -120.049833333333,
+    "magnitude": 2.2,
+    "record_id": "nc75202911",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-01T04:59:39Z",
+    "depth": 4.85,
+    "latitude": 37.2528333333333,
+    "longitude": -121.632833333333,
+    "magnitude": 1.72,
+    "record_id": "nc75202926",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-01T06:48:34Z",
+    "depth": 11.17,
+    "latitude": 37.4015,
+    "longitude": -118.5715,
+    "magnitude": 2.65,
+    "record_id": "nc75202951",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-01T07:27:53Z",
+    "depth": 5.16,
+    "latitude": 36.0173333333333,
+    "longitude": -120.050333333333,
+    "magnitude": 1.88,
+    "record_id": "nc75202976",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-01T11:26:53Z",
+    "depth": 5.13,
+    "latitude": 35.9938333333333,
+    "longitude": -120.554833333333,
+    "magnitude": 1.86,
+    "record_id": "nc75203051",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-01T17:12:14Z",
+    "depth": 8.66,
+    "latitude": 37.2776666666667,
+    "longitude": -121.643666666667,
+    "magnitude": 2.56,
+    "record_id": "nc75203171",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-01T20:21:02Z",
+    "depth": -0.39,
+    "latitude": 36.9975,
+    "longitude": -119.804833333333,
+    "magnitude": 1.98,
+    "record_id": "nc75203246",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-01T20:47:45Z",
+    "depth": 3.52,
+    "latitude": 37.0608333333333,
+    "longitude": -121.489166666667,
+    "magnitude": 2.52,
+    "record_id": "nc75203271",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-01T22:29:58Z",
+    "depth": 3.98,
+    "latitude": 36.4048333,
+    "longitude": -118.0088333,
+    "magnitude": 1.74,
+    "record_id": "ci41011631",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-02T15:23:18Z",
+    "depth": 1.79,
+    "latitude": 36.2433333333333,
+    "longitude": -120.325,
+    "magnitude": 1.72,
+    "record_id": "nc75203591",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-02T16:00:57Z",
+    "depth": 3.33,
+    "latitude": 37.475,
+    "longitude": -118.789666666667,
+    "magnitude": 2.72,
+    "record_id": "nc75203616",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-02T17:51:20Z",
+    "depth": 3.76,
+    "latitude": 37.4805,
+    "longitude": -118.788166666667,
+    "magnitude": 2.15,
+    "record_id": "nc75203691",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-02T17:53:35Z",
+    "depth": 4.29,
+    "latitude": 37.4721666666667,
+    "longitude": -118.790333333333,
+    "magnitude": 1.81,
+    "record_id": "nc75203696",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-02T20:03:39Z",
+    "depth": 2.98,
+    "latitude": 37.4693333333333,
+    "longitude": -118.790166666667,
+    "magnitude": 2.87,
+    "record_id": "nc75203741",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-03T04:51:27Z",
+    "depth": 14.04,
+    "latitude": 37.4131666666667,
+    "longitude": -118.733833333333,
+    "magnitude": 1.74,
+    "record_id": "nc75203866",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-03T09:18:31Z",
+    "depth": 4.6,
+    "latitude": 36.6606666666667,
+    "longitude": -121.312833333333,
+    "magnitude": 2.11,
+    "record_id": "nc75203936",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-03T13:33:18Z",
+    "depth": 1.58,
+    "latitude": 37.4653333333333,
+    "longitude": -118.796,
+    "magnitude": 2.17,
+    "record_id": "nc75204006",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-03T22:27:39Z",
+    "depth": 3.26,
+    "latitude": 36.5525,
+    "longitude": -121.141833333333,
+    "magnitude": 1.5,
+    "record_id": "nc75204181",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-05T09:41:09Z",
+    "depth": 6.49,
+    "latitude": 36.5981666666667,
+    "longitude": -121.223,
+    "magnitude": 2.5,
+    "record_id": "nc75205697",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-05T15:09:15Z",
+    "depth": 6.98,
+    "latitude": 36.6038333333333,
+    "longitude": -121.208666666667,
+    "magnitude": 2.01,
+    "record_id": "nc75205772",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-06T01:54:25Z",
+    "depth": 13.4,
+    "latitude": 37.4126666666667,
+    "longitude": -118.571833333333,
+    "magnitude": 1.75,
+    "record_id": "nc75206002",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-06T09:11:50Z",
+    "depth": 7.37,
+    "latitude": 37.131,
+    "longitude": -121.5205,
+    "magnitude": 1.63,
+    "record_id": "nc75206182",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-06T15:58:05Z",
+    "depth": 7.43,
+    "latitude": 36.4781666666667,
+    "longitude": -121.039833333333,
+    "magnitude": 1.93,
+    "record_id": "nc75206307",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-06T19:07:08Z",
+    "depth": 7.35,
+    "latitude": 36.4676666666667,
+    "longitude": -121.0465,
+    "magnitude": 1.97,
+    "record_id": "nc75206372",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-08T03:52:05Z",
+    "depth": 4.4,
+    "latitude": 36.97,
+    "longitude": -121.625666666667,
+    "magnitude": 1.64,
+    "record_id": "nc75206892",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-08T06:14:46Z",
+    "depth": 8.58,
+    "latitude": 36.4351666666667,
+    "longitude": -121.009333333333,
+    "magnitude": 1.52,
+    "record_id": "nc75206927",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-08T06:50:42Z",
+    "depth": 21.65,
+    "latitude": 35.9715,
+    "longitude": -119.2481667,
+    "magnitude": 1.97,
+    "record_id": "ci41016695",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-08T09:27:57Z",
+    "depth": 4.33,
+    "latitude": 36.6725,
+    "longitude": -121.335333333333,
+    "magnitude": 1.74,
+    "record_id": "nc75206972",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-08T10:43:07Z",
+    "depth": 8.23,
+    "latitude": 36.0325,
+    "longitude": -120.593833333333,
+    "magnitude": 2.25,
+    "record_id": "nc75207012",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-08T18:42:45Z",
+    "depth": -0.39,
+    "latitude": 36.9961666666667,
+    "longitude": -119.808833333333,
+    "magnitude": 1.67,
+    "record_id": "nc75207172",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-08T23:34:15Z",
+    "depth": 9.63,
+    "latitude": 35.9266666666667,
+    "longitude": -120.477833333333,
+    "magnitude": 2.83,
+    "record_id": "nc75207262",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-09T03:27:19Z",
+    "depth": 9.69,
+    "latitude": 36.536,
+    "longitude": -121.124833333333,
+    "magnitude": 1.82,
+    "record_id": "nc75207327",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-09T09:01:24Z",
+    "depth": 10.64,
+    "latitude": 35.0935,
+    "longitude": -119.1125,
+    "magnitude": 2.29,
+    "record_id": "ci41017687",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-09T13:15:00Z",
+    "depth": 3.87,
+    "latitude": 36.6848333333333,
+    "longitude": -121.356,
+    "magnitude": 1.83,
+    "record_id": "nc75207492",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-10T02:47:50Z",
+    "depth": 30.21,
+    "latitude": 37.0895,
+    "longitude": -119.715166666667,
+    "magnitude": 2.24,
+    "record_id": "nc75207757",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-10T10:16:49Z",
+    "depth": 17.86,
+    "latitude": 37.1988333333333,
+    "longitude": -119.763333333333,
+    "magnitude": 1.84,
+    "record_id": "nc75207902",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-10T13:31:00Z",
+    "depth": 6.93,
+    "latitude": 36.9608333333333,
+    "longitude": -121.597666666667,
+    "magnitude": 2.01,
+    "record_id": "nc75207942",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-11T02:16:09Z",
+    "depth": 9.48,
+    "latitude": 35.939,
+    "longitude": -120.4895,
+    "magnitude": 3.15,
+    "record_id": "nc75208107",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-11T14:03:34Z",
+    "depth": 14.54,
+    "latitude": 35.0785,
+    "longitude": -119.5586667,
+    "magnitude": 1.91,
+    "record_id": "ci41020007",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-11T21:33:05Z",
+    "depth": 5.84,
+    "latitude": 36.2455,
+    "longitude": -118.2996667,
+    "magnitude": 1.64,
+    "record_id": "ci41020511",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-12T05:05:05Z",
+    "depth": 4.95,
+    "latitude": 36.0345,
+    "longitude": -120.598833333333,
+    "magnitude": 2.22,
+    "record_id": "nc75208642",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-12T08:31:00Z",
+    "depth": 10.51,
+    "latitude": 36.5481666666667,
+    "longitude": -121.075833333333,
+    "magnitude": 3.46,
+    "record_id": "nc75208732",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-12T11:58:10Z",
+    "depth": 9.5,
+    "latitude": 36.5411666666667,
+    "longitude": -121.092166666667,
+    "magnitude": 1.89,
+    "record_id": "nc75208812",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-13T10:13:57Z",
+    "depth": 17.93,
+    "latitude": 35.0685,
+    "longitude": -119.0945,
+    "magnitude": 1.93,
+    "record_id": "ci41021639",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-13T11:53:34Z",
+    "depth": 4.06,
+    "latitude": 35.9916666666667,
+    "longitude": -120.5495,
+    "magnitude": 1.57,
+    "record_id": "nc75209172",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-13T12:27:55Z",
+    "depth": 2.03,
+    "latitude": 36.1743333,
+    "longitude": -118.0321667,
+    "magnitude": 3.98,
+    "record_id": "ci41021687",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-13T12:43:24Z",
+    "depth": 2.08,
+    "latitude": 36.1713333,
+    "longitude": -118.0291667,
+    "magnitude": 1.97,
+    "record_id": "ci41021703",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-13T15:45:05Z",
+    "depth": 2,
+    "latitude": 36.1745,
+    "longitude": -118.0305,
+    "magnitude": 2.66,
+    "record_id": "ci41021807",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-13T17:59:25Z",
+    "depth": 9.08,
+    "latitude": 35.1118333,
+    "longitude": -119.1345,
+    "magnitude": 1.79,
+    "record_id": "ci41021879",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-13T19:40:59Z",
+    "depth": 2.38,
+    "latitude": 36.1795,
+    "longitude": -118.0278333,
+    "magnitude": 1.67,
+    "record_id": "ci41021951",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-13T20:23:04Z",
+    "depth": 6.31,
+    "latitude": 37.4615,
+    "longitude": -118.811833333333,
+    "magnitude": 2.99,
+    "record_id": "nc75209462",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-13T20:28:54Z",
+    "depth": 6.23,
+    "latitude": 37.4606666666667,
+    "longitude": -118.813,
+    "magnitude": 2.24,
+    "record_id": "nc75209467",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-13T22:06:05Z",
+    "depth": 2.39,
+    "latitude": 36.1698333,
+    "longitude": -118.0303333,
+    "magnitude": 1.69,
+    "record_id": "ci41022015",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-14T10:56:25Z",
+    "depth": 7.55,
+    "latitude": 37.4711666666667,
+    "longitude": -118.812333333333,
+    "magnitude": 2.37,
+    "record_id": "nc75209707",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-15T00:25:36Z",
+    "depth": 13.64,
+    "latitude": 37.1881666666667,
+    "longitude": -118.425666666667,
+    "magnitude": 2.21,
+    "record_id": "nc75209992",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-15T00:30:27Z",
+    "depth": 18.19,
+    "latitude": 35.2631667,
+    "longitude": -118.944,
+    "magnitude": 2.28,
+    "record_id": "ci41022615",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-15T18:23:22Z",
+    "depth": 6.46,
+    "latitude": 35.2821667,
+    "longitude": -118.464,
+    "magnitude": 2.64,
+    "record_id": "ci41023415",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-15T18:48:05Z",
+    "depth": 2.34,
+    "latitude": 36.7071666666667,
+    "longitude": -121.368166666667,
+    "magnitude": 1.51,
+    "record_id": "nc75210352",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-16T04:36:15Z",
+    "depth": 8.58,
+    "latitude": 36.7715,
+    "longitude": -121.305666666667,
+    "magnitude": 1.66,
+    "record_id": "nc75210617",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-16T14:41:04Z",
+    "depth": 10.18,
+    "latitude": 37.2268333333333,
+    "longitude": -118.199666666667,
+    "magnitude": 2.01,
+    "record_id": "nc75210787",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-17T14:00:25Z",
+    "depth": 1.27,
+    "latitude": 37.1708333333333,
+    "longitude": -121.191166666667,
+    "magnitude": 2.53,
+    "record_id": "nc75211097",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-17T18:37:35Z",
+    "depth": 10.86,
+    "latitude": 36.049,
+    "longitude": -120.884333333333,
+    "magnitude": 1.99,
+    "record_id": "nc75211237",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-17T21:29:44Z",
+    "depth": 6.41,
+    "latitude": 36.9421666666667,
+    "longitude": -121.564333333333,
+    "magnitude": 1.51,
+    "record_id": "nc75211292",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-18T04:08:46Z",
+    "depth": 7.47,
+    "latitude": 36.5645,
+    "longitude": -121.136166666667,
+    "magnitude": 1.7,
+    "record_id": "nc75211497",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-19T10:34:41Z",
+    "depth": 8.67,
+    "latitude": 36.5501666666667,
+    "longitude": -121.105,
+    "magnitude": 1.8,
+    "record_id": "nc75211972",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-19T14:09:07Z",
+    "depth": 1.71,
+    "latitude": 35.089,
+    "longitude": -119.1541667,
+    "magnitude": 2.23,
+    "record_id": "ci41026303",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-19T17:54:10Z",
+    "depth": 11.29,
+    "latitude": 35.077,
+    "longitude": -119.162,
+    "magnitude": 1.85,
+    "record_id": "ci41026439",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-20T03:55:58Z",
+    "depth": 8.93,
+    "latitude": 36.418,
+    "longitude": -120.3715,
+    "magnitude": 2.67,
+    "record_id": "nc75212292",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-20T09:00:54Z",
+    "depth": 8.15,
+    "latitude": 36.4196666666667,
+    "longitude": -120.352333333333,
+    "magnitude": 1.66,
+    "record_id": "nc75212387",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-20T10:09:12Z",
+    "depth": 7.67,
+    "latitude": 36.454,
+    "longitude": -121.048333333333,
+    "magnitude": 1.77,
+    "record_id": "nc75212412",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-20T11:12:07Z",
+    "depth": 7.43,
+    "latitude": 36.3976666666667,
+    "longitude": -120.376666666667,
+    "magnitude": 1.66,
+    "record_id": "nc75212442",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-20T18:36:42Z",
+    "depth": 3.71,
+    "latitude": 37.344,
+    "longitude": -121.711,
+    "magnitude": 1.66,
+    "record_id": "nc75212617",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-20T23:41:13Z",
+    "depth": 7.94,
+    "latitude": 36.433,
+    "longitude": -120.301166666667,
+    "magnitude": 2.22,
+    "record_id": "nc75212732",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-21T02:03:22Z",
+    "depth": 8.11,
+    "latitude": 36.4883333333333,
+    "longitude": -121.066666666667,
+    "magnitude": 1.69,
+    "record_id": "nc75212752",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-21T09:04:38Z",
+    "depth": 9.81,
+    "latitude": 36.0426666666667,
+    "longitude": -121.242,
+    "magnitude": 2.19,
+    "record_id": "nc75212847",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-22T04:51:18Z",
+    "depth": 20.16,
+    "latitude": 35.8251667,
+    "longitude": -119.2571667,
+    "magnitude": 2.15,
+    "record_id": "ci41028271",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-22T11:33:45Z",
+    "depth": 8.5,
+    "latitude": 35.7505,
+    "longitude": -121.725833333333,
+    "magnitude": 1.9,
+    "record_id": "nc75213387",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-22T15:51:49Z",
+    "depth": 9.36,
+    "latitude": 36.8565,
+    "longitude": -120.844,
+    "magnitude": 1.71,
+    "record_id": "nc75213532",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-22T17:09:24Z",
+    "depth": 4.65,
+    "latitude": 36.8233333333333,
+    "longitude": -120.843166666667,
+    "magnitude": 1.81,
+    "record_id": "nc75213582",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-22T18:20:36Z",
+    "depth": -0.39,
+    "latitude": 36.99,
+    "longitude": -119.811,
+    "magnitude": 1.77,
+    "record_id": "nc75213612",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-22T22:32:39Z",
+    "depth": 5.6,
+    "latitude": 36.5568333333333,
+    "longitude": -121.143666666667,
+    "magnitude": 1.74,
+    "record_id": "nc75213697",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-23T00:20:03Z",
+    "depth": 5.83,
+    "latitude": 36.8195,
+    "longitude": -120.843833333333,
+    "magnitude": 1.77,
+    "record_id": "nc75213722",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-23T08:45:19Z",
+    "depth": 3.88,
+    "latitude": 37.0406666666667,
+    "longitude": -121.134166666667,
+    "magnitude": 1.88,
+    "record_id": "nc75213857",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-24T00:10:39Z",
+    "depth": 9.57,
+    "latitude": 36.1631666666667,
+    "longitude": -120.264166666667,
+    "magnitude": 1.75,
+    "record_id": "nc75214182",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-24T01:26:54Z",
+    "depth": 7.78,
+    "latitude": 37.3845,
+    "longitude": -119.062666666667,
+    "magnitude": 1.57,
+    "record_id": "nc75214207",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-24T02:53:59Z",
+    "depth": 1.43,
+    "latitude": 37.4665,
+    "longitude": -118.797,
+    "magnitude": 1.72,
+    "record_id": "nc75214237",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-24T09:07:08Z",
+    "depth": 9.98,
+    "latitude": 36.535,
+    "longitude": -121.084833333333,
+    "magnitude": 1.61,
+    "record_id": "nc75214337",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-24T15:59:23Z",
+    "depth": 5.12,
+    "latitude": 36.6706666666667,
+    "longitude": -121.329,
+    "magnitude": 1.82,
+    "record_id": "nc75214457",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-24T16:05:38Z",
+    "depth": 2.84,
+    "latitude": 35.3201667,
+    "longitude": -118.5535,
+    "magnitude": 1.73,
+    "record_id": "ci41031031",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-24T16:06:35Z",
+    "depth": 2.76,
+    "latitude": 35.3206667,
+    "longitude": -118.5528333,
+    "magnitude": 1.9,
+    "record_id": "ci41031047",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-24T17:06:23Z",
+    "depth": 10.03,
+    "latitude": 35.8791666666667,
+    "longitude": -120.223666666667,
+    "magnitude": 1.53,
+    "record_id": "nc75214497",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  },
+  {
+    "acquisition_timestamp": "2025-07-24T23:41:17Z",
+    "depth": 0.77,
+    "latitude": 36.6941666666667,
+    "longitude": -121.373666666667,
+    "magnitude": 1.93,
+    "record_id": "nc75214647",
+    "source_id": "OSD-01",
+    "status": "reviewed"
+  }
+]

@@ -1,0 +1,226 @@
+{
+  "conflict_items_covered": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "3.4",
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.4",
+    "4.5",
+    "4.6"
+  ],
+  "conflict_items_not_covered": [
+    "3.1",
+    "3.2",
+    "3.3"
+  ],
+  "conflict_items_total": 20,
+  "detection_flags_represented": [
+    "duplicate_object_id",
+    "mixed_bundle_versions",
+    "source_supplied_policy_binding_state",
+    "unrecorded_parentage"
+  ],
+  "guards_demonstrated": [
+    "GDR-001",
+    "GDR-002",
+    "GDR-003",
+    "GDR-004",
+    "GDR-005",
+    "GDR-006",
+    "GDR-016"
+  ],
+  "note": "Representation at M6; demonstration claims are per-item and M7-bounded where stated (EVD-M6 excluded per rule 9).",
+  "public_fixtures": {
+    "OSD-01": 200,
+    "OSD-04": 100,
+    "total": 300
+  },
+  "rc_codes_represented": [
+    "RC-001",
+    "RC-002",
+    "RC-003",
+    "RC-004",
+    "RC-005",
+    "RC-006",
+    "RC-007",
+    "RC-008",
+    "RC-009",
+    "RC-010",
+    "RC-011",
+    "RC-012"
+  ],
+  "rows": [
+    {
+      "data_origin": "SYNTHETIC-DERIVED",
+      "envelope_parentage": "empty",
+      "expected_outcome": "G2/G3 integrity fail-closed (RC-001 path)",
+      "mutation": "classification_label + data_origin changed post-hash (integrity mismatch)",
+      "parent_source_record_ids": [
+        "nc75211292"
+      ],
+      "scenario_items": [
+        "S1 tampered"
+      ],
+      "trace": [
+        "FCE-REQ-MET-010"
+      ],
+      "variant": "tampered"
+    },
+    {
+      "data_origin": "SYNTHETIC",
+      "envelope_parentage": "empty",
+      "expected_outcome": "G2 reject RC-001 (FCE-DR-SCH-003); duplicate object_id -> quarantine RC-001 + duplicate_object_id flag (FCE-DR-SCH-004 D5)",
+      "mutation": "unknown envelope field; and a duplicate object_id pair",
+      "parent_source_record_ids": [
+        "nc75211237",
+        "nc75197406"
+      ],
+      "scenario_items": [
+        "S3 malformed"
+      ],
+      "trace": [
+        "FCE-REQ-MET-010"
+      ],
+      "variant": "malformed"
+    },
+    {
+      "data_origin": "SYNTHETIC-DERIVED",
+      "envelope_parentage": "empty",
+      "expected_outcome": "RC-004 fail-closed — fixture at M6, demonstration M7 (RT-M3S6-05)",
+      "mutation": "acquisition_timestamp set beyond staleness policy",
+      "parent_source_record_ids": [
+        "S2C_11SKU_20250724_0_L2A"
+      ],
+      "scenario_items": [
+        "2.3",
+        "S3 replay"
+      ],
+      "trace": [
+        "FCE-REQ-ING-011"
+      ],
+      "variant": "stale"
+    },
+    {
+      "data_origin": "SYNTHETIC",
+      "envelope_parentage": "empty",
+      "expected_outcome": "G4 fail-closed, RC-008",
+      "mutation": "unauthenticated/unbound PIP attribute presented at G4",
+      "parent_source_record_ids": [
+        "nc75207942"
+      ],
+      "scenario_items": [
+        "S1 PIP spoof"
+      ],
+      "trace": [
+        "FCE-REQ-SEC-002"
+      ],
+      "variant": "pip_spoof"
+    },
+    {
+      "data_origin": "SYNTHETIC-DERIVED",
+      "envelope_parentage": "empty",
+      "expected_outcome": "forced unvalidated + RC-012 / source_supplied detection flag",
+      "mutation": "source-supplied policy_binding_state=validated",
+      "parent_source_record_ids": [
+        "nc75197311"
+      ],
+      "scenario_items": [
+        "3.4 pre-marking"
+      ],
+      "trace": [
+        "FCE-REQ-MET-010"
+      ],
+      "variant": "pre_marking"
+    },
+    {
+      "data_origin": "SYNTHETIC + PUBLIC parents (request only; no output object)",
+      "envelope_parentage": "n/a (no output)",
+      "expected_outcome": "RC-003 block + segregate",
+      "mutation": "cross-domain merge request with no covering combination",
+      "parent_source_record_ids": [
+        "nc75203591"
+      ],
+      "scenario_items": [
+        "1.1",
+        "2.1"
+      ],
+      "trace": [
+        "FCE-REQ-KRN-011"
+      ],
+      "variant": "unauthorized_merge"
+    },
+    {
+      "data_origin": "SYNTHETIC-DERIVED",
+      "envelope_parentage": "non-empty (test payload)",
+      "expected_outcome": "quarantine + unrecorded_parentage flag (docs/18 §1, C3)",
+      "mutation": "derived lifecycle_type with caller-supplied parent_object_ids not in ARCH-09",
+      "parent_source_record_ids": [
+        "nc75202436"
+      ],
+      "scenario_items": [
+        "S1 forged parentage",
+        "V3/V7"
+      ],
+      "trace": [
+        "FCE-REQ-KRN-012"
+      ],
+      "variant": "forged_parentage"
+    },
+    {
+      "config": "RC-002 caveat/domain-mismatch channel case (block, override-immune)",
+      "item": "1.2 / 2.2",
+      "side": "calibration"
+    },
+    {
+      "config": "ambiguous classification (unresolvable label) -> quarantine RC-005",
+      "item": "1.3",
+      "side": "calibration"
+    },
+    {
+      "config": "mixed pinned bundle-version merge pair -> quarantine RC-005 + mixed_bundle_versions",
+      "item": "1.4",
+      "side": "calibration"
+    },
+    {
+      "config": "broad-release partial-permit (restrict; permitted subset in rules-fired citation, TST-POL-007)",
+      "item": "2.4",
+      "side": "calibration"
+    },
+    {
+      "config": "route-to-higher-domain delivery disposition (TST-POL-008; envelope invariant)",
+      "item": "2.5",
+      "side": "calibration"
+    },
+    {
+      "config": "G1-reject family: unsupported schema_version / LIVE / source-supplied binding",
+      "item": "3.4",
+      "side": "calibration"
+    },
+    {
+      "config": "S4 override (accept/reject/immunity) + downgrade (valid/invalid proof) inputs",
+      "item": "4.1-4.6",
+      "side": "calibration"
+    }
+  ],
+  "variants": [
+    "forged_parentage",
+    "malformed_duplicate_id_a",
+    "malformed_duplicate_id_b",
+    "malformed_unknown_field",
+    "pip_spoof",
+    "pre_marking",
+    "stale",
+    "tampered",
+    "unauthorized_merge"
+  ]
+}

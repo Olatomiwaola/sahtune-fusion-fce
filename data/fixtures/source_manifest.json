@@ -1,0 +1,126 @@
+{
+  "_framing": "USGS and Sentinel-2 STAC data are reproducible public-source anchors for a TRL 1-3 compliance-engine proof of concept — never operational or CAF-equivalent data.",
+  "global": {
+    "aoi_bbox": {
+      "maxlatitude": 37.5,
+      "maxlongitude": -118.0,
+      "minlatitude": 35.0,
+      "minlongitude": -122.0
+    },
+    "split_key": "sha-256 over <stable_source_record_id>:<seed>",
+    "split_seed": 12918724377571503927,
+    "time_window": "2025-06-01T00:00:00Z/2025-08-31T23:59:59Z"
+  },
+  "schema_note": "M6 Sprint 12 source manifest (GDR-001/-002/-003). No raw payloads committed; data/raw/ is git-ignored.",
+  "sources": {
+    "OSD-01": {
+      "access_timestamp": "2026-07-08T02:46:40Z",
+      "api_endpoint": "https://earthquake.usgs.gov/fdsnws/event/1/query",
+      "fixture_modality": "acoustic_like",
+      "fixture_modality_disclosure": "policy-engineer ruling 2026-07-07 (fixture role, not a sensing claim; disclosed in source manifest + trim report)",
+      "http_method": "GET",
+      "http_status": 200,
+      "licence_note": "USGS-authored or produced data and information are considered to be in the U.S. Public Domain . While the content of most USGS websites is in the U.S. Public Domain, not all information, illustrations, or photographs on our site are. Some non-USGS photographs, images, and/or graphics that appear on USGS websites are used by the USGS with permission from the copyright holder (as required by USGS policy on the use of copyrighted material ). These materials are generally marked as being copyrighted. To use these copyrighted materials, you must obtain permission from the copyright holder under copyright law . For any content or multimedia containing USGS personnel or staff, and regardless of the license applied, their likeness, or voice, the person may have publicity rights. For commercial use of that multimedia, permission may be required. When using information from USGS information products, publications, or websites, we ask that proper credit be given. Credit can be provided by including a citation such as the following: Credit: U.S. Geological Survey Department of the Interior/USGS U.S. Geological Survey/photo by Jane Doe (if the photographer/artist is known)",
+      "licence_provenance_chain": [
+        {
+          "hop": "R1",
+          "role": "API base page; links to Legal",
+          "sha256": "8c610ec9839398f0a52fa695c5c9c23f0aa216489933a9d1e6a6de098e4b95e1",
+          "url": "https://earthquake.usgs.gov/fdsnws/event/1/"
+        },
+        {
+          "hop": "R2",
+          "role": "policies index; links onward",
+          "sha256": "358f498d734ad4f1887a2eaf9381b133144c463ea7c803bd2a554d845040cc33",
+          "url": "https://www.usgs.gov/policies-and-notices"
+        },
+        {
+          "hop": "R3",
+          "role": "information-policies index; links to Copyrights and Credits",
+          "sha256": "e8cee4b1d24072d785815704ce718649284cd0ad49d59a058176c59043191592",
+          "url": "https://www.usgs.gov/information-policies-and-instructions"
+        },
+        {
+          "hop": "R4",
+          "role": "verbatim licence/credit statement source",
+          "sha256": "e4b6684666812ccebd165218cb183a942120503a583a921a8623f2f5b239bbab",
+          "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        }
+      ],
+      "query_params": {
+        "endtime": "2025-08-31T23:59:59Z",
+        "format": "geojson",
+        "limit": "200",
+        "maxlatitude": "37.5",
+        "maxlongitude": "-118.0",
+        "minlatitude": "35.0",
+        "minlongitude": "-122.0",
+        "minmagnitude": "1.5",
+        "orderby": "time-asc",
+        "starttime": "2025-06-01T00:00:00Z"
+      },
+      "raw_file": "osd01_usgs_events.geojson",
+      "raw_file_sha256": "64e24161218875aa5cf64e2ec9655f4b9bef09dc044daae5e7e65bcdedda692e",
+      "record_count": 200,
+      "source_page": "https://earthquake.usgs.gov/fdsnws/event/1/"
+    },
+    "OSD-04": {
+      "access_timestamp": "2026-07-08T09:45:11Z",
+      "api_endpoint": "https://earth-search.aws.element84.com/v1/search",
+      "collection": "sentinel-2-l2a",
+      "endpoint_resolution_trail": {
+        "confirmed_hostname": "earth-search.aws.element84.com",
+        "documented_stac_endpoint": "https://earth-search.aws.element84.com/v1",
+        "stage_a_sha256": "c6ee3e3c8422a9841b07a9ff343e8f3722ffbad12ecaff9dc665c153be00a1bd",
+        "stage_a_url": "https://registry.opendata.aws/sentinel-2-l2a-cogs/"
+      },
+      "fixture_modality": "eo_ir",
+      "http_method": "POST",
+      "http_status": 200,
+      "licence_note": "Access to Sentinel data is free, full and open for the broad Regional, National, European and International user community. View Terms and Conditions",
+      "licence_terms_url": "https://scihub.copernicus.eu/twiki/do/view/SciHubWebPortal/TermsConditions",
+      "query_body": {
+        "bbox": [
+          -122.0,
+          35.0,
+          -118.0,
+          37.5
+        ],
+        "collections": [
+          "sentinel-2-l2a"
+        ],
+        "datetime": "2025-06-01T06:49:28Z/2025-07-24T23:41:17Z",
+        "limit": 100
+      },
+      "query_role": "ACTIVE (corrective B2 — datetime slice-aligned to the USGS effective span)",
+      "raw_file": "osd04_stageB2_stac_items.geojson",
+      "raw_file_sha256": "15294426b549e3c685d49215c2fa836803c236f1077e90f19af154a27fa6ddeb",
+      "record_count": 100,
+      "source_page": "https://registry.opendata.aws/sentinel-2-l2a-cogs/",
+      "superseded_query": {
+        "access_timestamp": "2026-07-08T02:59:37Z",
+        "api_endpoint": "https://earth-search.aws.element84.com/v1/search",
+        "http_method": "POST",
+        "http_status": 200,
+        "query_body": {
+          "bbox": [
+            -122.0,
+            35.0,
+            -118.0,
+            37.5
+          ],
+          "collections": [
+            "sentinel-2-l2a"
+          ],
+          "datetime": "2025-06-01T00:00:00Z/2025-08-31T23:59:59Z",
+          "limit": 100
+        },
+        "query_role": "SUPERSEDED",
+        "raw_file": "osd04_stageB_stac_items.geojson",
+        "raw_file_sha256": "23827600f14d965d54de6a8355918724df523ebb404abffb465a27dde5626420",
+        "reason": "Superseded 2026-07-08: the original Stage-B slice (Earth Search default datetime-descending, limit=100) sampled 2025-08-22 onward while the USGS time-asc limit=200 slice ended ~1 month earlier — zero temporal candidate pairs (876 spatial-only). Corrective query constrains the STAC datetime to the USGS effective span read from the downloaded events file, guaranteeing slice alignment mechanically. Selection rule: earliest-200 USGS events define the span; STAC items within that span. No policy evaluation had consumed any data; no split existed. Slice-alignment correction, not source or result selection.",
+        "record_count": 100
+      }
+    }
+  }
+}

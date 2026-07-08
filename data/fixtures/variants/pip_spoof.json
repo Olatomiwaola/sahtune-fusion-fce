@@ -1,0 +1,12 @@
+{
+  "data_origin": "SYNTHETIC",
+  "expected_outcome": "G4 fail-closed, RC-008",
+  "parent_object_id": "235f340d-d0ca-5e14-84d0-04e950124c55",
+  "spoofed_pip_attribute": {
+    "attr_id": "clearance",
+    "authenticated": false,
+    "integrity_bound": false,
+    "value": "PROJ-LEVEL-3"
+  },
+  "variant": "pip_spoof"
+}

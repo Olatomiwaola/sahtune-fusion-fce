@@ -1,0 +1,20 @@
+{
+  "data_origin_note": "request only; no output object exists on block",
+  "expected_outcome": "RC-003 block + segregate; null output",
+  "request_parents": [
+    {
+      "data_origin": "PUBLIC-OPEN-SOURCE",
+      "domain_label": "DOMAIN-A",
+      "object_id": "df359f98-e1f6-5475-9aa5-2c90141a6e94",
+      "source_record_id": "nc75203591"
+    },
+    {
+      "classification_label": "PROJ-LEVEL-1",
+      "data_origin": "SYNTHETIC",
+      "domain_label": "DOMAIN-B",
+      "modality": "radar_like",
+      "object_id": "f4c8afb5-ce01-53b4-a1f8-6e7bafbdda2f"
+    }
+  ],
+  "variant": "unauthorized_merge"
+}
