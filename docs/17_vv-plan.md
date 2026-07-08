@@ -87,11 +87,7 @@ environment**: `docs/07_policy-decision-model.md` and the **contents** of
 `data/fixtures/policy/bundle_proj-baseline_0.2.0.json` (the actual
 `permitted_combinations` / registry / lattice). Consequences, fail closed:
 
-- §4 (Scenario 4 tuple-coverage `covers()` verification) is specified in full
-  but its **final match check is BLOCKED** pending the bundle's actual
-  `permitted_combinations` enumeration. It does not silently pass. Resolution is
-  a Claude Code read-back of the bundle (or the permits pasted into chat),
-  performed **before** the held-out run, under the seal re-pin protocol.
+- §4 (Scenario 4 tuple-coverage `covers()` verification) was specified in full and **RESOLVED 2026-07-08** (lead decision): the sealed proj-baseline@0.2.0 permits were read back and S4's fused-track positive merge binds to MP-V1-SAME-DOMAIN (exact-multiset covers() = True; no re-pin). It never silently passed. See the §4 Resolution addendum.
 - Registry/lattice references below are taken from the derived docs that quote
   them (`docs/08`, `docs/18`, `docs/09`, coverage matrix), labelled as such;
   they are not a substitute for `docs/07` at ratification and are flagged where
@@ -320,7 +316,7 @@ demonstrations/tests land here.
 
 ## §4 — Scenario 4 tuple-coverage verification (`covers()` vs sealed bundle)
 
-`[ROLE: policy-engineer]` (no web tools). **STATUS: BLOCKED — fail closed.**
+`[ROLE: policy-engineer]` (no web tools). **STATUS: RESOLVED 2026-07-08 (lead decision) — see the §4 Resolution addendum at end of document.**
 The final match check needs the sealed bundle's actual `permitted_combinations`
 (`bundle_proj-baseline_0.2.0.json`), which was not available to the design
 environment. The verification is fully specified here; it is resolved by a
@@ -433,9 +429,7 @@ lattice.
   fixtures; treating FCE-REQ-EDG-001/-010 as method-stated/M8-deferred rather
   than M7 gaps; the RT-M3S6-02 "full decision tuple across all classes" breadth
   definition.
-- **Uncertainty:** Scenario 4 `covers()` result is **unresolved pending the
-  bundle contents** (§4, fail closed); whether a S4 re-pin is required is that
-  read-back's call; the exact count of matrix-new tests that green on first
+- **Uncertainty:** Scenario 4 `covers()` is **RESOLVED** (§4 Resolution addendum; MP-V1-SAME-DOMAIN, no re-pin); the exact count of matrix-new tests that green on first
   Layer-1 run; held-out outcomes are unknown until the single Layer-2 pass and
   are reported verbatim regardless.
 
@@ -448,3 +442,18 @@ FCE-REQ-ING-010/-011, FCE-REQ-MET-010, FCE-REQ-PRV-001/-002,
 FCE-REQ-AUD-001/-002/-003, FCE-REQ-EXP-001, FCE-REQ-EDG-001/-010/-011,
 FCE-REQ-OPS-001/-002, FCE-REQ-SEC-001/-002. Guards GDR-001..016.
 FCE-DR-POC-003/-004/-005/-006. RT-M3S6-02/-03/-05, RT-M5S9-05, RT-M6S11-01/-02.
+
+
+---
+
+## §4 Resolution addendum (2026-07-08, lead decision)
+
+Scenario 4 (UAV) fused-track positive-merge parent labels are FIXED before the Sprint 14 build (recorded pre-build; no post-hoc tuning):
+
+- eo_ir observation = (PROJ-LEVEL-1, DOMAIN-A, [PROJ-CAVEAT-X])
+- uas_telemetry observation = (PROJ-LEVEL-2, DOMAIN-A, [PROJ-CAVEAT-X])
+- fused-track high-water-mark label = (PROJ-LEVEL-2, DOMAIN-A, [PROJ-CAVEAT-X])
+
+The parent tuple-multiset [(PROJ-LEVEL-1, DOMAIN-A, [PROJ-CAVEAT-X]), (PROJ-LEVEL-2, DOMAIN-A, [PROJ-CAVEAT-X])] matches MP-V1-SAME-DOMAIN exactly in the sealed proj-baseline@0.2.0 — exact-multiset covers() = True (order-independent). No re-pin required; the sealed bundle (sha 6a830b24…c53502; held-out aggregate 059829…63e) is used unchanged for the held-out run. Negative case 4.3 (override vs an uncovered cross-domain merge) remains intentionally uncovered → RC-003 block, override-immune (B2).
+
+Finding of record: no Scenario 4 calibration envelopes exist on disk; S4 observation fixtures are materialized in the Sprint 14 build to exactly these labels (train/serve identity, GDR-016). Recorded in evidence/laptop-poc/decision_register.md (Sprint 13 close). Trace: docs/09 Scenario 4, docs/18 §4, FCE-DR-POC-004 (pin-before-evaluation), seal record re-pin protocol.
