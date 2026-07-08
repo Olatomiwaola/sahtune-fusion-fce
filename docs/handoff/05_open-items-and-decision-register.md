@@ -154,6 +154,42 @@ Process record: commit eafb980 (M6-01) executed before its read-backs were
 returned — post-hoc verified clean in-chat; codified as working-conventions
 rule 10 and the CLAUDE.md execution-discipline section (this close).
 
+### M6 Sprint 12 open (2026-07-07) — network approval (lead ratification, one-time)
+
+Network is approved ONE-TIME for the Sprint 12 download phase only, bounds
+ratified in-chat 2026-07-07:
+
+1. Scope: retrieval of public source data from the two approved families only
+   (USGS OSD-01; Sentinel-2 STAC OSD-04). No installs, no package downloads,
+   no credentials, no unrelated browsing.
+2. Endpoint allowlist: before the first request, the exact hostname(s), source
+   page, query URL, and query parameters are recorded in chat and in the
+   source manifest; allowed requests are limited to those recorded hostnames.
+   Any unexpected hostname, redirect, authentication prompt, or non-public
+   endpoint = STOP.
+3. Raw-data safety: raw responses only under data/raw/ (verified
+   commit-protected before download; protection gate at Sprint 12 open).
+4. Trim protocol binds from the first byte: query URL, parameters, access
+   timestamp, source page, licence/terms note, raw-response hash,
+   trimmed-file hash, record counts. Initial target 200 (USGS) + 100
+   (Sentinel-2 STAC) records within the 500-record cap; if association
+   candidate pairs < 10 after trim, widen the time window within the cap and
+   record before/after counts in the trim report (RT-M6S11-05).
+5. No-network after download: once raw responses are saved, network closes;
+   normalization, fixture build, split, seal, tests, and EVD-M6 run
+   no-network.
+6. Expiry: this approval expires at Sprint 12 close; any re-download or
+   future-sprint network use requires fresh approval.
+
+Framing obligation (lead directive 2026-07-07, binding on the source
+manifest, trim report, and EVD-M6 verbatim): USGS and Sentinel-2 STAC data
+are "reproducible public-source anchors for a TRL 1-3 compliance-engine
+proof of concept" — never framed as operational or CAF-equivalent data.
+EVD-M6 claims fixture existence, guard function, and coverage representation
+only; enforcement demonstration claims are M7's (two-layer harness, sealed
+held-out replay, deterministic-outcome verification, train/serve identity per
+GDR-016, negative results reported verbatim).
+
 RT-M2S3-03 and RT-M2S3-04 are resolved (see `docs/06_security/red_team_findings/RT-M2S3.md`);
 FCE-DR-SCH-003 recorded in `docs/12_decision_records/`. **RT-M2S4-03 (reason-code
 registry consistency) → RESOLVED** by the closed RC-001..012 registry + consistency check
