@@ -8,7 +8,7 @@ from fce_poc.policy import evaluate
 def _ev(request, bundle, clock, resolvable):
     return evaluate(
         request, bundle, clock,
-        pinned_version="0.1.0", resolvable_classifications=resolvable,
+        pinned_version="0.2.0", resolvable_classifications=resolvable,
     )
 
 

@@ -10,7 +10,7 @@ from fce_poc.audit.writer import AuditWriter
 from fce_poc.fusion import MergeParent, MergeRequest, evaluate_merge
 
 REPO = Path(__file__).resolve().parents[2]
-BUNDLE_PATH = REPO / "data" / "fixtures" / "policy" / "bundle_proj-baseline_0.1.0.json"
+BUNDLE_PATH = REPO / "data" / "fixtures" / "policy" / "bundle_proj-baseline_0.2.0.json"
 
 
 def _bundle():

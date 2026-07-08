@@ -41,6 +41,12 @@ Sprint 14 evaluation. Therefore the seal/anchor recomputations are Claude Code
 operations at the Sprint 14 boundary. What was verifiable in chat has been
 verified; the rest is specified for raw execution.
 
+M7 Sprint 14 anchor reconciliation (2026-07-08): docs/17 was authored before the
+later M7 governance/evidence commits. The original planning anchor `284c3fa` is
+superseded for Sprint 14 execution by current pre-build anchor `a832fe8`; this is a
+governance-anchor update only and does not alter the sealed held-out data, sealed
+policy bundle, or FCE-DR-POC-005 pass/fail criteria.
+
 ### Verified in chat (no fixture touch)
 
 - **Aggregate-digest formula reproduces.** Recomputing sha-256 over the two

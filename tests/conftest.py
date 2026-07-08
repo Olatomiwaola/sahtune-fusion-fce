@@ -46,7 +46,7 @@ def valid_raw() -> dict:
 from fce_poc.policy import InjectedClock, PIPAttribute, load_bundle  # noqa: E402
 
 POLICY_DIR = REPO_ROOT / "data" / "fixtures" / "policy"
-PINNED_VERSION = "0.1.0"
+PINNED_VERSION = "0.2.0"
 
 
 def _load_pip(name: str):
@@ -68,7 +68,7 @@ def load_json_policy(name: str):
 
 @pytest.fixture
 def bundle():
-    return load_bundle(POLICY_DIR / "bundle_proj-baseline_0.1.0.json")
+    return load_bundle(POLICY_DIR / "bundle_proj-baseline_0.2.0.json")
 
 
 @pytest.fixture

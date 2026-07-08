@@ -19,7 +19,7 @@ def test_tst_pol_006c_unresolvable_quarantines_never_permit(make_request, bundle
            "data_origin": "SYNTHETIC", "schema_version": "0.2.0"}
     rec = evaluate(
         make_request(object=obj), bundle, clock,
-        pinned_version="0.1.0", resolvable_classifications=resolvable_classifications,
+        pinned_version="0.2.0", resolvable_classifications=resolvable_classifications,
     )
     assert rec["disposition"] == "quarantine"
     assert "RC-005" in rec["reason_codes"]
