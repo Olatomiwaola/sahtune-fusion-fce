@@ -263,3 +263,34 @@ def evaluate(
     # Audit emission is a stub interface only at M2 (M4 owns the writer).
     (audit_sink or NullAuditSink()).emit(disposition, env)
     return disposition
+
+
+DUPLICATE_OBJECT_ID_FLAG = "duplicate_object_id"
+
+
+def evaluate_batch(objects, taxonomy: Taxonomy):
+    """Batch evaluation with bounded per-run duplicate object_id detection
+    (FCE-DR-SCH-004 D5). Each object is evaluated via `evaluate`; the second and any
+    later occurrence of an object_id fails closed to a `quarantined` disposition on
+    the RC-001 path, carrying a `duplicate_object_id:<id>` detection flag naming the
+    colliding id. First occurrences and every other validation behavior are
+    unchanged. Uniqueness is per-run only (docs/08, FCE-DR-SCH-004). No new reason
+    code: the existing RC-001 fail-closed path is reused.
+    """
+    seen: set = set()
+    dispositions: list[Disposition] = []
+    for raw in objects:
+        disp = evaluate(raw, taxonomy)
+        oid = raw.get("object_id")
+        if oid is not None and oid in seen:
+            disp = Disposition(
+                disposition="quarantined",
+                reason_code=REASON_CODE_FAIL_CLOSED,
+                failed_rules=disp.failed_rules,
+                detection_flags=tuple(sorted(set(disp.detection_flags) | {f"{DUPLICATE_OBJECT_ID_FLAG}:{oid}"})),
+                synthetic_banner=disp.synthetic_banner,
+            )
+        elif oid is not None:
+            seen.add(oid)
+        dispositions.append(disp)
+    return dispositions
