@@ -1,0 +1,20 @@
+{
+  "acquisition_timestamp": "2026-07-08T12:00:00Z",
+  "classification_label": "PROJ-LEVEL-2",
+  "clock_source": "injected",
+  "data_origin": "SYNTHETIC",
+  "domain_label": "DOMAIN-A",
+  "handling_instructions": "Handle per project synthetic-data policy (Scenario 4 UAV fixture).",
+  "ingest_timestamp": "2026-07-08T00:00:00Z",
+  "integrity_hash": "f0321023e8e5999aa84239660ce90d12a7e1a846508b02b739620db16028cb36",
+  "lifecycle_type": "normalized_observation",
+  "modality": "uas_telemetry",
+  "object_id": "7f70b1b4-b8c4-5b29-814b-436e88758c03",
+  "parent_object_ids": [],
+  "provenance_ref": "graph://node/s4-uas-telemetry",
+  "release_caveat": [
+    "PROJ-CAVEAT-X"
+  ],
+  "schema_version": "0.2.0",
+  "source_sensor_id": "SENSOR-S4-UAS-001"
+}

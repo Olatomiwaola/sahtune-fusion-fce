@@ -25,6 +25,11 @@ from fce_poc.fusion.permits import covers as merge_covers, tuples_from_objects
 
 ALLOWED_DATA_ORIGINS = frozenset({"SYNTHETIC", "SYNTHETIC-DERIVED", "PUBLIC-OPEN-SOURCE"})
 
+# RULE-ING-011 freshness threshold (FCE-REQ-ING-011). No bundle/policy freshness field
+# exists, so a deterministic config constant is used and recorded in every decision
+# record. Injected-clock tick units (H4; no wall-clock read).
+STALENESS_THRESHOLD_TICKS = 50
+
 ENFORCEMENT = {
     "permit": "release",
     "restrict": "restrict-release",
@@ -61,6 +66,8 @@ def _record(
         "enforcement_action": ENFORCEMENT[disposition],
         "detection_flags": sorted(set(detection_flags)),
         "evaluation_timestamp": clock.now,
+        "clock_source": getattr(clock, "clock_source", "injected"),
+        "staleness_threshold": STALENESS_THRESHOLD_TICKS,
         "deterministic_evaluation": True,
     }
 
@@ -79,6 +86,22 @@ def _stale(request, clock: InjectedClock) -> bool:
     if tick is None or window is None:
         return False  # freshness not asserted in this request
     return (clock.now - tick) > window
+
+
+def _freshness(request, clock: InjectedClock):
+    """RULE-ING-011 (FCE-REQ-ING-011): deterministic injected-clock freshness gate.
+
+    Returns (stale, threshold). An asserted object tick is stale if it is older than
+    STALENESS_THRESHOLD_TICKS or lies in the future (unverifiable). Absent tick ->
+    freshness not asserted -> not stale. No wall-clock read (H4). This is the
+    authoritative freshness gate; the pre-existing `_stale` (request-window model,
+    used inside RULE-POL-001) is left untouched per the additive constraint.
+    """
+    threshold = STALENESS_THRESHOLD_TICKS
+    tick = request.get("object_timestamp_tick")
+    if tick is None:
+        return (False, threshold)
+    return ((clock.now - tick) > threshold or tick > clock.now, threshold)
 
 
 def evaluate(
@@ -124,6 +147,18 @@ def evaluate(
             input_object_ids=obj_ids, pip_attributes=pip, bundle_version=bundle.version,
             rules_fired=["G1"], disposition="reject", reason_codes=g1_reject_codes,
             detection_flags=detection_flags, clock=clock,
+        )
+
+    # --- RULE-ING-011 — freshness / staleness (FCE-REQ-ING-011, RT-M3S6-05) ---
+    # Additive ingestion-family fail-closed gate; leaves RULE-POL-001/002/003 and the
+    # default-deny fallback untouched. Stale/future acquisition tick -> reject + RC-004;
+    # the staleness threshold and clock_source are recorded in the decision record.
+    stale, _threshold = _freshness(request, clock)
+    if stale:
+        return _record(
+            input_object_ids=obj_ids, pip_attributes=pip, bundle_version=bundle.version,
+            rules_fired=["RULE-ING-011"], disposition="reject", reason_codes=["RC-004"],
+            detection_flags=detection_flags + ["stale"], clock=clock,
         )
 
     # --- PIP attribute authentication (RULE-POL-004, B1) at G4 ---

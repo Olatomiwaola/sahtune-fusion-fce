@@ -1,0 +1,20 @@
+{
+  "acquisition_timestamp": "2026-07-08T12:00:00Z",
+  "classification_label": "PROJ-LEVEL-1",
+  "clock_source": "injected",
+  "data_origin": "SYNTHETIC",
+  "domain_label": "DOMAIN-A",
+  "handling_instructions": "Handle per project synthetic-data policy (Scenario 4 UAV fixture).",
+  "ingest_timestamp": "2026-07-08T00:00:00Z",
+  "integrity_hash": "9cee8cd097458a87624386c1f90bf2d83302e8e91930a5803d6d712883f12fb4",
+  "lifecycle_type": "normalized_observation",
+  "modality": "eo_ir",
+  "object_id": "e7458532-8297-592c-9742-e5a75c2576c9",
+  "parent_object_ids": [],
+  "provenance_ref": "graph://node/s4-eo-ir",
+  "release_caveat": [
+    "PROJ-CAVEAT-X"
+  ],
+  "schema_version": "0.2.0",
+  "source_sensor_id": "SENSOR-S4-EOIR-001"
+}
