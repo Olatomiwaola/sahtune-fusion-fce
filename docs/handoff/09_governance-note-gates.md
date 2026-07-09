@@ -48,3 +48,5 @@ EVD-M6 (evidence/laptop-poc/fixture_report.md) at the Sprint 12 close
 commit; seed per FCE-DR-POC-003, bundle pin per FCE-DR-POC-004
 (proj-baseline@0.2.0), locations per FCE-DR-POC-006. TRL 1-3 scope: fixture
 existence and guard function only; enforcement demonstration is M7 (GATE-D).
+
+GATE-D CLOSED 2026-07-08 (lead declaration). Sprints 10 (M5 merge evaluator) and 14 (M7 two-layer harness + sealed held-out run) both DONE. No-unauthorized-merge / fusion enforcement demonstrated by test at TRL 1-3 on calibration and sealed held-out fixtures (EVD-M5, EVD-M7). This attests Sprint 10+14 completion and the enforcement demonstration only; it is NOT accreditation, ATO, or operational authority, and the FCE-DR-POC-005 PoC-validation status remains "engineering progress; PoC validation gate not passed" (criterion 4 GDR-010 deferred; FCE-REQ-ING-011 held-out RC-004 not enforced, H4).
