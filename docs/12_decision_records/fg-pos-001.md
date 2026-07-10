@@ -1,6 +1,6 @@
 # Decision Record — FG-POS-001
 
-**Title:** Ratification of Fusion Guard as a Sahtune Fusion Capability Name
+**Title:** Ratification of Sahtune Fusion Guard as a Sahtune Fusion Capability Name
 **Date:** 2026-07-10
 **Status:** Approved — PENDING LEAD SIGN-OFF
 **Owner:** Lead / product-strategy-reviewer
@@ -13,15 +13,11 @@
 
 Kanatir previously submitted a proposal under the name **Fusion Guard**, describing a Sahtune Fusion capability for trusted sensor fusion, controlled data handling, auditability, and decision-support confidence **[C2: prior submission solicitation/date/filepath — requires artifact/link confirmation]**. Subsequent FCE work produced a stronger agent/skill engineering structure, an evidence-gated topology, and a stricter compliance-gate framing. A positioning decision is required so the resubmission preserves continuity with the prior Fusion Guard proposal without creating a sixth product or presenting Fusion Guard and FCE as unrelated product families.
 
-## Options considered
-
-1. **Promote Fusion Guard to a standalone (sixth) product.** Rejected — invites product-line inflation, whole-product TRL claims, and fragmentation objections; contradicts the fce-product-positioning baseline (five products).
-2. **Drop the Fusion Guard name; submit as "FCE" only.** Rejected — breaks continuity with the already-submitted Fusion Guard proposal.
-3. **Retain Fusion Guard as a mission-facing capability name inside Sahtune Fusion, implemented through the FCE compliance-gate layer.** **Selected** — preserves continuity and the five-product line; separates mission-facing naming from technical implementation.
-
 ## Decision
 
-Kanatir retains **Fusion Guard** as a **mission-facing capability name within the Sahtune Fusion product lineage**. Fusion Guard is not a sixth product and not a standalone product family; it is a challenge-specific Sahtune Fusion capability focused on trusted sensor fusion, controlled data handling, auditability, provenance, and operator-reviewable decision support. The **Fusion Compliance Engine (FCE)** is the upstream policy-enforcement, compliance-gate, provenance, and audit-control layer that implements and strengthens Fusion Guard's trusted-fusion functions.
+**Agreed formal product names (2026-07-10):** the mission-facing capability is **Sahtune Fusion Guard**; the implementation layer is **Sahtune Fusion Compliance Engine (FCE)**. No hyphen. Short forms "Fusion Guard" and "FCE" may be used after first use. The Sahtune-prefixed names are adopted partly to distinguish the capability from similarly named offerings by other vendors, while the embedded "Sahtune Fusion" signals a capability within the Fusion line rather than a top-level product.
+
+Kanatir retains **Sahtune Fusion Guard** as a **mission-facing capability name within the Sahtune Fusion product lineage**. It is not a sixth product and not a standalone product family; it is a challenge-specific Sahtune Fusion capability focused on trusted sensor fusion, controlled data handling, auditability, provenance, and operator-reviewable decision support. The **Sahtune Fusion Compliance Engine (FCE)** is the upstream policy-enforcement, compliance-gate, provenance, and audit-control layer that implements and strengthens Fusion Guard's trusted-fusion functions.
 
 **Approved product hierarchy (five products; Fusion Guard and FCE are capabilities within Fusion):**
 
@@ -29,10 +25,16 @@ Sahtune
 - Sentinel
 - Perception
 - Fusion
-  - Fusion Guard — mission-facing trusted-fusion capability
-  - Fusion Compliance Engine (FCE) — upstream compliance-gate implementation layer
+  - Sahtune Fusion Guard — mission-facing trusted-fusion capability
+  - Sahtune Fusion Compliance Engine (FCE) — upstream compliance-gate implementation layer
 - Ground Control
 - SwarmLink
+
+## Options considered
+
+1. **Promote Fusion Guard to a standalone (sixth) product.** Rejected — invites product-line inflation, whole-product TRL claims, and fragmentation objections; contradicts the fce-product-positioning baseline (five products).
+2. **Drop the Fusion Guard name; submit as "FCE" only.** Rejected — breaks continuity with the already-submitted Fusion Guard proposal.
+3. **Retain Fusion Guard as a mission-facing capability name inside Sahtune Fusion, implemented through the FCE compliance-gate layer.** **Selected** — preserves continuity and the five-product line; separates mission-facing naming from technical implementation.
 
 ## Consequences
 
@@ -42,6 +44,7 @@ Sahtune
 
 **Positioning constraints carried forward:**
 - External description (approved, verbatim): "Fusion Guard is a Sahtune Fusion capability. The revised architecture incorporates the Fusion Compliance Engine as its upstream policy-enforcement, provenance, and audit-control layer."
+- On first use, qualify "Sahtune Fusion Guard" as "a Sahtune Fusion capability" so it does not read as a top-level product.
 - Prohibited: Fusion Guard as Kanatir's sixth product; Fusion Guard and FCE as separate product families; FCE certifies/accredits/authorizes classified processing; any claim of demonstrated isolation, edge deployment, or performance not backed by a named artifact.
 - "Independently deployable" and "downstream failure isolation" are written as **architecture intent / design objective** until packaged-deployment and isolation tests exist. **[C3: architecture artifact `docs/04`/`docs/18` — requires artifact/link confirmation]**
 - TRL claims are capability-specific and evidence-specific; Fusion Guard/FCE readiness is not inherited from or extended to other Sahtune modules.
